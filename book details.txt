@@ -1,0 +1,14 @@
+id
+Title 
+author
+price
+image
+description
+rate
+used --> low price , discount
+
+
+Islam :- Javascript 
+Khaled :- Design pattern
+Samy :- Java
+Nada :- python
