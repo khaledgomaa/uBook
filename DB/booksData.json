@@ -63,7 +63,7 @@
       "categoryId": 2,
       "author": "Kathy Sierra & Bert Bates",
       "price": 56.99,
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51BSxeykubL._SX258_BO1,204,203,200_.jpg",
+      "image": "headfirstJava.jpg",
       "description": "Learning a complex new language is no easy task especially when it s an object-oriented computer programming language like Java. You might think the problem is your brain. It seems to have a mind of its own, a mind that doesn't always want to take in the dry, technical stuff you're forced to study",
       "rate": "4.4",
       "used": 0
@@ -74,7 +74,7 @@
       "categoryId": 2,
       "author": "Joshua Bloch",
       "price": 54.99,
-      "image": "https://images-na.ssl-images-amazon.com/images/I/41zLisPNN2L._SX376_BO1,204,203,200_.jpg",
+      "image": "effectivejava.jpg",
       "description": "In this new edition of Effective Java, Bloch explores new design patterns and language idioms that have been introduced since the second edition was released in 2008 shortly after Java SE6, including Lambda, streams, generics and collections, as well as selected Java 9 features.",
       "rate": "4.8",
       "used": 0
@@ -85,7 +85,7 @@
       "categoryId": 2,
       "author": "Cay Horstmann",
       "price": 35.86,
-      "image": "https://images-na.ssl-images-amazon.com/images/I/41Brz5j2rKL._SX381_BO1,204,203,200_.jpg",
+      "image": "javavolum.jpg",
       "description": "For serious programmers, Core Java, Volume I―Fundamentals, Eleventh Edition, is the definitive guide to writing robust, maintainable code. Whether you’re using Java SE 9, 10, or 11, it will help you achieve a deep and practical understanding of the language and API, and its hundreds of realistic examples reveal the most powerful and effective ways to get the job done.",
       "rate": "4.7",
       "used": 0
@@ -96,7 +96,7 @@
       "categoryId": 2,
       "author": "Barry Burd",
       "price": 20.19,
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51BreP86heL._SX405_BO1,204,203,200_.jpg",
+      "image": "beginningwithjava.jpg",
       "description": "Learn to speak the Java language like the pros Are you new to programming and have decided that Java is your language of choice? Are you a wanna-be programmer looking to learn the hottest lingo around? Look no further! Beginning Programming with Java For Dummies, 5th Edition is the easy-to-follow guide you'll want to keep in your back pocket as you work your way toward Java mastery! In plain English, it quickly and easily shows you what goes into creating a program, how to put the pieces together, ways to deal with standard programming challenges, and so much more.",
       "rate": "4.5",
       "used": 0
@@ -107,7 +107,7 @@
       "categoryId": 2,
       "author": "Y.Daniel Liang",
       "price": 129.01,
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51lkHc6Hl1L._SX396_BO1,204,203,200_.jpg",
+      "image": "introtoJava.jpg",
       "description": "Introduction to Java Programming and Data Structures seamlessly integrates programming, data structures, and algorithms into one text. With a fundamentals-first approach, the text builds a strong foundation of basic programming concepts and techniques before teaching students object-oriented programming and advanced Java programming. Liang explains programming in a problem-driven way that focuses on problem solving rather than syntax, illustrating basic concepts by example and providing a large number of exercises with various levels of difficulty for students to practice. The 12th Edition is completely revised in every detail to enhance clarity, presentation, content, examples, and exercises.",
       "rate": "4.7",
       "used": 0
@@ -118,13 +118,13 @@
       "categoryId": 2,
       "author": "Herbert Schildt",
       "price": 60.54,
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51Xhwv2+hZL._SX402_BO1,204,203,200_.jpg",
+      "image": "completerefjava.jpg",
       "description": "Fully updated for Java SE 11, Java: The Complete Reference, Eleventh Edition explains how to develop, compile, debug, and run Java programs. Best-selling programming author Herb Schildt covers the entire Java language, including its syntax, keywords, and fundamental programming principles. You’ll also find information on key portions of the Java API library, such as I/O, the Collections Framework, the stream library, and the concurrency utilities. Swing, JavaBeans, and servlets are examined and numerous examples demonstrate Java in action. Of course, the very important module system is discussed in detail. This Oracle Press resource also offers an introduction to JShell, Java’s interactive programming tool. Best of all, the book is written in the clear, crisp, uncompromising style that has made Schildt the choice of millions worldwid",
       "rate": "4.6",
       "used": 0
     }
   ],
- "Javascript": [
+  "Javascript": [
     {
       "id": 12,
       "title": "Eloquent JavaScript",
