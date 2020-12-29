@@ -124,28 +124,28 @@
       "used": 0
     }
   ],
-  "Javascript": [
+ "Javascript": [
     {
       "id": 12,
-      "title": "Eloquent JavaScript: A Modern Introduction to Programming",
+      "title": "Eloquent JavaScript",
       "categoryId": 3,
       "author": "Marijn Haverbeke",
-      "price": 470,
+      "price": 29.9,
       "description": "Eloquent JavaScript dives deep into the JavaScript language to show you how to write beautiful, effective code",
       "rate": "4.5",
       "used": 0,
-      "image": "cover1.jpg"
+      "image": "EloquentJavaScript.jpg"
     },
     {
       "id": 13,
-      "title": "JavaScript: The Good Parts: The Good Parts",
+      "title": "JavaScript: The Good Parts",
       "categoryId": 3,
       "author": "Douglas Crockford",
-      "price": 165,
+      "price": 12,
       "description": "This authoritative book scrapes away these bad features to reveal a subset of JavaScript that's more reliable, readable, and maintainable than the language as a whole",
       "rate": "4.2",
       "used": 0,
-      "image": "cover2.jpg"
+      "image": "JavaScriptTheGoodParts.jpg"
     },
 
     {
@@ -153,33 +153,33 @@
       "title": "Object-Oriented JavaScript From Technologies to Solutions",
       "categoryId": 3,
       "author": "Stoyan Stefanov",
-      "price": 376.4,
+      "price": 24,
       "description": "The book requires no prior knowledge of JavaScript and works from the ground up to give you a thorough grounding in this powerful language",
       "rate": "4.2",
       "used": 0,
-      "image": "cover3.jpg"
+      "image": "ObjectOrientedJavaScript.jpg"
     },
     {
       "id": 15,
       "title": "How JavaScript Works",
       "categoryId": 3,
       "author": "Douglas Crockford",
-      "price": 376.4,
+      "price": 24,
       "description": "Crockford shows how to repair those problems. He then moves on to data structures and functions, exploring the underlying mechanisms and then uses higher order functions to achieve class-free object oriented programming",
       "rate": "3.8",
       "used": 0,
-      "image": "cover4.jpg"
+      "image": "HowJavaScriptWorks.jpg"
     },
     {
       "id": 16,
       "title": "Secrets of the JavaScript Ninja",
       "categoryId": 3,
       "author": "John Resig, Bear Bibeault, Josip Maras",
-      "price": 410,
+      "price": 26,
       "description": "illustrate each core concept and technique. This completely revised edition shows you how to master key JavaScript concepts such as functions, closures, objects, prototypes, and promises. It covers APIs such as the DOM.",
       "rate": "5",
       "used": 0,
-      "image": "cover5.png"
+      "image": "SecretsOfTheJavaScriptNinja.jpg"
     },
 
     {
@@ -187,22 +187,22 @@
       "title": "JavaScript: The Definitive Guide: Master the World's Most-Used Programming Language",
       "categoryId": 3,
       "author": "David Flanagan",
-      "price": 348,
+      "price": 22.13,
       "description": "JavaScript: The Definitive Guide is ideal for experienced programmers who want to learn the programming language of the web, and for current JavaScript programmers who want to master it.",
       "rate": "4.8",
       "used": 0,
-      "image": "cover6.png"
+      "image": "JavaScriptTheDefinitiveGuide.jpg"
     },
     {
       "id": 18,
       "title": "Effective Javascript: 68 Specific Ways to Harness the Power of Javascript",
       "categoryId": 3,
       "author": "David Herman",
-      "price": 520,
+      "price": 33,
       "description": "This is not a book for those looking for shortcuts; rather it is hard-won experience distilled into a guided tour. It's one of the few books on JS that I'll recommend without hesitation",
       "rate": "4.3",
       "used": 0,
-      "image": "cover7.png"
+      "image": "EffectiveJavascript.jpg"
     }
   ],
   "Python": [
