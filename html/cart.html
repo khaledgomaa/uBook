@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cart Items</title>
+    <link href="cart.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="table">
+      <table id="cart" class="cart">
+        <thead>
+          <tr>
+            <th>Product Image</th>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="items">
+          <tr>
+            <td><img src="./images/Cplusplus.jpg" width="70" height="50" /></td>
+            <td>Design Pattern In C++</td>
+            <td><input type="number" /></td>
+            <td>54$</td>
+            <td>99$</td>
+            <td>
+              <div id="delete" class="remove"><i class="fa fa-trash"></i></div>
+            </td>
+          </tr>
+          <tr>
+            <td><img src="./images/Cplusplus.jpg" width="70" height="50" /></td>
+            <td>Design Pattern In C++</td>
+            <td><input type="number" /></td>
+            <td>54$</td>
+            <td>99$</td>
+            <td>
+              <div id="delete" class="remove"><i class="fa fa-trash"></i></div>
+            </td>
+          </tr>
+          <tr>
+            <td><img src="./images/Cplusplus.jpg" width="70" height="50" /></td>
+            <td>Design Pattern In C++</td>
+            <td><input type="number" /></td>
+            <td>54$</td>
+            <td>99$</td>
+            <td>
+              <div id="delete" class="remove"><i class="fa fa-trash"></i></div>
+            </td>
+          </tr>
+          <tr>
+            <td><img src="./images/Cplusplus.jpg" width="70" height="50" /></td>
+            <td>Design Pattern In C++</td>
+            <td><input type="number" /></td>
+            <td>54$</td>
+            <td>99$</td>
+            <td>
+              <div id="delete" class="remove"><i class="fa fa-trash"></i></div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="5" class="align-right">Total items</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td colspan="5" class="align-right">Total Price</td>
+            <td>200$</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/cart.js"></script>
+  </body>
+</html>
