@@ -1,8 +1,9 @@
-<!--<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Page Title</title>
-    <link type="text/css" rel="stylesheet" href="./css/navbar.css" />
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="navbar.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -11,7 +12,7 @@
   <body>
     <div class="header">
       <div class="logoStyle">
-        <img src="./images/logo1_rbg.png" width="120" height="65" />
+        <img src="./images/logo1_rbg.png" width="120" height="70" />
       </div>
       <div class="leftMenu">
         <a href="navbar.html">Home</a>
@@ -23,99 +24,27 @@
 
       <div class="rightMenu">
         <a href="navbar.html">Sign in</a>
-        <i
-          class="fa fa-shopping-cart"
-          style="font-size: 36px; color: aliceblue"
-        ></i>
+        <div class="cart">
+          <i
+            class="fa fa-shopping-cart"
+            style="font-size: 36px; color: aliceblue"
+          ></i>
+          <span>0</span>
+        </div>
       </div>
     </div>
+
     <div class="searchStyle">
-      <input type="text" id="search" placeholder="Search by name" />
-      <button type="submit" id="btnSearch">
+      <input type="text" class="search" placeholder="Search by book Name" />
+      <button type="submit" class="btnSearch">
         <i class="fa fa-search"></i>
       </button>
-    </div>
-    <div class="slideShow">
-      <img
-        id="slideImage"
-        src="./images/slideShow1.jpg"
-        width="1500"
-        height="400"
-      />
     </div>
 
     <script src="./js/slideShow.js"></script>
   </body>
-</html>-->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="nav.css">
-	<link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-</head>
-<body>
-<div class="header">
-     <div class="logoStyle">
-        <img src="./images/logo1_rbg.png" width="120" height="70" />
-      </div>
-	<div class="leftMenu">
-        <a href="navbar.html">Home</a>
-        <a href="navbar.html">Categories</a>
-        <a href="navbar.html">Events</a>
-        <a href="navbar.html">About</a>
-        <a href="navbar.html">Contact us</a>
-      </div>
-      
-      <div class="rightMenu">
-        <a href="navbar.html">Sign in</a>
-        <i
-          class="fa fa-shopping-cart"
-          style="font-size: 36px; color:aliceblue "
-        ></i>
-      </div>
-      
-     </div> 
-     
-   <div class="searchStyle">
-      <input type="text" class="search" placeholder="Search by book Name">
-      <button type="submit" class="btnSearch">
-        <i class="fa fa-search"></i>
-     </button>
-</div>
-     <div class="slideShow">
-      <img
-        id="slideImage"
-        src="./images/slideShow1.jpg"
-      />
-    </div>
-      <script src="./js/slideShow.js"></script>
-</body>
 </html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- radio button to change or swap slide show images
+when hover on slide image we should display a text contains an 
+important about reading -->
