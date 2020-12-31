@@ -26,7 +26,6 @@ onload = function () {
     }
     slide.setAttribute("src", images[index]);
   }, 3000);
-=======
 
   // -------- Function to get the next image
 
@@ -84,5 +83,4 @@ onload = function () {
       paginationElements.children[x].classList.remove("active");
     paginationElements.children[index].classList.add("active");
   }
-
 };
