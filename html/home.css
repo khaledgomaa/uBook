@@ -123,3 +123,44 @@
 .cart {
   display: inline;
 }
+#prev{
+  position: absolute;
+  top:60%;
+  border-radius: 50%;
+  width:30px;
+  height: 30px;
+  font-size: 20px;
+}
+#next{
+  position: absolute;
+  top:60%;
+  left:96%;
+  border-radius: 50%;
+  width:30px;
+  height: 30px;
+  font-size: 20px;
+}
+#prev:active,
+#prev:hover,
+#next:active,
+#next:hover{
+  width: 30px;
+  height: 30px;
+  background-color: #717171;
+  border-radius:0;
+  color: #fff;
+  font-size: 20px;
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+.active, 
+.dot:hover {
+  background-color: #717171;
+}
