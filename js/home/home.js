@@ -1,9 +1,9 @@
 onload = function () {
   $("#header").load("./navbar.html");
   var images = [
-    "./images/slideShow1.jpg",
-    "./images/slideShow2.jpg",
-    "./images/slideShow3.jpg",
+    "../images/slideShow1.jpg",
+    "../images/slideShow2.jpg",
+    "../images/slideShow3.jpg",
   ];
   var textImage = [
     `Reading is important because it develops our thoughts, gives us endless
