@@ -123,6 +123,7 @@
 .cart {
   display: inline;
 }
+
 #prev{
   position: absolute;
   top:60%;
@@ -164,3 +165,4 @@
 .dot:hover {
   background-color: #717171;
 }
+

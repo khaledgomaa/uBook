@@ -18,6 +18,16 @@ onload = function () {
   var index = 1;
   var slide = document.getElementById("slideImage");
 
+  setInterval(function () {
+    if (index < images.length - 1) {
+      index++;
+    } else {
+      index = 0;
+    }
+    slide.setAttribute("src", images[index]);
+  }, 3000);
+=======
+
   // -------- Function to get the next image
 
   $("#next").click(function () {
@@ -74,4 +84,5 @@ onload = function () {
       paginationElements.children[x].classList.remove("active");
     paginationElements.children[index].classList.add("active");
   }
+
 };
