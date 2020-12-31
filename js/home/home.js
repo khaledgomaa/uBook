@@ -1,9 +1,9 @@
 onload = function () {
   $("#header").load("./navbar.html");
   var images = [
-    "./images/slideShow1.jpg",
-    "./images/slideShow2.jpg",
-    "./images/slideShow3.jpg",
+    "../images/slideShow1.jpg",
+    "../images/slideShow2.jpg",
+    "../images/slideShow3.jpg",
   ];
   var textImage = [
     `Reading is important because it develops our thoughts, gives us endless
@@ -17,16 +17,16 @@ onload = function () {
   ];
   var index = 1;
   var slide = document.getElementById("slideImage");
-  
+
   // -------- Function to get the next image
 
-  $("#next").click(function () { 
+  $("#next").click(function () {
     goToSlide(index + 1);
   });
 
   //------------ function to get the previus Image
 
-  $("#prev").click(function () { 
+  $("#prev").click(function () {
     goToSlide(index - 1);
   });
 
@@ -36,46 +36,42 @@ onload = function () {
     goToSlide(index + 1);
   }, 3000);
 
-
   // ------- creation of pagination
 
-  var paginationElements = document.createElement('ul');
-  
+  var paginationElements = document.createElement("ul");
+
   paginationElements.setAttribute("id", "pagination-ul");
 
   paginationElements.style.textAlign = "center";
   // create list of lis based on images.length
 
-  for (var i = 1; i <= images.length; i++){
+  for (var i = 1; i <= images.length; i++) {
     var liItem = document.createElement("li");
-    liItem.setAttribute("data-index", i);   // set data index for each element
-    liItem.setAttribute("class", "dot");   // add class active to li 
+    liItem.setAttribute("data-index", i); // set data index for each element
+    liItem.setAttribute("class", "dot"); // add class active to li
     paginationElements.appendChild(liItem); // add li to ul
   }
 
-  document.getElementById("pagination").appendChild(paginationElements);  // append ul to document
-  paginationElements.children[index].classList.add('active');            // set the current index to be active
-  
-  
-  for (var i = 0; i < paginationElements.children.length; i++){
+  document.getElementById("pagination").appendChild(paginationElements); // append ul to document
+  paginationElements.children[index].classList.add("active"); // set the current index to be active
+
+  for (var i = 0; i < paginationElements.children.length; i++) {
     paginationElements.children[i].onclick = function () {
-      index = parseInt(this.getAttribute('data-index')) - 1;
+      index = parseInt(this.getAttribute("data-index")) - 1;
       goToSlide(index);
-    }
+    };
   }
 
-function goToSlide(num){
-  index = (num + images.length) % images.length;  // set index
-  slide.setAttribute("src", images[index]);
-  checkPagination();
+  function goToSlide(num) {
+    index = (num + images.length) % images.length; // set index
+    slide.setAttribute("src", images[index]);
+    checkPagination();
   }
-  
+
   // function to set the current li element only to active
   function checkPagination() {
     for (var x = 0; x < paginationElements.children.length; x++)
-      paginationElements.children[x].classList.remove('active');
-      paginationElements.children[index].classList.add('active');
+      paginationElements.children[x].classList.remove("active");
+    paginationElements.children[index].classList.add("active");
   }
-
-
 };
