@@ -2,14 +2,16 @@ $("#navbar").load("./navbar.html");
 
 var cartItems = [
   {
+    id: 0,
     image: "Cplusplus.jpg",
     title: "Design Pattern In C++",
     qty: 2,
     price: 54,
   },
   {
-    image: "Cplusplus.jpg",
-    title: "Design Pattern In C++",
+    id: 1,
+    image: "headfirst.jpg",
+    title: "Design patterns head First",
     qty: 3,
     price: 50,
   },
@@ -33,21 +35,23 @@ function checkCart() {
 }
 
 function displayCartItems() {
-  var total = 0;
   for (var i = 0; i < cartItems.length; i++) {
     //create row for each item in cartItems object
-    total += createItem(cartItems[i], tableBody, i);
+    createItem(cartItems[i], tableBody, i);
   }
 
   var row = createRow(tableBody);
-  addTotalElement("Total Items", cartItems.length, row);
+  row.setAttribute("id", "totalItems");
+  addTotalElement("Total Items", computeTotalItems(), row);
 
   row = createRow(tableBody);
-  addTotalElement("Total Price", total + "$", row);
+  row.setAttribute("id", "totalPrice");
+  addTotalElement("Total Price", computeTotalPrice() + "$", row);
 }
 
-function createItem(item, tableBody, id) {
+function createItem(item, tableBody) {
   var row = createRow(tableBody);
+  row.setAttribute("id", "tr" + item.id);
   //image Attribute
   var column = createColumn(row);
   createImageTag(column, item.image, 70, 50);
@@ -56,19 +60,16 @@ function createItem(item, tableBody, id) {
   column.innerHTML = item.title;
   //Input tag
   column = createColumn(row);
-  createInputTag(column, item.qty, 1);
+  createInputTag(column, item.qty, 1, item.id);
   //price attribute
   column = createColumn(row);
   column.innerHTML = item.price + "$";
   //total Price attribute
   column = createColumn(row);
-  var total = item.price * item.qty;
-  column.innerHTML = total + "$";
+  column.innerHTML = item.qty * item.price + "$";
 
   column = createColumn(row);
-  createDeleteButton(column, id);
-
-  return total;
+  createDeleteButton(column, item.id);
 }
 
 function createRow(tableBody) {
@@ -94,9 +95,21 @@ function createImageTag(column, src, width, height) {
     " />";
 }
 
-function createInputTag(column, value, min) {
+function createInputTag(column, value, min, id) {
   column.innerHTML =
-    "<input type='number' min=" + min + " value=" + value + " />";
+    "<input id=qty" +
+    id +
+    " type='number' min=" +
+    min +
+    " value=" +
+    value +
+    " />";
+  var inputFeild = document.getElementById("qty" + id);
+  inputFeild.addEventListener("change", function () {
+    updateTotalPriceForItem(id, inputFeild.value);
+    updateCartItem(id, +inputFeild.value);
+    updateTotal(computeTotalItems(), computeTotalPrice());
+  });
 }
 
 function addTotalElement(name, value, row) {
@@ -110,11 +123,51 @@ function addTotalElement(name, value, row) {
 
 function createDeleteButton(column, id) {
   column.innerHTML =
-    "<div class='remove' id =" + id + ">" + "<i class='fa fa-trash'></i></div>";
-  document.getElementById(id).addEventListener("click", function () {
+    "<div class='remove' id =del" +
+    id +
+    ">" +
+    "<i class='fa fa-trash'></i></div>";
+  document.getElementById("del" + id).addEventListener("click", function () {
     cartItems.splice(id, 1);
-    tableBody.innerHTML = "";
-    displayCartItems(tableBody);
+    document.getElementById("tr" + id).remove();
+    updateTotal(computeTotalItems(), computeTotalPrice());
     checkCart();
   });
+}
+
+function updateTotalPriceForItem(rowNum, newValue) {
+  var row = document.getElementById("tr" + rowNum);
+  var curPrice = row.getElementsByTagName("td")[3].innerHTML.replace("$", "");
+  row.getElementsByTagName("td")[4].innerHTML = +newValue * +curPrice + "$";
+}
+
+function computeTotalItems() {
+  var total = 0;
+  for (var i = 0; i < cartItems.length; i++) {
+    total += cartItems[i].qty;
+  }
+
+  return total;
+}
+
+function computeTotalPrice() {
+  var total = 0;
+  for (var i = 0; i < cartItems.length; i++) {
+    total += cartItems[i].qty * cartItems[i].price;
+  }
+
+  return total;
+}
+
+function updateTotal(totalItems, totalPrice) {
+  document
+    .getElementById("totalItems")
+    .getElementsByTagName("td")[1].innerHTML = totalItems;
+  document
+    .getElementById("totalPrice")
+    .getElementsByTagName("td")[1].innerHTML = totalPrice + "$";
+}
+
+function updateCartItem(id, value) {
+  cartItems.find((x) => x.id == id).qty = value;
 }
