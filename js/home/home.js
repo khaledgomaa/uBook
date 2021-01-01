@@ -83,4 +83,6 @@ onload = function () {
       paginationElements.children[x].classList.remove("active");
     paginationElements.children[index].classList.add("active");
   }
+
+  $("#footer").load("./footer.html");
 };
