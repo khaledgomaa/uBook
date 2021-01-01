@@ -18,15 +18,6 @@ onload = function () {
   var index = 1;
   var slide = document.getElementById("slideImage");
 
-  setInterval(function () {
-    if (index < images.length - 1) {
-      index++;
-    } else {
-      index = 0;
-    }
-    slide.setAttribute("src", images[index]);
-  }, 3000);
-
   // -------- Function to get the next image
 
   $("#next").click(function () {
@@ -44,9 +35,7 @@ onload = function () {
   setInterval(function () {
     goToSlide(index + 1);
   }, 3000);
-
-  // ------- creation of pagination
-
+  
   var paginationElements = document.createElement("ul");
 
   paginationElements.setAttribute("id", "pagination-ul");
@@ -84,5 +73,21 @@ onload = function () {
     paginationElements.children[index].classList.add("active");
   }
 
+  
   $("#footer").load("./footer.html");
+
+
+/* *** back to up*** */
+
+  $(window).scroll(function () { 
+    if ($(window).scrollTop() > 300) 
+      $("#up").css('display', 'block');
+    else
+      $("#up").css('display', 'none');
+    
+  });
+  $("#up").click(function () { 
+    $('html, body').animate({ scrollTop: 0 });
+  });
+
 };
