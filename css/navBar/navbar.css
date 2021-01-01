@@ -25,6 +25,7 @@
   background-color: dimgray;
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 .rightMenu {
   flex-basis: 200px;

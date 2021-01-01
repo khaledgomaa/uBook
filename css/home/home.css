@@ -126,7 +126,7 @@
 
 #prev {
   position: absolute;
-  top: 60%;
+  top: 55%;
   border-radius: 50%;
   width: 30px;
   height: 30px;
@@ -134,7 +134,7 @@
 }
 #next {
   position: absolute;
-  top: 60%;
+  top: 55%;
   left: 96%;
   border-radius: 50%;
   width: 30px;
