@@ -4,12 +4,29 @@
         <title>Log In</title>
         <script></script>
         <link rel="stylesheet" href="../../css/signin.css">
+	    <script src="../../js/auth/jqueryDev.js"></script>
+	    <script src="../../js/auth/jquery.validate.js"></script>
     </head>
     <body>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.login-form').validate({ 
+            rules: {
+                email: {
+                    required: true,
+
+                },
+                password: {
+                    required: true,
+                }
+            }
+        });
+    });
+        </script>
         <div class="login-content">
             <label class="login-text">Please Log In</label>
-            <form>
-                <input type="email" class="email-input" name="name" placeholder="Your Email">
+            <form class="login-form">
+                <input type="email" class="email-input" name="email" placeholder="Your Email">
                 <input type="password" class="password-input" name="password" placeholder="Your Password">
                 <div class="remember-me-div">
                     <input type="checkbox" name="remember_me" class="remember-me" id="remember_me">
