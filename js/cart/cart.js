@@ -1,3 +1,5 @@
+$("#header").load("./navbar.html");
+
 var cartItems = [
   {
     image: "Cplusplus.jpg",
@@ -15,7 +17,6 @@ var cartItems = [
 var tableBody = document.getElementById("items");
 
 onload = function () {
-  $("#header").load("./navbar.html");
   checkCart();
   //get tbody element
   displayCartItems(tableBody);

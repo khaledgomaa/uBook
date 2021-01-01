@@ -1,5 +1,6 @@
 onload = function () {
   $("#header").load("./navbar.html");
+  $("#searchbar").load("./search.html");
   var images = [
     "../images/slideShow1.jpg",
     "../images/slideShow2.jpg",
@@ -35,7 +36,7 @@ onload = function () {
   setInterval(function () {
     goToSlide(index + 1);
   }, 3000);
-  
+
   var paginationElements = document.createElement("ul");
 
   paginationElements.setAttribute("id", "pagination-ul");
@@ -73,21 +74,15 @@ onload = function () {
     paginationElements.children[index].classList.add("active");
   }
 
-  
   $("#footer").load("./footer.html");
 
+  /* *** back to up*** */
 
-/* *** back to up*** */
-
-  $(window).scroll(function () { 
-    if ($(window).scrollTop() > 300) 
-      $("#up").css('display', 'block');
-    else
-      $("#up").css('display', 'none');
-    
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > 300) $("#up").css("display", "block");
+    else $("#up").css("display", "none");
   });
-  $("#up").click(function () { 
-    $('html, body').animate({ scrollTop: 0 });
+  $("#up").click(function () {
+    $("html, body").animate({ scrollTop: 0 });
   });
-
 };

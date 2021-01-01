@@ -17,7 +17,7 @@ tbody:before {
 
 .table {
   text-align: -webkit-center;
-  margin-top: 5%;
+  margin-top: 7%;
   width: 100%;
   display: none;
 }
@@ -38,7 +38,7 @@ tbody:before {
   text-align: right;
 }
 
-.emptyCart {
+#emptyCart {
   text-align: center;
   display: none;
   font-size: 16px;
