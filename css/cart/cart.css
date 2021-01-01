@@ -19,6 +19,7 @@ tbody:before {
   text-align: -webkit-center;
   margin-top: 5%;
   width: 100%;
+  display: none;
 }
 
 .cart {
@@ -35,4 +36,10 @@ tbody:before {
 
 .align-right {
   text-align: right;
+}
+
+.emptyCart {
+  text-align: center;
+  display: none;
+  font-size: 16px;
 }

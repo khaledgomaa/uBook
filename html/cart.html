@@ -11,7 +11,14 @@
   </head>
   <body>
     <div id="header"></div>
-    <div class="table">
+    <div class="emptyCart" id="emptyCart">
+      <img src="../images/emptycart.png" width="200" height="200" />
+      <pre>
+        You have no items in your shopping cart. 
+        Click <a href="home.html"><b>here</b></a> to continue shopping.
+      </pre>
+    </div>
+    <div class="table" id="table">
       <table id="cart" class="cart">
         <thead>
           <tr>
@@ -23,67 +30,9 @@
             <th></th>
           </tr>
         </thead>
-        <tbody id="items">
-          <tr>
-            <td>
-              <img src="../images/Cplusplus.jpg" width="70" height="50" />
-            </td>
-            <td>Design Pattern In C++</td>
-            <td><input type="number" /></td>
-            <td>54$</td>
-            <td>99$</td>
-            <td>
-              <div id="delete" class="remove"><i class="fa fa-trash"></i></div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img src="../images/Cplusplus.jpg" width="70" height="50" />
-            </td>
-            <td>Design Pattern In C++</td>
-            <td><input type="number" /></td>
-            <td>54$</td>
-            <td>99$</td>
-            <td>
-              <div id="delete" class="remove"><i class="fa fa-trash"></i></div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img src="../images/Cplusplus.jpg" width="70" height="50" />
-            </td>
-            <td>Design Pattern In C++</td>
-            <td><input type="number" /></td>
-            <td>54$</td>
-            <td>99$</td>
-            <td>
-              <div id="delete" class="remove"><i class="fa fa-trash"></i></div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img src="../images/Cplusplus.jpg" width="70" height="50" />
-            </td>
-            <td>Design Pattern In C++</td>
-            <td><input type="number" /></td>
-            <td>54$</td>
-            <td>99$</td>
-            <td>
-              <div id="delete" class="remove"><i class="fa fa-trash"></i></div>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="5" class="align-right">Total items</td>
-            <td>7</td>
-          </tr>
-          <tr>
-            <td colspan="5" class="align-right">Total Price</td>
-            <td>200$</td>
-          </tr>
-        </tbody>
+        <tbody id="items"></tbody>
       </table>
     </div>
-
     <script src="../js/jquery.min.js"></script>
     <script src="../js/cart/cart.js"></script>
   </body>
