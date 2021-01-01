@@ -12,12 +12,12 @@ tbody:before {
   line-height: 0.5em;
   content: ".";
   color: white;
-  display: block;
+  /* display: block; */
 }
 
-.table {
+#tableCart {
   text-align: -webkit-center;
-  margin-top: 7%;
+  margin-top: 11%;
   width: 100%;
   display: none;
 }
@@ -42,4 +42,5 @@ tbody:before {
   text-align: center;
   display: none;
   font-size: 16px;
+  margin-top: 12%;
 }

@@ -1,4 +1,4 @@
-$("#header").load("./navbar.html");
+$("#navbar").load("./navbar.html");
 
 var cartItems = [
   {
@@ -24,10 +24,10 @@ onload = function () {
 
 function checkCart() {
   if (cartItems.length === 0) {
-    $("#table").hide();
+    $("#tableCart").hide();
     $("#emptyCart").show();
   } else {
-    $("#table").show();
+    $("#tableCart").show();
     $("#emptyCart").hide();
   }
 }
