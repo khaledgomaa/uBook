@@ -1,4 +1,4 @@
-body{
+#body{
     margin-top: 50px;
     margin-right: 120px;
     margin-left: 100px;
@@ -8,7 +8,11 @@ body{
     background-color:#F5F5F5; 
 
 }
-
+#bkdiv2,
+#bkdiv3{
+    text-align: center;
+    width: 98%;
+}
 a:link{
     text-decoration: none;
 }
@@ -41,7 +45,7 @@ div.categories{
 .bkdiv{
     display: table;  
     margin-top: 20px;
-    margin-bottom: 80px;
+    /*margin-bottom: 80px;*/
 }
 .categTitle{
     font-size: 28pt;

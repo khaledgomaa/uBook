@@ -1,12 +1,16 @@
 #footer{
     padding: 40px 0;
     background-color: #ffffff;
-    color: #4c4b4d;
+    color:floralwhite;
+    margin: auto;
+    margin-bottom: -25px;
+}
+#footer-container{
+    background-color: dimgray;
 }
 #footer hr{
     border-top-color:#bbb;
     opacity:0.7;
-    width:95%;
 }
 #container{
     display: flex;
@@ -18,25 +22,21 @@
 
 .contact-info 
 {
-    font-size: 20px;
-    color: #4c4b4d;
-    opacity: 0.8;
-    margin-top: -10px;
+    font-size: 18px;
+    color:floralwhite;
+    
 }
 .contact-info a{
     text-decoration: none;
-    color:#4c4b4d;
-    opacity: 0.8;
+    color:floralwhite;
 }
 .contact-info a:hover{
-    opacity: 0.8;
-    color: rgb(31, 67, 176);
+    color:burlywood;
 }
 
 #container h2{
     text-align: center;
-    color: #4c4b4d;
-    opacity: 0.8;
+    color: floralwhite;
     text-transform:capitalize;
 }
 .contact-info h2{
@@ -59,11 +59,9 @@
 #footer .list-inline li a{
     color:inherit;
     text-decoration: none;
-    opacity: 0.8;
 }
 #footer .list-inline li a:hover{
-    opacity: 0.8;
-    color: rgb(84, 110, 188);
+    color:burlywood;
 }
 #footer .social-icons{
     list-style: none;
@@ -111,13 +109,13 @@
     margin-top: 30px;
     text-align: center;
     font-size: 15px;
-    margin-bottom: 0%;
-    color: #aaaaaa;
+    color: floralwhite;
+    padding-bottom: 20px;
 }
 .copyright a{
     color: inherit;
     text-decoration: none;
 }
 .copyright a:hover{
-    color: gray;
+    color:burlywood;
 }
