@@ -31,7 +31,6 @@
   color: white;
   background-color: salmon;
 }
-
 .rightMenu {
   flex-basis: 200px;
   display: flex;

@@ -21,10 +21,10 @@ tbody:before {
   line-height: 0.5em;
   content: ".";
   color: white;
-  display: block;
+  /* display: block; */
 }
 
-.table {
+#tableCart {
   text-align: -webkit-center;
   margin-top: 5%;
   width: 100%;
@@ -52,4 +52,5 @@ tbody:before {
   text-align: center;
   display: none;
   font-size: 16px;
+  margin-top: 12%;
 }
