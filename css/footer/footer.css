@@ -1,0 +1,122 @@
+#footer{
+    padding: 40px 0;
+    background-color: #ffffff;
+    color:floralwhite;
+    margin: auto;
+    margin-bottom: -25px;
+    width: 98%;
+}
+#footer-container{
+    background-color: dimgray;
+}
+#footer hr{
+    border-top-color:#bbb;
+    opacity:0.7;
+}
+#links-container{
+    display: flex;
+    justify-content: space-between;
+    width: 86%;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.contact-info 
+{
+    font-size: 18px;
+    color:floralwhite;
+    
+}
+.contact-info a{
+    text-decoration: none;
+    color:floralwhite;
+}
+.contact-info a:hover{
+    color:burlywood;
+}
+
+#links-container h2{
+    text-align: center;
+    color: floralwhite;
+    text-transform:capitalize;
+}
+.contact-info h2{
+    text-align: left !important;
+    padding-left: 40px;
+}
+#footer .list-inline{
+    padding: 0%;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+#footer .list-inline li{
+    padding: 0 10px;
+    display: inline-block;
+}
+
+#footer .list-inline li a{
+    color:inherit;
+    text-decoration: none;
+}
+#footer .list-inline li a:hover{
+    color:burlywood;
+}
+#footer .social-icons{
+    list-style: none;
+    text-align: center;
+}
+#footer .social-icons li {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    border:1px solid #ccc;
+    margin: 0 8px;
+}
+#footer .social-icons li a{
+    color: inherit;
+    opacity: 0.75;
+}
+#footer .social-icons li a:hover,
+#footer .social-icons li a:active,
+#footer .social-icons li a:focus{
+    opacity: 0.9;
+}
+#footer .social-icons .facebook:hover{
+    background-color:#3b5998;
+    color:floralwhite;
+}
+#footer .social-icons .linkedin:hover
+{
+    background-color:#007bb6;
+    color:floralwhite;
+}
+
+#footer .social-icons .twitter:hover{
+    background-color:#00aced;
+    color:floralwhite;
+}
+#footer .social-icons .instagram:hover{
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    color:floralwhite;
+}
+.copyright{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 15px;
+    color: floralwhite;
+    padding-bottom: 20px;
+}
+.copyright a{
+    color: inherit;
+    text-decoration: none;
+}
+.copyright a:hover{
+    color:burlywood;
+}

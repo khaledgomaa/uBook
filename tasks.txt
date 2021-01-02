@@ -1,0 +1,15 @@
+1- Sign in , sin up , add photo for sign up Mohamed samy.
+
+2- search Mohamed Samy.
+
+3- book details Islam Ramadan.
+
+4- add to cart Islam Ramadan.
+
+5- books slider for categories nada.
+
+6- home --> get books , shuffle array , get top 4 , get top 4 rated by khaled.
+
+7- categories content from db. nada.
+
+8- display cart items --Done by khaled.
