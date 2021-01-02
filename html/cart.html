@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cart Items</title>
+    <link href="../css/cart/cart.css" type="text/css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div id="emptyCart">
+      <img src="../images/emptycart.png" width="200" height="200" />
+      <pre>
+        You have no items in your shopping cart. 
+        Click <a href="CategoryDedails.html"><b>here</b></a> to continue shopping.
+      </pre>
+    </div>
+    <div id="tableCart">
+      <table id="cart" class="cart">
+        <thead>
+          <tr>
+            <th>Product Image</th>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="items"></tbody>
+      </table>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/cart/cart.js"></script>
+  </body>
+</html>

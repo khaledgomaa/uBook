@@ -1,0 +1,46 @@
+thead {
+  box-shadow: rgba(104 104 214 / 30%) 7px 7px 7px;
+}
+
+td,
+tbody {
+  text-align: center;
+  font-size: 20px;
+  font-family: cursive;
+}
+tbody:before {
+  line-height: 0.5em;
+  content: ".";
+  color: white;
+  /* display: block; */
+}
+
+#tableCart {
+  text-align: -webkit-center;
+  margin-top: 11%;
+  width: 100%;
+  display: none;
+}
+
+.cart {
+  border-spacing: 100px 20px;
+}
+
+.remove {
+  color: red;
+  font-size: 27px;
+}
+.remove i {
+  cursor: pointer;
+}
+
+.align-right {
+  text-align: right;
+}
+
+#emptyCart {
+  text-align: center;
+  display: none;
+  font-size: 16px;
+  margin-top: 12%;
+}

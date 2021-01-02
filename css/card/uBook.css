@@ -1,0 +1,131 @@
+/* #body {
+  margin-top: 50px;
+  margin-right: 120px;
+  margin-left: 100px;
+  font-family: monospace;
+  font-size: 19pt;
+  color: dimgray;
+  background-color: #f5f5f5;
+} */
+#bkdiv2,
+#bkdiv3 {
+  text-align: center;
+  width: 98%;
+}
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  color: dimgray;
+}
+
+.homeLink {
+  margin-left: 40px;
+}
+
+.homeArrow {
+  margin-top: 4px;
+  width: 17px;
+  height: 17px;
+}
+.arrowimg {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 160px;
+  margin-right: 10px;
+}
+
+div.categories {
+  margin-top: 60px;
+  text-align: center;
+  margin-left: 80px;
+}
+.bkdiv {
+  display: table;
+  margin-top: 6%;
+  width: 100%;
+  /*margin-bottom: 80px;*/
+}
+.categTitle {
+  font-size: 28pt;
+  margin-top: 28px;
+  margin-bottom: 25px;
+  color: darkorange;
+  display: table-caption;
+}
+.cell {
+  display: table-cell;
+}
+.bookimg {
+  width: 230px;
+  height: 370px;
+}
+
+.AuthLab {
+  margin-left: 100px;
+  margin-right: 85px;
+  margin-top: 15px;
+  color: #faac15;
+  display: block;
+}
+
+.PricLab {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.classWithShadow {
+  transform: scale(1.08);
+  -moz-box-shadow: 7px 7px 8px 8px #b0a8a7;
+  -webkit-box-shadow: 7px 7px 8px 8px #b0a8a7;
+  box-shadow: 7px 7px 8px 8px #b0a8a7;
+}
+.bookInfo {
+  display: table;
+  margin-bottom: 200px;
+}
+
+.bimg {
+  display: table-cell;
+}
+
+.titlelab {
+  float: right;
+  margin-top: 80px;
+  margin-left: 200px;
+  display: table-cell;
+  height: 620px;
+}
+
+.bkDetImg {
+  width: 470px;
+  height: 620px;
+  margin-top: 70px;
+  margin-left: 150px;
+  display: inline;
+}
+
+.tiltestyle {
+  font-family: fantasy;
+  letter-spacing: 3px;
+  font-size: 35pt;
+}
+.autlab,
+.ratelab,
+.dislab {
+  margin-top: 20px;
+}
+.addCartBtn {
+  width: 250px;
+  height: 50px;
+  background-color: #fb9a33;
+  font-size: 17pt;
+  font-family: cursive;
+  border-radius: 12px;
+  color: dimgrey;
+  box-shadow: -3px 3px orange, -2px 2px orange, -1px 1px orange;
+  border: 3px solid darkorange;
+  margin-top: 320px;
+  display: inline;
+}
