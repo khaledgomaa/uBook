@@ -1,6 +1,10 @@
 onload = function () {
   $("#header").load("./navbar.html");
   $("#searchbar").load("./search.html");
+
+  displayBooks("Top rated ebooks", "top", getTopRated(4));
+  displayBooks("Most trending ebooks", "trend", getRandomBooks(4));
+  $("#footer").load("./footer.html");
   var images = [
     "../images/slideShow1.jpg",
     "../images/slideShow2.jpg",
@@ -74,7 +78,78 @@ onload = function () {
     paginationElements.children[index].classList.add("active");
   }
 
-  $("#footer").load("./footer.html");
+  //display Top rated books
+  function displayBooks(categorName, id, items) {
+    $("<div class=bkdiv id=" + id + "></div>").insertBefore("#up");
+    $("#" + id).append(
+      "<div class=categTitle><strong>" + categorName + "</strong></div>"
+    );
+    for (var i = 0; i < items.length; i++) {
+      $("#" + id).append(
+        "<div class=cell id=" +
+          id +
+          i +
+          "><a href><img src=../images/" +
+          items[i].image +
+          " width=350 height=350/></a><label class=AuthLab>" +
+          items[i].author +
+          "</label><label class=AuthLab>" +
+          items[i].price +
+          "$" +
+          "</label></div>"
+      );
+      createOnCLickAction(id + i, items[i].id);
+    }
+  }
+
+  function createOnCLickAction(elementId, bookId) {
+    document
+      .getElementById(elementId.toString())
+      .addEventListener("click", function () {
+        cookie.setCookie("selectedBook", bookId);
+        console.log(bookId);
+      });
+  }
+
+  //to reorder books everyTime
+  function shuffle(array) {
+    var curtIndex = array.length,
+      temp,
+      randomIndex;
+
+    while (curtIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * curtIndex);
+      curtIndex -= 1;
+
+      temp = array[curtIndex];
+      array[curtIndex] = array[randomIndex];
+      array[randomIndex] = temp;
+    }
+
+    return array;
+  }
+
+  function getAllBooks() {
+    //returned from getCategorizedBooks is array of array of objects so one more step
+    //needed to concat all elements.
+    var allBooks = books.getCategorizedBooks();
+    return [].concat.apply([], allBooks);
+  }
+
+  //Get top 4 rated books
+  function getTopRated(numOfelements) {
+    var allBooks = getAllBooks();
+    return allBooks
+      .sort(function (a, b) {
+        return +b.rate - +a.rate;
+      })
+      .slice(0, numOfelements);
+  }
+
+  //Get random books
+  function getRandomBooks(numOfelements) {
+    return shuffle(getAllBooks()).slice(0, numOfelements);
+  }
 
   /* *** back to up*** */
 

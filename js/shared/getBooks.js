@@ -17,8 +17,6 @@
   };
   xhr.send();
   var books = {
-    readDbFile: function () {},
-
     getCategorizedBooks: function () {
       return categorizedBooks;
     },
