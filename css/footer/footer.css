@@ -4,6 +4,7 @@
     color:floralwhite;
     margin: auto;
     margin-bottom: -25px;
+    width: 98%;
 }
 #footer-container{
     background-color: dimgray;
@@ -12,7 +13,7 @@
     border-top-color:#bbb;
     opacity:0.7;
 }
-#container{
+#links-container{
     display: flex;
     justify-content: space-between;
     width: 86%;
@@ -34,7 +35,7 @@
     color:burlywood;
 }
 
-#container h2{
+#links-container h2{
     text-align: center;
     color: floralwhite;
     text-transform:capitalize;

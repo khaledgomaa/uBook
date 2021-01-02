@@ -1,5 +1,5 @@
-$("#navbar").load("./navbar.html");
-
+$("#header").load("./navbar.html");
+$("#cartfooter").load("./footer.html");
 var cartItems = [
   {
     id: 0,
