@@ -128,7 +128,10 @@ function createDeleteButton(column, id) {
     ">" +
     "<i class='fa fa-trash'></i></div>";
   document.getElementById("del" + id).addEventListener("click", function () {
-    cartItems.splice(id, 1);
+    cartItems.splice(
+      cartItems.findIndex((x) => x.id == id),
+      1
+    );
     document.getElementById("tr" + id).remove();
     updateTotal(computeTotalItems(), computeTotalPrice());
     checkCart();
