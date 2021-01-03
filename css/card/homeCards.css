@@ -47,18 +47,27 @@ div.categories {
   width: 100%;
   text-align: center;
   width: 98%;
-  /*margin-bottom: 80px;*/
+  margin-left: 1%;
 }
 .categTitle {
   font-size: 28pt;
   margin-top: 28px;
-  margin-bottom: 25px;
+  margin-bottom: 52px;
   color: darkorange;
   display: table-caption;
 }
 .cell {
   display: table-cell;
+  width: 25%;
 }
+
+.cell:hover {
+  transform: scale(1.08);
+  -moz-box-shadow: 7px 7px 8px 8px #b0a8a7;
+  -webkit-box-shadow: 7px 7px 8px 8px #b0a8a7;
+  box-shadow: 7px 7px 8px 8px #b0a8a7;
+}
+
 .bookimg {
   width: 230px;
   height: 370px;

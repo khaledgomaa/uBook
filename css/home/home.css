@@ -1,8 +1,8 @@
-.homeContainer{
+.homeContainer {
   position: absolute;
-  top:70px;
+  top: 70px;
 }
-#bodyContainer{
+#bodyContainer {
   padding: 0;
   margin: 0;
 }
@@ -16,7 +16,7 @@
   width: 98%;
 }
 
-.imageText {
+#imageText {
   width: 50%;
   color: white;
   text-align: center;
