@@ -12,29 +12,29 @@
   text-align: center;
   width: 98%;
 } */
-a:link {
+/* a:link {
   text-decoration: none;
 }
 
 a:visited {
   color: dimgray;
-}
+} */
 
-.homeLink {
+/* .homeLink {
   margin-left: 40px;
-}
+} */
 
-.homeArrow {
+/* .homeArrow {
   margin-top: 4px;
   width: 17px;
   height: 17px;
-}
-.arrowimg {
+} */
+/* .arrowimg {
   width: 30px;
   height: 30px;
   margin-bottom: 160px;
   margin-right: 10px;
-}
+} */
 
 div.categories {
   margin-top: 60px;
