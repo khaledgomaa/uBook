@@ -35,4 +35,10 @@ function resetForm() {
   $(".Islam").hide();
 }
 
+setTimeout(function () {
+  $("#header").show();
+  $("#contactContainer").show();
+  $("#preLoader").hide();
+}, 300);
+
 function submitInfo() {}
