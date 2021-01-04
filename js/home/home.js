@@ -29,6 +29,12 @@ onload = function () {
     }
   };
 
+  setTimeout(function () {
+    $("#header").show();
+    $(".homeContainer").show();
+    $("#preLoader").hide();
+  }, 300);
+
   var images = [
     "../images/slideShow1.jpg",
     "../images/slideShow2.jpg",

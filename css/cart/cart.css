@@ -6,6 +6,7 @@
   position: absolute;
   top: 70px;
   width: 100%;
+  display: none;
 }
 thead {
   box-shadow: rgba(104 104 214 / 30%) 7px 7px 7px;
@@ -52,4 +53,37 @@ tbody:before {
   text-align: center;
   display: none;
   font-size: 16px;
+}
+
+.submitForm {
+  width: 109px;
+  height: 47px;
+  border: 1px solid #00b4cc;
+  background: coral;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: -65%;
+  margin-top: 2%;
+  display: none;
+}
+.submitForm:hover {
+  background-color: rgb(241, 96, 47);
+}
+.submitForm:active {
+  background-color: chocolate;
+  box-shadow: 0 5px coral;
+  transform: translateY(1px);
+}
+
+#preLoader {
+  position: absolute;
+  top: 35%;
+  left: 43%;
+}
+
+#header {
+  display: none;
 }

@@ -6,3 +6,5 @@ onload = function () {
 $(".submitForm").click(function () {
   $(".thankMessage").show();
 });
+
+function submitInfo() {}

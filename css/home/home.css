@@ -1,6 +1,7 @@
 .homeContainer {
   position: absolute;
   top: 70px;
+  display: none;
 }
 #bodyContainer {
   padding: 0;
@@ -14,6 +15,12 @@
   margin: auto;
   margin-top: 20px;
   width: 98%;
+}
+
+#preLoader {
+  position: absolute;
+  top: 35%;
+  left: 43%;
 }
 
 #imageText {
@@ -88,4 +95,8 @@
 
 .content {
   margin-top: 70px;
+}
+
+#header {
+  display: none;
 }

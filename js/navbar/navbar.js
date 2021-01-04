@@ -1,12 +1,3 @@
-$(window).scroll(function () {
-  //console.log("scroll" + $(document).scrollTop());
-  if ($(document).scrollTop() > 50) {
-    $(".navbar").addClass("newOpacity");
-  } else {
-    $(".navbar").removeClass("newOpacity");
-  }
-});
-
 $(".menuItems a").click(function () {
   setSelectedPage($(this).attr("id"));
 });

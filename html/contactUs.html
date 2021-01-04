@@ -14,33 +14,34 @@
   </head>
   <body id="contactBody">
     <div id="header"></div>
-    <div id="contactContainer" class="row">
+    <div id="contactContainer">
       <div class="imageSize">
         <img class="imagePos" src="../images/contactus.PNG" />
       </div>
-      <div class="myForm">
+      <form class="myForm" onsubmit="event.preventDefault();">
         <div class="touch">
           <span>Get In Touch</span>
         </div>
 
         <div>
-          <input required class="myInput" type="text" placeholder="Name" />
+          <input class="myInput" type="text" placeholder="Name" required />
         </div>
         <div>
-          <input required class="myInput" type="text" placeholder="Email" />
+          <input class="myInput" type="text" placeholder="Email" required />
         </div>
         <div>
-          <input required class="myInput" type="text" placeholder="Subject" />
+          <input class="myInput" type="text" placeholder="Subject" required />
         </div>
         <div>
-          <textarea required class="myMessage" placeholder="Message"></textarea>
+          <textarea class="myMessage" placeholder="Message" required></textarea>
         </div>
         <p class="thankMessage">We have received your message successfully</p>
         <button type="submit" class="submitForm">Submit</button>
-      </div>
+      </form>
 
       <div id="contactfooter"></div>
     </div>
+
     <script src="../js/jquery.min.js"></script>
     <script src="../js/contactUs/contact.js"></script>
   </body>
