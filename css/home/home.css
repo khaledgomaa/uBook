@@ -15,6 +15,9 @@
   margin: auto;
   margin-top: 20px;
   width: 98%;
+  min-height: 274px;
+  max-height: 274px;
+  margin-bottom: 10%;
 }
 
 #preLoader {

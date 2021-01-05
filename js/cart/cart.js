@@ -2,7 +2,7 @@ $("#header").load("./navbar.html");
 $("#cartfooter").load("./footer.html");
 var cartItems = [
   {
-    useremail: "islam@gmail.com",
+    useremail: "khaled@gmail.com",
     items: [
       {
         id: 0,
@@ -20,15 +20,14 @@ var cartItems = [
       },
     ],
   },
-
   {
-    useremail: "khaled@gmail.com",
+    useremail: "islam@gmail.com",
     items: [
       {
         id: 0,
         image: "Cplusplus.jpg",
         title: "Design Pattern In C++",
-        qty: 2,
+        qty: 5,
         price: 54,
       },
       {
@@ -151,9 +150,9 @@ function createImageTag(column, src, width, height) {
   column.innerHTML =
     "<img src=../images/" +
     src +
-    " width=" +
+    " width=200px" +
     width +
-    " height=" +
+    " height=200px" +
     height +
     " />";
 }
@@ -250,6 +249,7 @@ function updateCartItem(id, value) {
 function checkoutCartItems() {
   allCartItems.splice(findItemIndex(allCartItems, userEmail), 1);
   cartitem.items = [];
+  $(".numberlogo").text(0);
   localStorage.setItem("cartItems", JSON.stringify(allCartItems));
 }
 
@@ -257,32 +257,4 @@ function displayOrderFinished() {
   $("#cartImage").attr("src", "../images/checkout.png");
   document.getElementById("message").innerHTML =
     "Thank you , You have successfully purchased the items";
-}
-
-function findItem(cartList, value) {
-  for (var item in cartList) {
-    if (typeof value === "number") {
-      if (cartList[item].id == value) {
-        return item;
-      }
-    } else if (typeof value === "string") {
-      if (cartList[item].useremail == value) {
-        return cartList[item];
-      }
-    }
-  }
-}
-
-function findItemIndex(cartList, value) {
-  for (var item in cartList) {
-    if (typeof value === "number") {
-      if (cartList[item].id == value) {
-        return item;
-      }
-    } else if (typeof value === "string") {
-      if (cartList[item].useremail == value) {
-        return item;
-      }
-    }
-  }
 }
