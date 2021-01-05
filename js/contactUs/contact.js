@@ -2,7 +2,7 @@ onload = function () {
   $("#header").load("./navbar.html");
   $("#contactfooter").load("./footer.html");
 };
-
+var emailRegex = /^(\w|[-]|[.])+@[a-z]+[\.][a-z]{2,8}$/;
 $(".submitForm").click(function () {
   if (
     $("#name").val() !== "" &&
@@ -10,7 +10,7 @@ $(".submitForm").click(function () {
     $("#subject").val() !== "" &&
     $("#message").val() !== ""
   ) {
-    var emailRegex = /^(\w|[-]|[.])+@[a-z]+[\.][a-z]{2,8}$/;
+    emailRegex = /^(\w|[-]|[.])+@[a-z]+[\.][a-z]{2,8}$/;
     if ($("#email").val().match(emailRegex)) {
       $(".thankMessage").show();
       $(".Islam").hide();
@@ -23,6 +23,14 @@ $(".submitForm").click(function () {
     }
   } else {
     $(".thankMessage").hide();
+  }
+});
+
+document.getElementById("email").addEventListener("change", function () {
+  if (!$("#email").val().match(emailRegex)) {
+    $(".Islam").show();
+  } else {
+    $(".Islam").hide();
   }
 });
 
