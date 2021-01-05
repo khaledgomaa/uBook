@@ -119,15 +119,6 @@ onload = function () {
       "<div class=categTitle><strong>" + categorName + "</strong></div>"
     );
     for (var i = 0; i < items.length; i++) {
-      // console.log(
-      //   items[i].id +
-      //     " " +
-      //     items[i].image +
-      //     "  " +
-      //     items[i].author +
-      //     " " +
-      //     items[i].price
-      // );
       $("#" + id).append(
         "<div class=cell id=" +
           id +

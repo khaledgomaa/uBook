@@ -1,17 +1,13 @@
 #categories-container {
   padding: 0;
   margin: 0;
-} 
-#bodyDivId{
-position: absolute;
-top:70px;
-width: 100%;
 }
-#bkdiv2,
-#bkdiv3 {
-  text-align: center;
-  width: 98%;
+#bodyDivId {
+  position: absolute;
+  top: 70px;
+  width: 100%;
 }
+
 a:link {
   text-decoration: none;
 }
@@ -32,8 +28,8 @@ a:visited {
 .arrowimg {
   width: 30px;
   height: 30px;
-  margin-bottom: 160px;
-  margin-right: 10px;
+  margin-bottom: -10%;
+  margin-right: -1%;
 }
 
 div.categories {
@@ -44,8 +40,9 @@ div.categories {
 .bkdiv {
   display: table;
   margin-top: 6%;
-  width: 100%;
-  /*margin-bottom: 80px;*/
+  width: 98%;
+  text-align: center;
+  margin-left: -9%;
 }
 .categTitle {
   font-size: 28pt;
@@ -56,10 +53,12 @@ div.categories {
 }
 .cell {
   display: table-cell;
+  width: 25%;
 }
 .bookimg {
   width: 230px;
   height: 370px;
+  border: 1 solid black;
 }
 
 .AuthLab {
