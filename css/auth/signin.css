@@ -1,11 +1,14 @@
 #signinBody {
   background-color: #3c3c3b;
+  padding: 0;
+  margin: 0;
+}
+#loginContainer{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-
 input {
   outline: none;
   width: 62%;
@@ -78,4 +81,5 @@ input {
   font-size: 14px;
   color: grey;
 }
+
 /*#C85808;*/

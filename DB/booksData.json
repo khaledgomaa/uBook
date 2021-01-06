@@ -59,7 +59,7 @@
   "Java": [
     {
       "id": 6,
-      "Title": "Head First Java, 2nd Edition",
+      "title": "Head First Java, 2nd Edition",
       "categoryId": 2,
       "author": "Kathy Sierra & Bert Bates",
       "price": 56.99,
@@ -70,7 +70,7 @@
     },
     {
       "id": 7,
-      "Title": "Effective Java 3rd Edition",
+      "title":"Effective Java 3rd Edition",
       "categoryId": 2,
       "author": "Joshua Bloch",
       "price": 54.99,
@@ -81,7 +81,7 @@
     },
     {
       "id": 8,
-      "Title": "Core Java Volume I--Fundamentals (Core Series) 11th Edition",
+      "title": "Core Java Volume I--Fundamentals (Core Series) 11th Edition",
       "categoryId": 2,
       "author": "Cay Horstmann",
       "price": 35.86,
@@ -92,7 +92,7 @@
     },
     {
       "id": 9,
-      "Title": "Beginning Programming with Java For Dummies (For Dummies (Computers)) 5th Edition",
+      "title": "Beginning Programming with Java For Dummies 5th Edition",
       "categoryId": 2,
       "author": "Barry Burd",
       "price": 20.19,
@@ -103,7 +103,7 @@
     },
     {
       "id": 10,
-      "Title": "Introduction to Java Programming and Data Structures, Comprehensive Version 12th Edition",
+      "title": "Introduction to Java Programming and Data Structures, Comprehensive Version 12th Edition",
       "categoryId": 2,
       "author": "Y.Daniel Liang",
       "price": 129.01,
@@ -114,7 +114,7 @@
     },
     {
       "id": 11,
-      "Title": "Java: The Complete Reference, Eleventh Edition 11th Edition",
+      "title": "Java: The Complete Reference, Eleventh Edition 11th Edition",
       "categoryId": 2,
       "author": "Herbert Schildt",
       "price": 60.54,

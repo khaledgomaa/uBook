@@ -1,11 +1,17 @@
-body{
-    background-color: #3C3C3B;
+/*body{
+   
+}*/
+#signupContainer{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-
+#signupBody{
+    margin: 0;
+    padding: 0;
+    background-color: #3C3C3B;
+}
 input{
     outline: none;
     width: 62%;
