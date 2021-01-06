@@ -71,9 +71,15 @@ $("document").ready(function () {
               "../../images/" +
               booksJsObj[Object.keys(booksJsObj)[i]][j]["image"];
             var bookid = booksJsObj[Object.keys(booksJsObj)[i]][j]["id"];
-            bkimg.addEventListener("click", function () {
-              cookie.setCookie("selectedBook", bookid);
-            });
+            console.log(bookid);
+            bkimg.addEventListener(
+              "click",
+              (function (bookid) {
+                return function () {
+                  return cookie.setCookie("selectedBook", bookid);
+                };
+              })(bookid)
+            );
 
             document.getElementsByClassName("cell")[cellClassnum].append(bkimg);
 
@@ -204,9 +210,14 @@ function swipToLeft(cID, idx, NumofBooks) {
       bkimg.src =
         "../../images/" + booksJsObj[Object.keys(booksJsObj)[idx]][j]["image"];
       var bookid = booksJsObj[Object.keys(booksJsObj)[idx]][j]["id"];
-      bkimg.addEventListener("click", function () {
-        cookie.setCookie("selectedBook", bookid);
-      });
+      bkimg.addEventListener(
+        "click",
+        (function (bookid) {
+          return function () {
+            return cookie.setCookie("selectedBook", bookid);
+          };
+        })(bookid)
+      );
 
       document.getElementById(imDivId).append(bkimg);
 
@@ -323,9 +334,14 @@ function swipToRight(cID, idx, NumofBooks) {
       bkimg.src =
         "../../images/" + booksJsObj[Object.keys(booksJsObj)[idx]][j]["image"];
       var bookid = booksJsObj[Object.keys(booksJsObj)[idx]][j]["id"];
-      bkimg.addEventListener("click", function () {
-        cookie.setCookie("selectedBook", bookid);
-      });
+      bkimg.addEventListener(
+        "click",
+        (function (bookid) {
+          return function () {
+            return cookie.setCookie("selectedBook", bookid);
+          };
+        })(bookid)
+      );
 
       document.getElementById(imDivId).append(bkimg);
 
