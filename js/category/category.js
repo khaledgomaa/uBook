@@ -5,6 +5,13 @@ $("#header").load("./navbar.html");
 $("#searchbar").load("./search.html");
 $("#footer").load("./footer.html");
 
+setTimeout(function () {
+  $("#bodyDivId").show();
+  $("#header").show();
+  $("#footer").show();
+  $("#preLoader").hide();
+}, 300);
+
 var booksJsObj;
 var cellClassnum = -1;
 
