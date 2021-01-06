@@ -44,8 +44,9 @@ var cartItems = [
 //Convert linq expressions to loop
 //update local storage when delete
 
-cookie.setCookie("useremail", "khaled@gmail.com");
-localStorage.setItem("cartItems", JSON.stringify(cartItems));
+//cookie.setCookie("useremail", "khaled@gmail.com");
+//localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
 var userEmail = cookie.getCookie("useremail");
 var allCartItems = JSON.parse(localStorage.getItem("cartItems"));
 var cartitem = findItem(allCartItems, userEmail);

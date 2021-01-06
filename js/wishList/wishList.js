@@ -42,10 +42,6 @@ var wishList = [
   },
 ];
 
-cookie.setCookie("useremail", "islam@gmail.com");
-
-localStorage.setItem("wishListCart", JSON.stringify(wishList));
-
 //Getting user data
 var userEmail = cookie.getCookie("useremail");
 var allCartItems = JSON.parse(localStorage.getItem("cartItems"));
@@ -53,6 +49,9 @@ var allWishList = JSON.parse(localStorage.getItem("wishListCart"));
 var wishitems = findItem(allWishList, userEmail);
 
 var tableBody = document.getElementById("items");
+
+console.log(allCartItems);
+console.log(allWishList);
 
 onload = function () {
   checkCart();
@@ -187,10 +186,28 @@ function removeItemFromWishList(id, addedItemIndex) {
 }
 
 function addItemTocartItems(index) {
-  allCartItems[findItemIndex(allCartItems, userEmail)].items.push(
-    wishitems.items[index]
-  );
-  localStorage.setItem("cartItems", JSON.stringify(allCartItems));
+  var userIndex = findItemIndex(allCartItems, userEmail);
+  var newItem = wishitems.items[index];
+  var addFirstCart = [];
+  if (userIndex !== undefined) {
+    allCartItems[findItemIndex(allCartItems, userEmail)].items.push(newItem);
+    localStorage.setItem("cartItems", JSON.stringify(allCartItems));
+  } else {
+    addFirstCart.push({
+      // add new object to storage
+      useremail: userEmail,
+      items: [
+        {
+          id: newItem.id,
+          title: newItem.title,
+          price: newItem.price,
+          qty: 1,
+          image: newItem.image,
+        },
+      ],
+    });
+    localStorage.setItem("cartItems", JSON.stringify(addFirstCart));
+  }
 }
 
 function computeTotalItems() {
