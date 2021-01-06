@@ -35,11 +35,7 @@ $(function () {
   });
 });
 /******************************************************************************************************************************* */
-(function(){
 
-     if(cookie.getCookie(cookieNamecurrentUser) != "Not Found")
-         location.replace("home.html")
- })()
 let register = function () {
   let email, username, password;
   email = document.getElementById("email").value;

@@ -1,4 +1,5 @@
-/*validation*/
+$("#signinHeader").load("../html/navbar.html");
+$("#signinFooter").load("../html/footer.html");
 $(function () {
   $(".login-form").validate({
     rules: {
@@ -15,13 +16,6 @@ $(function () {
     },
   });
 });
-/************************************** */
-(function(){
-
-     if(cookie.getCookie("useremail") != "Not Found"){
-         location.replace("home.html")
-     }
-})()
 
 let login = function () {
   let email, password, remember_me;

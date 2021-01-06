@@ -7,52 +7,52 @@
   <body id="signinBody">
     <div id="signinHeader"></div>
     <div id="loginContainer">
-    <div class="login-content">
-      <label class="login-text">Please Log In</label>
-      <form class="login-form" action="home.html">
-        <input
-        id="email"
-        type="email"
-        class="email-input"
-        name="email"
-        placeholder="Your Email"
-        />
-        <input
-        id="password"
-        type="password"
-        class="password-input"
-        name="password"
-        placeholder="Your Password"
-        />
-        <div class="remember-me-div">
+      <div class="login-content">
+        <label class="login-text">Please Log In</label>
+        <form class="login-form" action="home.html">
           <input
-          type="checkbox"
-          name="remember_me"
-          class="remember-me"
-          id="remember_me"
+            id="email"
+            type="email"
+            class="email-input"
+            name="email"
+            placeholder="Your Email"
           />
-          <label for="remember_me">Remember Me</label>
-          <a href="#" class="forgot-password">Forgot Password</a>
+          <input
+            id="password"
+            type="password"
+            class="password-input"
+            name="password"
+            placeholder="Your Password"
+          />
+          <div class="remember-me-div">
+            <input
+              type="checkbox"
+              name="remember_me"
+              class="remember-me"
+              id="remember_me"
+            />
+            <label for="remember_me">Remember Me</label>
+            <a href="#" class="forgot-password">Forgot Password</a>
+          </div>
+          <input
+            type="submit"
+            class="submit-input"
+            value="Log in"
+            name="submit"
+          />
+        </form>
+        <div class="signup-navigate">
+          <label>haven't account yet!?</label>
+          <a href="signup.html" class="sign-up-link">Sign UP</a>
         </div>
-        <input
-        type="submit"
-        class="submit-input"
-        value="Log in"
-        name="submit"
-        />
-      </form>
-      <div class="signup-navigate">
-        <label>haven't account yet!?</label>
-        <a href="signup.html" class="sign-up-link">Sign UP</a>
       </div>
     </div>
     <div id="signinFooter"></div>
-    
+
     <script src="../js/shared/cookieFunction.js"></script>
     <script src="../../js/auth/jqueryDev.js"></script>
     <script src="../../js/auth/jquery.validate.js"></script>
     <script src="../defaultVarNames.js"></script>
     <script src="../js/auth/signin.js"></script>
   </body>
-  </html>
-  
+</html>

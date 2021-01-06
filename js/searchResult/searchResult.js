@@ -1,5 +1,11 @@
 onload = function () {
   $("#header").load("./navbar.html");
+  $("#searchFooter").load("footer.html");
+  setTimeout(function () {
+    $("#header").show();
+    $(".books-display").css("display", "grid");
+    $("#preLoader").hide();
+  }, 300);
 
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
@@ -64,10 +70,6 @@ onload = function () {
         console.log(bookId);
       });
   }
-
-  setTimeout(function () {
-    $("#preLoader").hide();
-  }, 300);
 };
 /*
  

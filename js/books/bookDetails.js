@@ -82,16 +82,16 @@ function checkBookInList(list, bookId) {
 // this is the first time for the user to add elements to cart
 document.getElementsByClassName("addCartBtn")[0].onclick = function () {
   // or this first time for the user to add this element to cart
-  if (currentUser == "" || currentUser == null || currentUser == undefined)
-    document.getElementsByClassName("numberlogo")[0].innerHTML = 0;
+  if (currentUser == "Not Found") location.replace("signin.html");
   // check if user signed in or not
   else {
     addItemsToCart();
   }
 };
 document.getElementsByClassName("addWishBtn")[0].onclick = function () {
-  if (currentUser == "" || currentUser == null || currentUser == undefined);
-  else {
+  if (currentUser == "Not Found") {
+    location.replace("signin.html");
+  } else {
     //document.getElementsByClassName("numberlogo")[0].innerHTML = 0;
     addToWishList();
   }
