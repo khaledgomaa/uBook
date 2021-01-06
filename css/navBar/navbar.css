@@ -32,7 +32,7 @@
   background-color: salmon;
 }
 .rightMenu {
-  flex-basis: 200px;
+  flex-basis: 300px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -63,6 +63,14 @@
 #cartlogo:hover {
   background-color: salmon;
   color: white;
+}
+#wishLogo {
+  width: 30px;
+  height: 30px;
+  font-size: 45px;
+  color: coral;
+  cursor: pointer;
+  margin-top: 34%;
 }
 .numberlogo {
   position: absolute;

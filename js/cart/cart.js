@@ -1,51 +1,5 @@
 $("#header").load("./navbar.html");
 $("#cartfooter").load("./footer.html");
-var cartItems = [
-  {
-    useremail: "khaled@gmail.com",
-    items: [
-      {
-        id: 0,
-        image: "Cplusplus.jpg",
-        title: "Design Pattern In C++",
-        qty: 2,
-        price: 54,
-      },
-      {
-        id: 1,
-        image: "headfirst.jpg",
-        title: "Design patterns head First",
-        qty: 3,
-        price: 50,
-      },
-    ],
-  },
-  {
-    useremail: "islam@gmail.com",
-    items: [
-      {
-        id: 0,
-        image: "Cplusplus.jpg",
-        title: "Design Pattern In C++",
-        qty: 5,
-        price: 54,
-      },
-      {
-        id: 1,
-        image: "headfirst.jpg",
-        title: "Design patterns head First",
-        qty: 3,
-        price: 50,
-      },
-    ],
-  },
-];
-
-//Convert linq expressions to loop
-//update local storage when delete
-
-//cookie.setCookie("useremail", "khaled@gmail.com");
-//localStorage.setItem("cartItems", JSON.stringify(cartItems));
 
 var userEmail = cookie.getCookie("useremail");
 var allCartItems = JSON.parse(localStorage.getItem("cartItems"));

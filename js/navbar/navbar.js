@@ -30,21 +30,18 @@ function setSelectedPage(item) {
 
 function computeTotalItems() {
   var total = 0;
-  for (var i = 0; i < cartitem.items.length; i++) {
-    total += cartitem.items[i].qty;
+  if (cartitem !== undefined) {
+    for (var i = 0; i < cartitem.items.length; i++) {
+      total += cartitem.items[i].qty;
+    }
   }
 
   return total;
 }
 
 function updateUsercartItemsNumber() {
-  if (userEmail == "Not Found") {
-    document.getElementsByClassName("numberlogo")[0].innerHTML = 0;
-  } else {
-    document.getElementsByClassName(
-      "numberlogo"
-    )[0].innerHTML = computeTotalItems();
-  }
+  document.getElementsByClassName("numberlogo")[0].innerHTML =
+    userEmail == "Not Found" ? 0 : computeTotalItems();
 }
 
 changeSeletedItemStyle();
