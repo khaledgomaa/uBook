@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Contact Us</title>
+    <link
+      href="../css/contactus/contact.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body id="contactBody">
+    <div id="preLoader">
+      <img src="../images/loader.gif" />
+    </div>
+    <div id="header"></div>
+    <div id="contactContainer">
+      <div class="imageSize">
+        <img class="imagePos" src="../images/contactus.PNG" />
+      </div>
+      <form class="myForm" onsubmit="event.preventDefault();">
+        <div class="touch">
+          <span>Get In Touch</span>
+        </div>
+
+        <div>
+          <input
+            class="myInput"
+            id="name"
+            type="text"
+            placeholder="Name"
+            required
+          />
+        </div>
+        <div>
+          <input
+            class="myInput"
+            id="email"
+            type="text"
+            placeholder="Email"
+            required
+          />
+          <label class="Islam">Invalid format</label>
+        </div>
+        <div>
+          <input
+            class="myInput"
+            id="subject"
+            type="text"
+            placeholder="Subject"
+            required
+          />
+        </div>
+        <div>
+          <textarea
+            class="myMessage"
+            id="message"
+            placeholder="Message"
+            required
+          ></textarea>
+        </div>
+        <p class="thankMessage">We have received your message successfully</p>
+        <button type="submit" class="submitForm">Submit</button>
+      </form>
+
+      <div id="contactfooter"></div>
+    </div>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/contactUs/contact.js"></script>
+  </body>
+</html>

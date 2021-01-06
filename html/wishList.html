@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Cart Items</title>
-    <link href="../css/cart/cart.css" type="text/css" rel="stylesheet" />
+    <title>Wish List</title>
+    <link
+      href="../css/wishList/wishList.css"
+      type="text/css"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -17,12 +21,12 @@
       <div id="emptyCart">
         <img
           id="cartImage"
-          src="../images/emptycart.png"
-          width="200"
-          height="200"
+          src="../images/emptywishlist.png"
+          width="400"
+          height="400"
         />
         <pre id="message">
-        You have no items in your shopping cart. 
+        You have no items in your wish list. 
         Click <a href="CategoryDedails.html"><b>here</b></a> to continue shopping.
       </pre>
       </div>
@@ -31,23 +35,20 @@
         <table id="cart" class="cart">
           <thead>
             <tr>
-              <th>Product Image</th>
+              <th>Product</th>
               <th>Title</th>
-              <th>Quantity</th>
               <th>Price</th>
-              <th>Total</th>
               <th></th>
             </tr>
           </thead>
           <tbody id="items"></tbody>
         </table>
-        <button type="submit" class="submitForm">Checkout</button>
       </div>
       <div id="cartfooter"></div>
     </div>
     <script src="../js/jquery.min.js"></script>
     <script src="../js/shared/cookieFunction.js"></script>
     <script src="../js/shared/arrayFunctions.js"></script>
-    <script src="../js/cart/cart.js"></script>
+    <script src="../js/wishList/wishList.js"></script>
   </body>
 </html>

@@ -1,0 +1,117 @@
+#contactBody {
+  padding: 0;
+  margin: 0;
+}
+#contactContainer {
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  display: none;
+}
+
+.touch {
+  margin-right: 9%;
+  font-size: 21px;
+  font-family: fantasy;
+  margin-bottom: 2%;
+}
+
+.imagePos {
+  margin-top: 4%;
+  display: inline;
+  width: 400px;
+  height: 322px;
+}
+
+.myForm {
+  text-align: right;
+  margin-right: 20%;
+  justify-content: center;
+  margin-top: -27%;
+}
+
+.myInput {
+  outline: none;
+  width: 20%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  height: 35px;
+  border-radius: 25px;
+  padding: 0 30px;
+  z-index: 1;
+  background: #e6e6e6;
+}
+
+.myMessage {
+  outline: none;
+  width: 20%;
+  min-height: 150px;
+  border-radius: 25px;
+  padding: 12px 30px;
+  z-index: 1;
+  background: #e6e6e6;
+}
+
+.submitForm {
+  width: 109px;
+  height: 47px;
+  border: 1px solid #00b4cc;
+  background: coral;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 8%;
+  margin-top: 2%;
+}
+.submitForm:hover {
+  background-color: rgb(241, 96, 47);
+}
+.submitForm:active {
+  background-color: chocolate;
+  box-shadow: 0 5px coral;
+  transform: translateY(1px);
+}
+
+.imageSize {
+  width: 300px;
+  margin-left: 15%;
+  margin-top: 11%;
+}
+
+.thankMessage {
+  color: coral;
+  display: none;
+}
+
+.inputvalidationStyle {
+  margin-right: 14%;
+  margin-top: -1%;
+  color: red;
+  display: none;
+}
+
+.textAreavalidationStyle {
+  margin-right: 13%;
+  margin-top: 0%;
+  color: red;
+  display: none;
+}
+
+.Islam {
+  margin-right: -6.8%;
+  color: red;
+  display: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#header {
+  display: none;
+}
+
+#preLoader {
+  position: absolute;
+  top: 35%;
+  left: 43%;
+}

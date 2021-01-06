@@ -1,3 +1,6 @@
+
+$("#signUpHeader").load("../html/navbar.html");
+$("#signupFooter").load("../html/footer.html");
 /*validation*/
 $(function () {
     $.validator.addMethod("passwordCheck", function(value) {

@@ -8,151 +8,37 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="../css/card/uBook.css" />
+    <link rel="stylesheet" href="../css/card/homeCards.css" />
   </head>
   <body id="bodyContainer">
+    <div id="preLoader">
+      <img src="../images/loader.gif" />
+    </div>
     <div id="header"></div>
     <div class="homeContainer">
-    <div id="searchbar"></div>
-    <div class="slideShow">
-      <input id="prev" type="button" value="&#8249;" />
-      <img id="slideImage" src="../images/slideShow1.jpg" />
-      <span id="pagination"></span>
-      <input id="next" type="button" value="&#8250;" />
-      <div class="text">
-        <p class="imageText">
-          Reading is important because it develops our thoughts, gives us
-          endless knowledge and lessons while keeping our minds active. Books
-          can hold and keep all kinds of information, stories, thoughts and
-          feelings unlike anything else in this world
-        </p>
+      <div id="searchbar"></div>
+      <div class="slideShow">
+        <input id="prev" type="button" value="&#8249;" />
+        <img id="slideImage" src="../images/slideShow1.jpg" />
+        <span id="pagination"></span>
+        <input id="next" type="button" value="&#8250;" />
+        <div class="text">
+          <p id="imageText">
+            Reading is important because it develops our thoughts, gives us
+            endless knowledge and lessons while keeping our minds active. Books
+            can hold and keep all kinds of information, stories, thoughts and
+            feelings unlike anything else in this world
+          </p>
+        </div>
       </div>
-
       <!--**********Body********-->
 
-      <div class="bkdiv" id="bkdiv2">
-        <div id="categTitle1" class="categTitle">
-          <strong> Java </strong>
-        </div>
-
-        <div class="cell">
-          <a href="">
-            <img class="arrowimg" src="../images/left.png" />
-          </a>
-        </div>
-
-        <div class="cell">
-          <a href="">
-            <img
-              id="book5img"
-              class="bookimg"
-              src="../images/ElementsofReusable.jpg"
-            />
-          </a>
-          <label class="AuthLab">Author1</label>
-          <label class="PricLab">Price1</label>
-        </div>
-
-        <div class="cell">
-          <a href="">
-            <img id="book6img" class="bookimg" src="../images/headFirst.jpg" />
-          </a>
-          <label class="AuthLab">Author2</label>
-          <label class="PricLab">Price2</label>
-        </div>
-
-        <div class="cell">
-          <a href="">
-            <img
-              id="book7img"
-              class="bookimg"
-              src="../images/machineLearning.jpg"
-            />
-          </a>
-          <label class="AuthLab">Author3</label>
-          <label class="PricLab">Price3</label>
-        </div>
-
-        <div class="cell">
-          <a href="">
-            <img
-              id="book8img"
-              class="bookimg"
-              src="../images/machineLearning.jpg"
-            />
-          </a>
-          <label class="AuthLab">Author4</label>
-          <label class="PricLab">Price4</label>
-        </div>
-        <div class="cell">
-          <a href="">
-            <img class="arrowimg" src="../images/right.png" />
-          </a>
-        </div>
-      </div>
-
-      <div class="bkdiv" id="bkdiv3">
-        <div id="categTitle1" class="categTitle">
-          <strong> JavaScript </strong>
-        </div>
-
-        <div class="cell">
-          <a href="">
-            <img class="arrowimg" src="../images/left.png" />
-          </a>
-        </div>
-
-        <div class="cell">
-          <a href="">
-            <img
-              id="book9img"
-              class="bookimg"
-              src="../images/ElementsofReusable.jpg"
-            />
-          </a>
-          <label class="AuthLab">Author1</label>
-          <label class="PricLab">Price1</label>
-        </div>
-
-        <div class="cell">
-          <a href="">
-            <img id="book10img" class="bookimg" src="../images/headFirst.jpg" />
-          </a>
-          <label class="AuthLab">Author2</label>
-          <label class="PricLab">Price2</label>
-        </div>
-
-        <div class="cell">
-          <a href="">
-            <img id="book11img" class="bookimg" src="../images/Cplusplus.jpg" />
-          </a>
-          <label class="AuthLab">Author3</label>
-          <label class="PricLab">Price3</label>
-        </div>
-
-        <div class="cell">
-          <a href="">
-            <img
-              id="book12img"
-              class="bookimg"
-              src="../images/ElementsofReusable.jpg"
-            />
-          </a>
-          <label class="AuthLab">Author4</label>
-          <label class="PricLab">Price4</label>
-        </div>
-        <div class="cell">
-          <a href="">
-            <img class="arrowimg" src="../images/right.png" />
-          </a>
-        </div>
-      </div>
       <i id="up" class="fa fa-arrow-circle-up"></i>
       <!--******end of body*****-->
+      <div id="footer"></div>
     </div>
-    <div id="footer"></div>
-  </div>
     <script src="../js/jquery.min.js"></script>
+    <script src="../js/shared/cookieFunction.js"></script>
     <script src="../js/home/home.js"></script>
   </body>
 </html>
