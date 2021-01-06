@@ -1,8 +1,9 @@
-.homeContainer{
+.homeContainer {
   position: absolute;
-  top:70px;
+  top: 70px;
+  display: none;
 }
-#bodyContainer{
+#bodyContainer {
   padding: 0;
   margin: 0;
 }
@@ -14,9 +15,18 @@
   margin: auto;
   margin-top: 20px;
   width: 98%;
+  min-height: 274px;
+  max-height: 274px;
+  margin-bottom: 10%;
 }
 
-.imageText {
+#preLoader {
+  position: absolute;
+  top: 35%;
+  left: 43%;
+}
+
+#imageText {
   width: 50%;
   color: white;
   text-align: center;
@@ -88,4 +98,8 @@
 
 .content {
   margin-top: 70px;
+}
+
+#header {
+  display: none;
 }

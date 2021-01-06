@@ -38,9 +38,17 @@ tbody:before {
 
 .remove {
   color: red;
-  font-size: 27px;
+  font-size: 33px;
 }
 .remove i {
+  cursor: pointer;
+}
+
+.addTomyCart {
+  color: cornflowerblue;
+  font-size: 33px;
+}
+.addTomyCart i {
   cursor: pointer;
 }
 
@@ -86,4 +94,8 @@ tbody:before {
 
 #header {
   display: none;
+}
+
+#message {
+  margin-right: 3%;
 }

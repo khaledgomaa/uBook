@@ -1,6 +1,40 @@
 onload = function () {
   $("#header").load("./navbar.html");
   $("#searchbar").load("./search.html");
+  $("#footer").load("./footer.html");
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "/DB/booksData.json");
+  xhr.send();
+
+  xhr.onreadystatechange = function () {
+    var categorizedBooks = [];
+    if (xhr.readyState == 4) {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        booksCat = JSON.parse(xhr.responseText);
+        for (var i = 0; i < Object.keys(booksCat).length; i++) {
+          categorizedBooks.push(booksCat[Object.keys(booksCat)[i]]);
+        }
+        categorizedBooks = [].concat.apply([], categorizedBooks);
+        displayBooks(
+          "Top rated ebooks",
+          "top",
+          getTopRated(4, categorizedBooks)
+        );
+        displayBooks(
+          "Most trending ebooks",
+          "trend",
+          getRandomBooks(4, categorizedBooks)
+        );
+      }
+    }
+  };
+
+  setTimeout(function () {
+    $("#header").show();
+    $(".homeContainer").show();
+    $("#preLoader").hide();
+  }, 300);
+
   var images = [
     "../images/slideShow1.jpg",
     "../images/slideShow2.jpg",
@@ -15,6 +49,9 @@ onload = function () {
      benefits for your mental health in the form of thinking and understanding.
       By concentrating on the words and the storyline,
        it stimulates your brain and cognitive functions.`,
+    `Books explore creativity and clarity in student’s and everyone’s minds.
+     Books are teaching tools for teachers. Books Library is a sea of knowledge for lifetime learners.
+      Reading books makes our life fresh and active each day.`,
   ];
   var index = 1;
   var slide = document.getElementById("slideImage");
@@ -64,6 +101,7 @@ onload = function () {
   function goToSlide(num) {
     index = (num + images.length) % images.length; // set index
     slide.setAttribute("src", images[index]);
+    document.getElementById("imageText").innerHTML = textImage[index];
     checkPagination();
   }
 
@@ -74,7 +112,70 @@ onload = function () {
     paginationElements.children[index].classList.add("active");
   }
 
-  $("#footer").load("./footer.html");
+  //display Top rated books
+  function displayBooks(categorName, id, items) {
+    $("<div class=bkdiv id=" + id + "></div>").insertBefore("#up");
+    $("#" + id).append(
+      "<div class=categTitle><strong>" + categorName + "</strong></div>"
+    );
+    for (var i = 0; i < items.length; i++) {
+      $("#" + id).append(
+        "<div class=cell id=" +
+          id +
+          i +
+          "><a href><img src=../images/" +
+          items[i].image +
+          " width=300 height=350/></a><label class=AuthLab>" +
+          items[i].author +
+          "</label><label class=AuthLab>" +
+          items[i].price +
+          "$" +
+          "</label></div>"
+      );
+      createOnCLickAction(id + i, items[i].id);
+    }
+  }
+
+  function createOnCLickAction(elementId, bookId) {
+    document
+      .getElementById(elementId.toString())
+      .addEventListener("click", function () {
+        cookie.setCookie("selectedBook", bookId);
+        console.log(bookId);
+      });
+  }
+
+  //to reorder books everyTime
+  function shuffle(array) {
+    var curtIndex = array.length,
+      temp,
+      randomIndex;
+
+    while (curtIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * curtIndex);
+      curtIndex -= 1;
+
+      temp = array[curtIndex];
+      array[curtIndex] = array[randomIndex];
+      array[randomIndex] = temp;
+    }
+
+    return array;
+  }
+
+  //Get top 4 rated books
+  function getTopRated(numOfelements, allBooks) {
+    return allBooks
+      .sort(function (a, b) {
+        return +b.rate - +a.rate;
+      })
+      .slice(0, numOfelements);
+  }
+
+  //Get random books
+  function getRandomBooks(numOfelements, allBooks) {
+    return shuffle(allBooks).slice(0, numOfelements);
+  }
 
   /* *** back to up*** */
 

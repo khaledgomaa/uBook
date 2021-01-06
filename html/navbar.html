@@ -13,21 +13,26 @@
     <div class="navbar">
       <div>
         <img src="../images/logo1_rbg.png" width="120" height="70" />
+        <!-- <p>uBook</p> -->
       </div>
       <div class="leftMenu">
-        <a href="home.html">Home</a>
-        <a href="CategoryDedails.html">Categories</a>
-        <a href="events.html">Events</a>
-        <a href="aboutUS.html">About</a>
-        <a href="navbar.html">Contact us</a>
+
+        <li class="menuItems">
+          <a id="home" href="home.html">Home</a>
+          <a id="cat" href="CategoryDedails.html">Categories</a>
+          <a id="event" href="navbar.html">Events</a>
+          <a id="about" href="navbar.html">About</a>
+          <a id="contactus" href="contactUs.html">Contact us</a>
+        </li>
+
       </div>
 
       <div class="rightMenu">
-        <a href="./signin.html">Sign in</a>
-        <div class="cartlogo">
-          <a href="cart.html">
+        <a id="signInbtn" href="./signin.html">Sign in</a>
+        <div id="cartlogo">
+          <a id="shoppingCart" href="cart.html">
             <img
-              class="cartlogo"
+              id="cartlogo"
               src="../images/cartLogo.png"
               height="40"
               width="40"
@@ -37,6 +42,11 @@
         </div>
       </div>
     </div>
-    <script src="../js/navbar/navigationbar.js"></script>
+
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/shared/cookieFunction.js"></script>
+    <script src="../js/navbar/navbar.js"></script>
+
   </body>
 </html>
