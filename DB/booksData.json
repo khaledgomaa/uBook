@@ -208,80 +208,80 @@
   "Python": [
     {
       "id": 19,
-      "Title": "Python for Everybody",
+      "title": "Python for Everybody",
       "categoryId": 4,
-      "Author": "Charles Severance",
-      "Price": 0.99,
-      "Image": "python.jpg",
-      "Description": "Python for Everybody is designed to introduce students to programming and software development through the lens of exploring data. You can think of the Python programming language as your tool to solve data problems that are beyond the capability of a spreadsheet.",
-      "Rate": "4.5",
-      "Used": 0
+      "author": "Charles Severance",
+      "price": 0.99,
+      "image": "python.jpg",
+      "description": "Python for Everybody is designed to introduce students to programming and software development through the lens of exploring data. You can think of the Python programming language as your tool to solve data problems that are beyond the capability of a spreadsheet.",
+      "rate": "4.5",
+      "used": 0
     },
     {
       "id": 20,
-      "Title": "Learn Python Programming",
+      "title": "Learn Python Programming",
       "categoryId": 4,
-      "Author": "Fabrizio Romano",
-      "Price": 5,
-      "Image": "pythonProgramming.jpg",
-      "Description": "You will explore the foundations of Python programming and learn how Python can be manipulated to achieve results. Explore different programming paradigms and find the best approach to a situation; understand how to carry out performance optimization and effective debugging; control the flow of a program; and utilize an interchange format to exchange data.",
-      "Rate": "4.3",
-      "Used": 0
+      "author": "Fabrizio Romano",
+      "price": 5,
+      "image": "pythonProgramming.jpg",
+      "description": "You will explore the foundations of Python programming and learn how Python can be manipulated to achieve results. Explore different programming paradigms and find the best approach to a situation; understand how to carry out performance optimization and effective debugging; control the flow of a program; and utilize an interchange format to exchange data.",
+      "rate": "4.3",
+      "used": 0
     },
     {
       "id": 21,
-      "Title": "Mastering Python for Finance - Second Edition",
+      "title": "Mastering Python for Finance - Second Edition",
       "categoryId": 4,
-      "Author": "James Ma Weiming",
-      "Price": 5,
-      "Image": "pythonforfinance.jpg",
-      "Description": "The second edition of Mastering Python for Finance will guide you through carrying out complex financial calculations practiced in the industry of finance by using next-generation methodologies. You will master the Python ecosystem by leveraging publicly available tools to successfully perform research studies and modeling, and learn to manage risks with the help of advanced examples.",
-      "Rate": "4.3",
-      "Used": 0
+      "author": "James Ma Weiming",
+      "price": 5,
+      "image": "pythonforfinance.jpg",
+      "description": "The second edition of Mastering Python for Finance will guide you through carrying out complex financial calculations practiced in the industry of finance by using next-generation methodologies. You will master the Python ecosystem by leveraging publicly available tools to successfully perform research studies and modeling, and learn to manage risks with the help of advanced examples.",
+      "rate": "4.3",
+      "used": 0
     },
     {
       "id": 22,
-      "Title": "Python Machine Learning By Example",
+      "title": "Python Machine Learning By Example",
       "categoryId": 4,
-      "Author": "Santosh Kumar",
-      "Price": 129.99,
-      "Image": "PythonMachineLearning.jpg",
-      "Description": "A comprehensive guide to get you up to speed with the latest developments of practical machine learning with Python and upgrade your understanding of machine learning (ML) algorithms and techniquesKey FeaturesDive into machine learning algorithms to solve the complex challenges faced by data scientists todayExplore cutting edge content reflecting deep learning and reinforcement learning developmentsUse updated Python libraries such as TensorFlow, PyTorch, and scikit-learn to track machine learning projects end-to-endBook DescriptionPython Machine Learning By Example serves as a comprehensive gateway into the world of machine learning (ML).",
-      "Rate": "4.18",
-      "Used": 0
+      "author": "Santosh Kumar",
+      "price": 129.99,
+      "image": "PythonMachineLearning.jpg",
+      "description": "A comprehensive guide to get you up to speed with the latest developments of practical machine learning with Python and upgrade your understanding of machine learning (ML) algorithms and techniquesKey FeaturesDive into machine learning algorithms to solve the complex challenges faced by data scientists todayExplore cutting edge content reflecting deep learning and reinforcement learning developmentsUse updated Python libraries such as TensorFlow, PyTorch, and scikit-learn to track machine learning projects end-to-endBook DescriptionPython Machine Learning By Example serves as a comprehensive gateway into the world of machine learning (ML).",
+      "rate": "4.18",
+      "used": 0
     },
     {
       "id": 23,
-      "Title": "Automate the Boring Stuff with Python",
+      "title": "Automate the Boring Stuff with Python",
       "categoryId": 4,
-      "Author": "Al Sweigart",
-      "Price": 26,
-      "Image": "pythonAutomation.jpg",
-      "Description": "In Automate the Boring Stuff with Python, you’ll learn how to use Python to write programs that do in minutes what would take you hours to do by hand—no prior programming experience required. Once you’ve mastered the basics of programming, you’ll create Python programs that effortlessly perform useful and impressive feats of automation to search for text in a file or across multiple files and Create, update, move, and rename files and folders.",
-      "Rate": "4.5",
-      "Used": 0
+      "author": "Al Sweigart",
+      "price": 26,
+      "image": "pythonAutomation.jpg",
+      "description": "In Automate the Boring Stuff with Python, you’ll learn how to use Python to write programs that do in minutes what would take you hours to do by hand—no prior programming experience required. Once you’ve mastered the basics of programming, you’ll create Python programs that effortlessly perform useful and impressive feats of automation to search for text in a file or across multiple files and Create, update, move, and rename files and folders.",
+      "rate": "4.5",
+      "used": 0
     },
     {
       "id": 24,
-      "Title": "Learn Python 3 the Hard Way",
+      "title": "Learn Python 3 the Hard Way",
       "categoryId": 4,
-      "Author": "Zed Shaw",
-      "Price": 32,
-      "Image": "LearnPython.jpg",
-      "Description": "In Learn Python 3 the Hard Way, you’ll learn Python by working through 52 brilliantly crafted exercises. Read them. Type their code precisely. (No copying and pasting!) Fix your mistakes. Watch the programs run. As you do, you’ll learn how a computer works; what good programs look like; and how to read, write, and think about code.It’ll be hard at first. But soon, you’ll just get it—and that will feel great! This course will reward you for every minute you put into it. Soon, you’ll know one of the world’s most powerful, popular programming languages. You’ll be a Python programmer.",
-      "Rate": "4.5",
-      "Used": 0
+      "author": "Zed Shaw",
+      "price": 32,
+      "image": "LearnPython.jpg",
+      "description": "In Learn Python 3 the Hard Way, you’ll learn Python by working through 52 brilliantly crafted exercises. Read them. Type their code precisely. (No copying and pasting!) Fix your mistakes. Watch the programs run. As you do, you’ll learn how a computer works; what good programs look like; and how to read, write, and think about code.It’ll be hard at first. But soon, you’ll just get it—and that will feel great! This course will reward you for every minute you put into it. Soon, you’ll know one of the world’s most powerful, popular programming languages. You’ll be a Python programmer.",
+      "rate": "4.5",
+      "used": 0
     },
     {
       "id": 25,
-      "Title": "Python Tricks",
+      "title": "Python Tricks",
       "categoryId": 4,
-      "Author": "Dan Bader",
-      "Price": 30,
-      "Image": "PythonTricks.jpg",
-      "Description": "With Python Tricks: The Book you’ll discover Python’s best practices and the power of beautiful & Pythonic code with simple examples and a step-by-step narrative. You'll get one step closer to mastering Python, so you can write beautiful and idiomatic code that comes to you naturally. Learning the ins and outs of Python is difficult—and with this book you'll be able to focus on the practical skills that really matter. Discover the “hidden gold” in Python’s standard library and start writing clean and Pythonic code today.",
-      "Rate": "4.5",
-      "Used": 0
+      "author": "Dan Bader",
+      "price": 30,
+      "image": "PythonTricks.jpg",
+      "description": "With Python Tricks: The Book you’ll discover Python’s best practices and the power of beautiful & Pythonic code with simple examples and a step-by-step narrative. You'll get one step closer to mastering Python, so you can write beautiful and idiomatic code that comes to you naturally. Learning the ins and outs of Python is difficult—and with this book you'll be able to focus on the practical skills that really matter. Discover the “hidden gold” in Python’s standard library and start writing clean and Pythonic code today.",
+      "rate": "4.5",
+      "used": 0
     }
   ]
 }
