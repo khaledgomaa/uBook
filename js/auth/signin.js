@@ -16,12 +16,12 @@ $(function () {
   });
 });
 /************************************** */
-// (function(){
+(function(){
 
-//     if(cookie.getCookie("useremail") != "Not Found"){
-//         location.replace("home.html")
-//     }
-// })()
+     if(cookie.getCookie("useremail") != "Not Found"){
+         location.replace("home.html")
+     }
+})()
 
 let login = function () {
   let email, password, remember_me;
