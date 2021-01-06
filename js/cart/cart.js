@@ -2,51 +2,113 @@ $("#header").load("./navbar.html");
 $("#cartfooter").load("./footer.html");
 var cartItems = [
   {
-    id: 0,
-    image: "Cplusplus.jpg",
-    title: "Design Pattern In C++",
-    qty: 2,
-    price: 54,
+    useremail: "khaled@gmail.com",
+    items: [
+      {
+        id: 0,
+        image: "Cplusplus.jpg",
+        title: "Design Pattern In C++",
+        qty: 2,
+        price: 54,
+      },
+      {
+        id: 1,
+        image: "headfirst.jpg",
+        title: "Design patterns head First",
+        qty: 3,
+        price: 50,
+      },
+    ],
   },
   {
-    id: 1,
-    image: "headfirst.jpg",
-    title: "Design patterns head First",
-    qty: 3,
-    price: 50,
+    useremail: "islam@gmail.com",
+    items: [
+      {
+        id: 0,
+        image: "Cplusplus.jpg",
+        title: "Design Pattern In C++",
+        qty: 5,
+        price: 54,
+      },
+      {
+        id: 1,
+        image: "headfirst.jpg",
+        title: "Design patterns head First",
+        qty: 3,
+        price: 50,
+      },
+    ],
   },
 ];
+
+//Convert linq expressions to loop
+//update local storage when delete
+
+cookie.setCookie("useremail", "khaled@gmail.com");
+localStorage.setItem("cartItems", JSON.stringify(cartItems));
+var userEmail = cookie.getCookie("useremail");
+var allCartItems = JSON.parse(localStorage.getItem("cartItems"));
+var cartitem = findItem(allCartItems, userEmail);
 var tableBody = document.getElementById("items");
+
+$(".submitForm").click(function () {
+  checkoutCartItems();
+  displayOrderFinished();
+  checkCart();
+  console.log(JSON.parse(localStorage.getItem("cartItems")));
+});
 
 onload = function () {
   checkCart();
   //get tbody element
   displayCartItems(tableBody);
+
+  setTimeout(function () {
+    $("#header").show();
+    $("#cartContainer").show();
+    $("#preLoader").hide();
+  }, 300);
 };
 
 function checkCart() {
-  if (cartItems.length === 0) {
-    $("#tableCart").hide();
-    $("#emptyCart").show();
+  if (
+    userEmail == "Not Found" ||
+    cartitem === undefined ||
+    cartitem.items.length === 0
+  ) {
+    showEmptyCart();
   } else {
-    $("#tableCart").show();
-    $("#emptyCart").hide();
+    showCartItems();
   }
 }
 
+function showEmptyCart() {
+  $("#tableCart").hide();
+  $("#emptyCart").show();
+  $(".submitForm").hide();
+}
+
+function showCartItems() {
+  $("#tableCart").show();
+  $("#emptyCart").hide();
+  $(".submitForm").show();
+}
+
 function displayCartItems() {
-  for (var i = 0; i < cartItems.length; i++) {
-    //create row for each item in cartItems object
-    createItem(cartItems[i], tableBody, i);
+  if (cartitem !== undefined) {
+    for (var i = 0; i < cartitem.items.length; i++) {
+      //create row for each item in cartItems object
+      createItem(cartitem.items[i], tableBody, i);
+    }
+
+    var row = createRow(tableBody);
+    row.setAttribute("id", "totalItems");
+    addTotalElement("Total Items", computeTotalItems(), row);
+
+    row = createRow(tableBody);
+    row.setAttribute("id", "totalPrice");
+    addTotalElement("Total Price", computeTotalPrice() + "$", row);
   }
-
-  var row = createRow(tableBody);
-  row.setAttribute("id", "totalItems");
-  addTotalElement("Total Items", computeTotalItems(), row);
-
-  row = createRow(tableBody);
-  row.setAttribute("id", "totalPrice");
-  addTotalElement("Total Price", computeTotalPrice() + "$", row);
 }
 
 function createItem(item, tableBody) {
@@ -88,9 +150,9 @@ function createImageTag(column, src, width, height) {
   column.innerHTML =
     "<img src=../images/" +
     src +
-    " width=" +
+    " width=200px" +
     width +
-    " height=" +
+    " height=200px" +
     height +
     " />";
 }
@@ -128,13 +190,18 @@ function createDeleteButton(column, id) {
     ">" +
     "<i class='fa fa-trash'></i></div>";
   document.getElementById("del" + id).addEventListener("click", function () {
-    cartItems.splice(
-      cartItems.findIndex((x) => x.id == id),
+    cartitem.items.splice(findItemIndex(cartitem.items, id), 1);
+    var userIndex = findItemIndex(allCartItems, userEmail);
+    allCartItems = JSON.parse(localStorage.getItem("cartItems"));
+    allCartItems[userIndex].items.splice(
+      findItemIndex(allCartItems[userIndex].items, id),
       1
     );
+    localStorage.setItem("cartItems", JSON.stringify(allCartItems));
     document.getElementById("tr" + id).remove();
     updateTotal(computeTotalItems(), computeTotalPrice());
     checkCart();
+    console.log(JSON.parse(localStorage.getItem("cartItems")));
   });
 }
 
@@ -146,8 +213,8 @@ function updateTotalPriceForItem(rowNum, newValue) {
 
 function computeTotalItems() {
   var total = 0;
-  for (var i = 0; i < cartItems.length; i++) {
-    total += cartItems[i].qty;
+  for (var i = 0; i < cartitem.items.length; i++) {
+    total += cartitem.items[i].qty;
   }
 
   return total;
@@ -155,8 +222,8 @@ function computeTotalItems() {
 
 function computeTotalPrice() {
   var total = 0;
-  for (var i = 0; i < cartItems.length; i++) {
-    total += cartItems[i].qty * cartItems[i].price;
+  for (var i = 0; i < cartitem.items.length; i++) {
+    total += cartitem.items[i].qty * cartitem.items[i].price;
   }
 
   return total;
@@ -169,8 +236,25 @@ function updateTotal(totalItems, totalPrice) {
   document
     .getElementById("totalPrice")
     .getElementsByTagName("td")[1].innerHTML = totalPrice + "$";
+  $(".numberlogo").text(totalItems);
 }
 
 function updateCartItem(id, value) {
-  cartItems.find((x) => x.id == id).qty = value;
+  cartitem.items[findItemIndex(cartitem.items, id)].qty = value;
+  allCartItems[findItemIndex(allCartItems, userEmail)].items = cartitem.items;
+  localStorage.setItem("cartItems", JSON.stringify(allCartItems));
+  console.log(JSON.parse(localStorage.getItem("cartItems")));
+}
+
+function checkoutCartItems() {
+  allCartItems.splice(findItemIndex(allCartItems, userEmail), 1);
+  cartitem.items = [];
+  $(".numberlogo").text(0);
+  localStorage.setItem("cartItems", JSON.stringify(allCartItems));
+}
+
+function displayOrderFinished() {
+  $("#cartImage").attr("src", "../images/checkout.png");
+  document.getElementById("message").innerHTML =
+    "Thank you , You have successfully purchased the items";
 }
