@@ -48,25 +48,35 @@ xhr.onreadystatechange = function () {
         getTotalNumberOfWhishlist();
         //updateUserWishesList();
         //updateUsercartItemsNumber(); // if user signed in  and this is not the first time to add this element
-        for (idx in storedItems) {
-          // display n in cart and hide add to cart
-          if (storedItems[idx].useremail == currentUser) {
-            for (x in storedItems[idx].items) {
-              if (storedItems[idx].items[x].id == bookinfo.id) {
-                $(".selectedItems").text(
-                  "(" + storedItems[idx].items[x].qty + ") in cart"
-                );
-                $(".addCartBtn").hide();
-                $(".addWishBtn").hide();
-                $(".secondTime").show();
-              }
-            }
+        var bookItem = checkBookInList(storedItems, bookinfo.id);
+        if (bookItem !== undefined) {
+          $(".selectedItems").text("(" + bookItem.qty + ") in cart");
+          $(".addCartBtn").hide();
+          $(".addWishBtn").hide();
+          $(".secondTime").show();
+        } else {
+          bookItem = checkBookInList(wishListitems, bookinfo.id);
+          if (bookItem !== undefined) {
+            $(".addWishBtn").hide();
           }
         }
       }
     }
   }
 };
+
+function checkBookInList(list, bookId) {
+  for (idx in list) {
+    // display n in cart and hide add to cart
+    if (list[idx].useremail == currentUser) {
+      for (x in list[idx].items) {
+        if (list[idx].items[x].id == bookId) {
+          return list[idx].items[x];
+        }
+      }
+    }
+  }
+}
 
 // when the request and response are okay get json objec
 // this is the first time for the user to add elements to cart
@@ -152,6 +162,7 @@ function removeFromWishList() {
         if (wishListitems[idx].items[x].id == bookinfo.id) {
           wishListitems[idx].items.splice(x, 1);
           localStorage.setItem("wishListCart", JSON.stringify(wishListitems));
+          $(".numberwish").text(+$(".numberwish").text() - 1);
         }
       }
     }
@@ -181,6 +192,7 @@ function addToWishList() {
         image: bookinfo.image,
       });
       localStorage.setItem("wishListCart", JSON.stringify(wishListitems));
+      $(".numberwish").text(+$(".numberwish").text() + 1);
       return;
     }
   }
@@ -201,6 +213,7 @@ function addToWishList() {
     ],
   });
   //document.getElementsByClassName("numberlogo")[0].innerHTML = 1;
+  $(".numberwish").text(+$(".numberwish").text() + 1);
   localStorage.setItem("wishListCart", JSON.stringify(addNewWishList));
   return;
 }

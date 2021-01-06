@@ -163,9 +163,11 @@ div.categories {
   box-shadow: 0 0 15px 0 black;
 }
 .bookDivImage {
-  width: 350;
-  height: 350;
   text-align: center;
+  max-height: 300px;
+  min-height: 300px;
+  max-width: 300px;
+  min-width: 300px;
 }
 .bookInfoSection {
   width: 350px;

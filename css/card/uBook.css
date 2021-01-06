@@ -16,6 +16,11 @@
 #header {
   display: none;
 }
+#preLoader {
+  position: absolute;
+  top: 35%;
+  left: 43%;
+}
 
 #footer {
   display: none;
@@ -261,10 +266,4 @@ div.categories {
 }
 .secondTime {
   display: none;
-}
-
-#preLoader {
-  position: absolute;
-  top: 35%;
-  left: 43%;
 }
