@@ -1,0 +1,25 @@
+.body-div{
+    margin: 0px;
+    padding: 0px;
+}
+
+#preLoader {
+    position: absolute;
+    top: 35%;
+    left: 43%;
+}
+
+.books-display{
+    margin-top: 22px;
+    width: 100%;
+    position: absolute;
+    top: 14%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    row-gap: 24px;
+    align-items: center;
+    justify-items: center;
+}
+.cell{
+    width: 300px;
+   }    
