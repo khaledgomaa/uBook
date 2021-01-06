@@ -1,10 +1,10 @@
 #signinBody {
-  background-color: #3c3c3b;
+  background-color: white;
   padding: 0;
   margin: 0;
 }
-#loginContainer{
-  display: flex;
+#loginContainer {
+  display: none;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -34,7 +34,7 @@ input {
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
 }
-.password-input{
+.password-input {
   display: block;
   margin-top: 10px;
 }
@@ -88,10 +88,24 @@ input {
   color: grey;
 }
 
-label.error{
+label.error {
   font-size: 12px;
   color: red;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+#preLoader {
+  position: absolute;
+  top: 35%;
+  left: 43%;
+}
+
+#signinHeader {
+  display: none;
+}
+
+#signinFooter {
+  display: none;
 }
 
 /*#C85808;*/

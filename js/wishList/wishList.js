@@ -1,46 +1,5 @@
 $("#header").load("./navbar.html");
 $("#cartfooter").load("./footer.html");
-var wishList = [
-  {
-    useremail: "islam@gmail.com",
-    items: [
-      {
-        id: 2,
-        image: "headFirst.jpg",
-        title: "Head First Design Patterns",
-        qty: 1,
-        price: 66,
-      },
-      {
-        id: 3,
-        image: "machineLearning.jpg",
-        title: "Machine Learning Design Patterns",
-        qty: 1,
-        price: 35,
-      },
-    ],
-  },
-
-  {
-    useremail: "khaled@gmail.com",
-    items: [
-      {
-        id: 0,
-        image: "Cplusplus.jpg",
-        title: "Design Pattern In C++",
-        qty: 2,
-        price: 54,
-      },
-      {
-        id: 1,
-        image: "headfirst.jpg",
-        title: "Design patterns head First",
-        qty: 3,
-        price: 50,
-      },
-    ],
-  },
-];
 
 //Getting user data
 var userEmail = cookie.getCookie("useremail");
@@ -183,6 +142,7 @@ function removeItemFromWishList(id, addedItemIndex) {
   );
   document.getElementById("tr" + id).remove();
   localStorage.setItem("wishListCart", JSON.stringify(allWishList));
+  $(".numberwish").text(+$(".numberwish").text() - 1);
 }
 
 function addItemTocartItems(index) {
@@ -206,6 +166,7 @@ function addItemTocartItems(index) {
         },
       ],
     });
+
     localStorage.setItem("cartItems", JSON.stringify(addFirstCart));
   }
 }

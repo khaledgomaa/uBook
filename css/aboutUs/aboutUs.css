@@ -1,78 +1,85 @@
-#aboutUsPage{
-    padding: 0;
-    margin:0;
+#aboutUsPage {
+  padding: 0;
+  margin: 0;
 }
-#aboutUsContainer{
-    position: absolute;
-    top: 70px;
-    width: 100%;
+#aboutUsContainer {
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  display: none;
 }
-.aboutUsDisplayStyle{
-    display: flex;
-    width: 96%;
-    margin: auto;
+.aboutUsDisplayStyle {
+  display: flex;
+  width: 96%;
+  margin: auto;
 }
-.aboutUsHeader{
-    text-align: center;
-    color:coral;
-    font-family: cursive;
-    text-shadow: black 0 -2px;
+.aboutUsHeader {
+  text-align: center;
+  color: coral;
+  font-family: cursive;
+  text-shadow: black 0 -2px;
 }
-.aboutUsInfo{
-    width:230px;
-    background-color: dimgray;
-    color: coral;
-    font-family: cursive;
-    line-height: 3;
-    font-size: 15pt;
-    margin-left: 2%;
-    border-radius: 12px;
-    border: solid 2px rgb(201, 142, 15);
-    box-shadow: black -2px -2px;
-    
+.aboutUsInfo {
+  width: 230px;
+  background-color: dimgray;
+  color: coral;
+  font-family: cursive;
+  line-height: 3;
+  font-size: 15pt;
+  margin-left: 2%;
+  border-radius: 12px;
+  border: solid 2px rgb(201, 142, 15);
+  box-shadow: black -2px -2px;
 }
 .ourTeam,
 .ourValues,
 .ourMission,
 .ourVission,
-.ourCapabilities
-{
-    padding-left: 5px;
-    margin-bottom: 3px;
-    outline: none;
-    border-radius: 5px;
-    border-bottom: coral solid 1px;
+.ourCapabilities {
+  padding-left: 5px;
+  margin-bottom: 3px;
+  outline: none;
+  border-radius: 5px;
+  border-bottom: coral solid 1px;
 }
-.displayAboutUsInfo{
-    width:70%;
-    color: coral;
-    font-family: cursive;
-    font-size: 18pt;
-    margin-left: 5%;
+.displayAboutUsInfo {
+  width: 70%;
+  color: coral;
+  font-family: cursive;
+  font-size: 18pt;
+  margin-left: 5%;
 }
 
 .displayourTeam,
 .displayourValues,
 .displayourMission,
 .displayourVission,
-.displayourCapabilities
-{
-    display:none;
-    background-color: dimgray;
-    color: coral;
-    text-align: center;
+.displayourCapabilities {
+  display: none;
+  background-color: dimgray;
+  color: coral;
+  text-align: center;
 }
-.active{
-    background-color: coral;
-    color: whitesmoke;
+.active {
+  background-color: coral;
+  color: whitesmoke;
 }
-.displayactive
-{
-    display: block;
-    margin-top: 6%;
-    padding-top: 5%;
-    padding-bottom: 4%;
-    border-radius: 12px;
-    border: solid 2px rgb(201, 142, 15);
-    box-shadow: black -2px -2px;
+.displayactive {
+  display: block;
+  margin-top: 6%;
+  padding-top: 5%;
+  padding-bottom: 4%;
+  border-radius: 12px;
+  border: solid 2px rgb(201, 142, 15);
+  box-shadow: black -2px -2px;
+}
+
+#preLoader {
+  position: absolute;
+  top: 35%;
+  left: 43%;
+}
+
+#aboutUsNavBar {
+  display: none;
 }

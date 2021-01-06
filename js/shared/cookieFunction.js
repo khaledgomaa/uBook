@@ -55,7 +55,7 @@
 
     deleteCookie: function (cookieName) {
       if (arguments.length === 1) {
-        if (hasCookie(cookieName)) {
+        if (this.hasCookie(cookieName)) {  
           document.cookie =
             cookieName + "=" + "" + ";expires=" + new Date().toUTCString();
         } else {

@@ -1,5 +1,12 @@
 $("#signUpHeader").load("../html/navbar.html");
 $("#signupFooter").load("../html/footer.html");
+
+setTimeout(function () {
+  $("#signUpHeader").show();
+  $("#signupFooter").show();
+  $("#signupContainer").css("display", "flex");
+  $("#preLoader").hide();
+}, 300);
 /*validation*/
 $(function () {
   $.validator.addMethod("passwordCheck", function (value) {
@@ -35,11 +42,7 @@ $(function () {
   });
 });
 /******************************************************************************************************************************* */
-// (function(){
 
-//     if(cookie.getCookie(cookieNamecurrentUser) != "Not Found")
-//         location.replace("home.html")
-// })()
 let register = function () {
   let email, username, password;
   email = document.getElementById("email").value;

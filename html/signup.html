@@ -5,50 +5,53 @@
     <link rel="stylesheet" href="../css/auth/signup.css" />
   </head>
   <body id="signupBody">
-    <div id= "signUpHeader"></div>
+    <div id="preLoader">
+      <img src="../images/loader.gif" />
+    </div>
+    <div id="signUpHeader"></div>
     <div id="signupContainer">
-    <div class="signup-content">
-      <label class="sign-up-text">Please Register</label>
-      <form class="signup-form" action="home.html"> 
-        <input
-          id="username"
-          type="text"
-          class="username-input"
-          name="username"
-          placeholder="Your UserName"
+      <div class="signup-content">
+        <label class="sign-up-text">Please Register</label>
+        <form class="signup-form" action="home.html">
+          <input
+            id="username"
+            type="text"
+            class="username-input"
+            name="username"
+            placeholder="Your UserName"
           />
           <input
-          id="email"
-          type="email"
-          class="email-input"
-          name="email"
-          placeholder="Your Email"
+            id="email"
+            type="email"
+            class="email-input"
+            name="email"
+            placeholder="Your Email"
           />
           <input
-          id="password"
-          type="password"
-          class="password-input"
-          name="password"
-          placeholder="Your Password"
+            id="password"
+            type="password"
+            class="password-input"
+            name="password"
+            placeholder="Your Password"
           />
           <input
-          type="submit"
-          class="submit-input"
-          value="Sign Up"
-          name="submit"
+            type="submit"
+            class="submit-input"
+            value="Sign Up"
+            name="submit"
           />
         </form>
         <div class="signin-navigate">
           <label>have account already!?</label>
           <a href="signin.html" class="sign-in-link">Log In</a>
-          
         </div>
       </div>
-
-      <script src="../js/shared/cookieFunction.js"></script>
-      <script src="../../js/auth/jqueryDev.js"></script>
-      <script src="../../js/auth/jquery.validate.js"></script>
-      <script src="../defaultVarNames.js"></script>
-      <script src="../js/auth/signup.js"></script>
-    </body>
-  </html>
+    </div>
+    <div id="signupFooter"></div>
+    <script src="../js/shared/cookieFunction.js"></script>
+    <script src="../../js/auth/jqueryDev.js"></script>
+    <script src="../../js/auth/jquery.validate.js"></script>
+    <script src="../defaultVarNames.js"></script>
+    <script src="../js/auth/signup.js"></script>
+  </body>
+</html>

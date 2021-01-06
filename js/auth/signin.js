@@ -1,4 +1,6 @@
-/*validation*/
+$("#signinHeader").load("../html/navbar.html");
+$("#signinFooter").load("../html/footer.html");
+
 $(function () {
   $(".login-form").validate({
     rules: {
@@ -15,13 +17,12 @@ $(function () {
     },
   });
 });
-/************************************** */
-// (function(){
-
-//     if(cookie.getCookie("useremail") != "Not Found"){
-//         location.replace("home.html")
-//     }
-// })()
+setTimeout(function () {
+  $("#signinHeader").show();
+  $("#signinFooter").show();
+  $("#loginContainer").css("display", "flex");
+  $("#preLoader").hide();
+}, 300);
 
 let login = function () {
   let email, password, remember_me;

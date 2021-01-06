@@ -32,7 +32,7 @@
   background-color: salmon;
 }
 .rightMenu {
-  flex-basis: 200px;
+  flex-basis: 300px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -42,7 +42,7 @@
   color: coral;
   text-decoration: none;
   padding-top: 15px;
-  padding-left: 10px;
+  padding-left: 1px;
   padding-right: 10px;
 }
 .rightMenu #cartlogo {
@@ -64,10 +64,36 @@
   background-color: salmon;
   color: white;
 }
+#wishList {
+  width: 75px;
+  box-sizing: border-box;
+  padding-left: 4%;
+  color: coral;
+}
+#wishList:hover {
+  background-color: salmon;
+  color: white;
+}
+
+#wishLogo {
+  width: 30px;
+  height: 30px;
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+  margin-top: 22%;
+}
 .numberlogo {
   position: absolute;
   top: 20%;
-  left: 96.7%;
+  left: 95.8%;
+  z-index: 2;
+}
+
+.numberwish {
+  position: absolute;
+  top: 40%;
+  left: 90.3%;
   z-index: 2;
 }
 

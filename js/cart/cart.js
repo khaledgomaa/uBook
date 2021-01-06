@@ -1,51 +1,5 @@
 $("#header").load("./navbar.html");
 $("#cartfooter").load("./footer.html");
-var cartItems = [
-  {
-    useremail: "khaled@gmail.com",
-    items: [
-      {
-        id: 0,
-        image: "Cplusplus.jpg",
-        title: "Design Pattern In C++",
-        qty: 2,
-        price: 54,
-      },
-      {
-        id: 1,
-        image: "headfirst.jpg",
-        title: "Design patterns head First",
-        qty: 3,
-        price: 50,
-      },
-    ],
-  },
-  {
-    useremail: "islam@gmail.com",
-    items: [
-      {
-        id: 0,
-        image: "Cplusplus.jpg",
-        title: "Design Pattern In C++",
-        qty: 5,
-        price: 54,
-      },
-      {
-        id: 1,
-        image: "headfirst.jpg",
-        title: "Design patterns head First",
-        qty: 3,
-        price: 50,
-      },
-    ],
-  },
-];
-
-//Convert linq expressions to loop
-//update local storage when delete
-
-//cookie.setCookie("useremail", "khaled@gmail.com");
-//localStorage.setItem("cartItems", JSON.stringify(cartItems));
 
 var userEmail = cookie.getCookie("useremail");
 var allCartItems = JSON.parse(localStorage.getItem("cartItems"));
@@ -117,21 +71,34 @@ function createItem(item, tableBody) {
   row.setAttribute("id", "tr" + item.id);
   //image Attribute
   var column = createColumn(row);
-  createImageTag(column, item.image, 70, 50);
+  column.style.maxWidth = "200px";
+  column.style.minWidth = "200px";
+  createImageTag(column, item.image);
   //Title
   column = createColumn(row);
+  column.style.maxWidth = "300px";
+  column.style.minWidth = "300px";
   column.innerHTML = item.title;
   //Input tag
   column = createColumn(row);
+  column.style.maxWidth = "70px";
+  column.style.minWidth = "70px";
   createInputTag(column, item.qty, 1, item.id);
   //price attribute
   column = createColumn(row);
   column.innerHTML = item.price + "$";
+  column.style.maxWidth = "70px";
+  column.style.minWidth = "70px";
   //total Price attribute
   column = createColumn(row);
   column.innerHTML = item.qty * item.price + "$";
+  column.style.maxWidth = "75px";
+  column.style.minWidth = "75px";
+  column.style.size = "75";
 
   column = createColumn(row);
+  column.style.maxWidth = "70px";
+  column.style.minWidth = "70px";
   createDeleteButton(column, item.id);
 }
 
@@ -147,15 +114,11 @@ function createColumn(row) {
   return column;
 }
 
-function createImageTag(column, src, width, height) {
+function createImageTag(column, src) {
   column.innerHTML =
     "<img src=../images/" +
     src +
-    " width=200px" +
-    width +
-    " height=200px" +
-    height +
-    " />";
+    " style= 'max-width: 200px; min-width: 200px;' />";
 }
 
 function createInputTag(column, value, min, id) {
@@ -166,7 +129,8 @@ function createInputTag(column, value, min, id) {
     min +
     " value=" +
     value +
-    " />";
+    " style= 'max-width: 70px; min-width: 70px;' />";
+
   var inputFeild = document.getElementById("qty" + id);
   inputFeild.addEventListener("change", function () {
     updateTotalPriceForItem(id, inputFeild.value);
@@ -179,6 +143,8 @@ function addTotalElement(name, value, row) {
   var column = createColumn(row);
   column.setAttribute("colSpan", 5);
   column.setAttribute("class", "align-right");
+  column.style.maxWidth = "75px";
+  column.style.minWidth = "75px";
   column.innerHTML = name;
   column = createColumn(row);
   column.innerHTML = value;
@@ -209,7 +175,8 @@ function createDeleteButton(column, id) {
 function updateTotalPriceForItem(rowNum, newValue) {
   var row = document.getElementById("tr" + rowNum);
   var curPrice = row.getElementsByTagName("td")[3].innerHTML.replace("$", "");
-  row.getElementsByTagName("td")[4].innerHTML = +newValue * +curPrice + "$";
+  row.getElementsByTagName("td")[4].innerHTML =
+    (+newValue * +curPrice).toFixed(2) + "$";
 }
 
 function computeTotalItems() {
@@ -227,7 +194,7 @@ function computeTotalPrice() {
     total += cartitem.items[i].qty * cartitem.items[i].price;
   }
 
-  return total;
+  return total.toFixed(2);
 }
 
 function updateTotal(totalItems, totalPrice) {
