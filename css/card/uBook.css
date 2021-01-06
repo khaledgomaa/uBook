@@ -1,6 +1,13 @@
 #categories-container {
   padding: 0;
   margin: 0;
+
+} 
+#bkdiv2,
+#bkdiv3 {
+  text-align: center;
+  width: 98%;
+
 }
 #bodyDivId {
   position: absolute;
@@ -115,16 +122,135 @@ div.categories {
 .dislab {
   margin-top: 20px;
 }
-.addCartBtn {
-  width: 250px;
-  height: 50px;
+/*.addCartBtn {
+  
+  margin-top: 320px;
+  display: inline;
+}*/
+
+
+/******* Book Details Page*******/
+
+#bookDetailsBody{
+  margin: 0;
+  padding: 0;
+}
+
+#bodyDivId{
+  position: absolute;
+  top:70px;
+  width: 100%;
+  }
+.bookBibliographic{
+display: flex;
+width: 60%;
+margin-left: auto;
+margin-right: auto;
+margin-top: 5%;
+justify-content: space-around;
+/* flex-direction: column; */
+}
+.bookImage{
+  width: 300px;
+  height: 300px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px 0 black;
+}
+.bookDivImage{
+  width: 350;
+  height: 350;
+  text-align: center;
+  
+}
+.bookInfoSection{
+  width: 350px;
+  height: 350px;
+  margin:0 auto;
+  text-align: left;
+  margin-top: 20px;
+}
+.selectedBook{
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.bTitle
+{
+  text-align: center;
+}
+.addCartButton{
+  text-align: center;
+  cursor: pointer;
+  margin-top: 5px;
+  
+}
+.addCartBtn,
+.addWishBtn{
+  width: 150px;
+  height: 40px;
   background-color: #fb9a33;
-  font-size: 17pt;
+  font-size: 14pt;
   font-family: cursive;
   border-radius: 12px;
   color: dimgrey;
-  box-shadow: -3px 3px orange, -2px 2px orange, -1px 1px orange;
+  /* box-shadow: -3px 3px orange, -2px 2px orange, -1px 1px orange; */
   border: 3px solid darkorange;
-  margin-top: 320px;
-  display: inline;
+  cursor: pointer;
+  margin-top: 5px;
+}
+.selectedItems{
+  box-sizing: border-box;
+  text-align: center;
+  width: 120px;
+  height: 40px;
+  display: inline-block;
+  border: 3px solid darkorange;
+  background-color: #fb9a33;
+  font-size: 15pt;
+  font-family: cursive;
+  color: dimgray;
+  padding-top: 2px;
+  margin-left: -4px;
+  margin-right: -4px;
+  
+}
+.minus,
+.plus{
+  height: 40px;
+  width: 30px;
+  cursor: pointer;
+  color:#e1892b;
+  font-family: cursive;
+  font-size: 13pt;
+  background-color: rgb(203, 195, 195);
+}
+.minus{
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.plus{
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.bookdesign{
+  font-size: 18pt;
+  font-family: cursive;
+  font-style:oblique;
+  font-weight: bold;
+  text-shadow: #fb9a33 0 -1px;
+  text-align: justify;
+}
+.bookAuthor,
+.bookTitle,
+.bookPrice,
+.bookRate{
+  font-size: 14pt;
+  font-family: cursive;
+  font-style: italic;
+  font-weight: bold;
+  text-align: justify;
+  text-shadow:#fb9a33 1 0px;
+}
+.secondTime{
+  display: none;
 }

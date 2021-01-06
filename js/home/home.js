@@ -123,7 +123,7 @@ onload = function () {
         "<div class=cell id=" +
           id +
           i +
-          "><a href><img src=../images/" +
+          "><a href=bookDetails.html><img src=../images/" +
           items[i].image +
           " width=300 height=350/></a><label class=AuthLab>" +
           items[i].author +

@@ -3,36 +3,47 @@
   <head>
     <title>Book</title>
     <link rel="stylesheet" href="../css/card/uBook.css" type="text/css" />
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   </head>
-  <body>
-    <div id="bodyDivId" class="bodyDivClass">
-      <a href="" title="Go to Home Page" class="homeLink">Home</a>
-      <img src="../images/more.png" class="homeArrow" />
-      <label class="headerTitle">Book title</label>
+  <body id="bookDetailsBody">
+    <div id="bookDetailsHeader"></div>
 
-      <div class="bookInfo">
-        <div class="bimg">
-          <img
-            src="../images/machineLearning.jpg"
-            class="bkDetImg"
-            id="bkDetImg"
-          />
+    <div id="bodyDivId">
+      <div class="bookBibliographic">
+        <div class="bookDivImage">
+          <img class="bookImage" />
         </div>
-        <div class="titlelab">
-          <label class="tiltestyle">Book Title</label>
-          <div class="autlab">by: Book author</div>
-          <div class="ratelab">rate:</div>
-          <div class="dislab">Book Discription</div>
-          <input type="button" value="Add to cart" class="addCartBtn" />
+        <div class="bookInfoSection">
+          <div class="selectedBook bTitle">
+            <span class="bookdesign">Title :</span>
+            <span class="bookTitle"></span>
+          </div>
+          <div class="selectedBook">
+            <span class="bookdesign">Author :</span>
+            <span class="bookAuthor"></span>
+          </div>
+          <div class="selectedBook">
+            <span class="bookdesign">Price :</span>
+            <span class="bookPrice"></span>
+          </div>
+          <div class="selectedBook">
+            <span class="bookdesign">Rate :</span>
+            <span class="bookRate"></span>
+          </div>
+          <div class="addCartButton">
+            <input type="button" value="Add to cart" class="addCartBtn" />
+            <input type="button" value="Add to wish list" class="addWishBtn" />
+          </div>
+          <div class="addCartButton secondTime">
+            <input type="button" value="-" class="minus" />
+            <p class="selectedItems">(0) in cart</p>
+            <input type="button" value="+" class="plus" />
+          </div>
         </div>
       </div>
+      <div id="bookDetailsFooter"></div>
     </div>
-
-    <script>
-      $(".addCartBtn").hover(function () {
-        $(this).toggleClass("classWithShadow");
-      });
-    </script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/shared/cookieFunction.js"></script>
+    <script src="../js/books/bookDetails.js"></script>
   </body>
 </html>
