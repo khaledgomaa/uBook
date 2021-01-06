@@ -2,18 +2,30 @@ $(".menuItems a").click(function () {
   setSelectedPage($(this).attr("id"));
 });
 
-$("#signInbtn").click(function () {
-  setSelectedPage("signInbtn");
-});
 
 $("#shoppingCart").click(function () {
   setSelectedPage("cartlogo");
+  
 });
 
 var userEmail = cookie.getCookie("useremail");
 var allCartItems = JSON.parse(localStorage.getItem("cartItems"));
 var cartitem = findItem(allCartItems, userEmail);
 
+$("#signInbtn").click(function () {
+  if(userEmail){
+    cookie.deleteCookie("useremail");
+  }
+  setSelectedPage("signInbtn");
+});
+
+function changeSignInOut(){
+  if(userEmail != "Not Found")
+  {
+    console.log(userEmail)
+    $("#signInbtn").html('Sign out')
+  }
+}
 function changeSeletedItemStyle() {
   var selected = cookie.getCookie("selected").trim();
   if (selected !== "Not Found") {
@@ -46,3 +58,4 @@ function updateUsercartItemsNumber() {
 
 changeSeletedItemStyle();
 updateUsercartItemsNumber();
+changeSignInOut();
