@@ -13,11 +13,12 @@ input {
   outline: none;
   width: 62%;
   height: 25px;
-  margin: 8px;
+  margin: auto;
   border: solid 1px rgb(219, 219, 219);
 }
 .email-input {
-  margin-top: 28px;
+  margin-top: 38px;
+  display: block;
 }
 .remember-me {
   width: fit-content;
@@ -33,9 +34,13 @@ input {
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
 }
+.password-input{
+  display: block;
+  margin-top: 10px;
+}
 .forgot-password {
   text-align: right;
-  margin-left: 20%;
+  margin-left: 34%;
   color: grey;
 }
 .submit-input {
@@ -46,7 +51,7 @@ input {
   width: 170px;
   display: block;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 40px;
   font-size: 16px;
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
   border-radius: 5px;
@@ -56,7 +61,8 @@ input {
 .login-content {
   padding-top: 20px;
   padding-bottom: 20px;
-  width: fit-content;
+  width: 470px;
+  min-height: 250px;
   height: fit-content;
   background-color: white;
   text-align: center;
@@ -80,6 +86,12 @@ input {
 .signup-navigate label {
   font-size: 14px;
   color: grey;
+}
+
+label.error{
+  font-size: 12px;
+  color: red;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /*#C85808;*/
