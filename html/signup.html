@@ -2,42 +2,52 @@
 <html>
   <head>
     <title>Sign Up</title>
-    <script></script>
     <link rel="stylesheet" href="../css/auth/signup.css" />
   </head>
   <body>
     <div class="signup-content">
       <label class="sign-up-text">Please Register</label>
-      <form>
+      <form class="signup-form" action="home.html"> 
         <input
+          id="username"
           type="text"
           class="username-input"
           name="username"
           placeholder="Your UserName"
-        />
-        <input
+          />
+          <input
+          id="email"
           type="email"
           class="email-input"
           name="email"
           placeholder="Your Email"
-        />
-        <input
+          />
+          <input
+          id="password"
           type="password"
           class="password-input"
           name="password"
           placeholder="Your Password"
-        />
-        <input
+          />
+          <input
           type="submit"
           class="submit-input"
           value="Sign Up"
           name="submit"
-        />
-      </form>
-      <div class="signin-navigate">
-        <label>have account already!?</label>
-        <a href="signin.html" class="sign-in-link">Log In</a>
+          />
+        </form>
+        <div class="signin-navigate">
+          <label>have account already!?</label>
+          <a href="signin.html" class="sign-in-link">Log In</a>
+          
+        </div>
       </div>
-    </div>
-  </body>
-</html>
+
+      <script src="../js/shared/cookieFunction.js"></script>
+      <script src="../../js/auth/jqueryDev.js"></script>
+      <script src="../../js/auth/jquery.validate.js"></script>
+      <script src="../defaultVarNames.js"></script>
+      <script src="../js/auth/signup.js"></script>
+    </body>
+  </html>
+  
