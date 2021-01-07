@@ -3,49 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="../css/profile/profile.css"
-    />
-   
+    <link rel="stylesheet" href="../css/profile/profile.css" />
   </head>
-     <body class="profile-body">
-        
-        <div class="profile-header"></div>
-        <div class="profile-container">
-
-        <div class="profile-container-info">
-            <div class="profile-image">
-                <input id="image-picker"  type="file" style="display: none;" disabled/>
-                <label for="image-picker" class="picker-label">
-                    <span>click to edit</span>
-                    <img class="profile-img" src="../images/user.svg" width="270px" height="270px">
-                </label>
-            </div>
-            <div class="profile-info">
-                <div class="name">
-                    <span>name: </span>
-                    <input class="info-input" type="text" disabled  />
-                </div>
-                <div class="email">
-                    <span>email: </span>
-                    <input class="info-input" type="email" disabled />
-                </div>
-                <div class="password">
-                    <span>password: </span>
-                    <input class="info-input" type="password" disabled  />
-                </div>
-
-                <button class="edit-button">Edit</button>
-            </div>
+  <body class="profile-body">
+    <div class="profile-header"></div>
+    <div class="profile-container">
+      <div class="profile-container-info">
+        <div class="profile-image">
+          <input id="image-picker" type="file" style="display: none" disabled />
+          <label for="image-picker" class="picker-label">
+            <span>click to edit</span>
+            <img
+              class="profile-img"
+              src="../images/user.svg"
+              width="270px"
+              height="270px"
+            />
+          </label>
         </div>
-        </div>
+        <div class="profile-info">
+          <div class="name change-Width">
+            <span>name: </span>
+            <input class="info-input" type="text" disabled />
+          </div>
+          <div class="email change-Width">
+            <span>email: </span>
+            <input class="info-input" type="email" disabled />
+          </div>
+          <div class="password change-Width">
+            <span>password: </span>
+            <input class="info-input" type="password" disabled />
+          </div>
 
-        <div class="profile-footer"></div>
-        
-        <script src="../js/shared/cookieFunction.js"></script>
-        <script src="../../js/auth/jqueryDev.js"></script>
-        <script src="../defaultVarNames.js"></script>
-        <script src="../js/profile/profile.js"></script>
-    </body>
+          <button class="edit-button">Edit</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-footer"></div>
+
+    <script src="../js/shared/cookieFunction.js"></script>
+    <script src="../../js/auth/jqueryDev.js"></script>
+    <script src="../defaultVarNames.js"></script>
+    <script src="../js/profile/profile.js"></script>
+  </body>
 </html>
