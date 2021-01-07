@@ -115,8 +115,7 @@ function updateCurrentQuantity(num) {
         for (x in storedItems[idx].items) {
           if (
             storedItems[idx].items[x].id == bookinfo.id &&
-            +storedItems[idx].items[x].qty + num <=
-              +storedItems[idx].items[x].stock
+            +storedItems[idx].items[x].stock != 0
           ) {
             var itemQuan = storedItems[idx].items[x].qty;
             itemQuan += num;
@@ -129,6 +128,9 @@ function updateCurrentQuantity(num) {
               storedItems[idx].items.splice(x, 1);
             } else {
               storedItems[idx].items[x].qty = itemQuan;
+              storedItems[idx].items[x].stock = Math.abs(
+                +storedItems[idx].items[x].stock - itemQuan
+              );
               $(".selectedItems").text(
                 "(" + storedItems[idx].items[x].qty + ") in cart"
               );
