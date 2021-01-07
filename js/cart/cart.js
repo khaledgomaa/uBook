@@ -81,8 +81,8 @@ function createItem(item, tableBody) {
   column.innerHTML = item.title;
   //Input tag
   column = createColumn(row);
-  column.style.maxWidth = "70px";
-  column.style.minWidth = "70px";
+  column.style.maxWidth = "75px";
+  column.style.minWidth = "75px";
   createInputTag(column, item.qty, 1, item.id);
   //price attribute
   column = createColumn(row);
@@ -91,10 +91,9 @@ function createItem(item, tableBody) {
   column.style.minWidth = "70px";
   //total Price attribute
   column = createColumn(row);
-  column.innerHTML = item.qty * item.price + "$";
-  column.style.maxWidth = "75px";
-  column.style.minWidth = "75px";
-  column.style.size = "75";
+  column.innerHTML = item.qty * +item.price.toFixed(2) + "$";
+  column.style.maxWidth = "100px";
+  column.style.minWidth = "100px";
 
   column = createColumn(row);
   column.style.maxWidth = "70px";
@@ -143,8 +142,8 @@ function addTotalElement(name, value, row) {
   var column = createColumn(row);
   column.setAttribute("colSpan", 5);
   column.setAttribute("class", "align-right");
-  column.style.maxWidth = "75px";
-  column.style.minWidth = "75px";
+  column.style.maxWidth = "100px";
+  column.style.minWidth = "100px";
   column.innerHTML = name;
   column = createColumn(row);
   column.innerHTML = value;
@@ -176,7 +175,7 @@ function updateTotalPriceForItem(rowNum, newValue) {
   var row = document.getElementById("tr" + rowNum);
   var curPrice = row.getElementsByTagName("td")[3].innerHTML.replace("$", "");
   row.getElementsByTagName("td")[4].innerHTML =
-    (+newValue * +curPrice).toFixed(2) + "$";
+    +(+newValue * +curPrice).toFixed(2) + "$";
 }
 
 function computeTotalItems() {
@@ -185,7 +184,7 @@ function computeTotalItems() {
     total += cartitem.items[i].qty;
   }
 
-  return total;
+  return +total.toFixed(2);
 }
 
 function computeTotalPrice() {
@@ -194,7 +193,7 @@ function computeTotalPrice() {
     total += cartitem.items[i].qty * cartitem.items[i].price;
   }
 
-  return total.toFixed(2);
+  return +total.toFixed(2);
 }
 
 function updateTotal(totalItems, totalPrice) {
@@ -203,7 +202,7 @@ function updateTotal(totalItems, totalPrice) {
     .getElementsByTagName("td")[1].innerHTML = totalItems;
   document
     .getElementById("totalPrice")
-    .getElementsByTagName("td")[1].innerHTML = totalPrice + "$";
+    .getElementsByTagName("td")[1].innerHTML = totalPrice.toFixed(2) + "$";
   $(".numberlogo").text(totalItems);
 }
 

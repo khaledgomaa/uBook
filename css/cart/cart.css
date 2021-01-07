@@ -19,7 +19,7 @@ tbody {
   font-family: cursive;
 }
 tbody:before {
-  line-height: 0.5em;
+  /* line-height: 0.5em; */
   content: ".";
   color: white;
   /* display: block; */
@@ -86,4 +86,9 @@ tbody:before {
 
 #header {
   display: none;
+}
+
+table td {
+  padding: 8px;
+  text-align: center;
 }
