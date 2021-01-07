@@ -110,3 +110,6 @@
   background-color: coral;
   color: white;
 }
+#profile{
+  display: none;
+}

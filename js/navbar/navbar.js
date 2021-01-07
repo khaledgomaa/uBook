@@ -18,8 +18,13 @@ var wishItems = findItem(
   userEmail
 );
 
+
+if (userEmail !== "Not Found") {
+  $("#profile").css("display","unset")
+}
+
 $("#signInbtn").click(function () {
-  if (userEmail) {
+  if (userEmail !== "Not Found") {
     cookie.deleteCookie("useremail");
   }
   setSelectedPage("signInbtn");
