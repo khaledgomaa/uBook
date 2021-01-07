@@ -68,7 +68,7 @@ div.categories {
   margin-top: 6%;
   width: 98%;
   text-align: center;
-  margin-left: -9%;
+  margin-left: -2%;
 }
 .categTitle {
   font-size: 28pt;
@@ -266,4 +266,9 @@ div.categories {
 }
 .secondTime {
   display: none;
+}
+
+.rightArrow {
+  float: left;
+  min-height: 190px;
 }
