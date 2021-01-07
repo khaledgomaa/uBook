@@ -2,10 +2,12 @@ $(".menuItems a").click(function () {
   setSelectedPage($(this).attr("id"));
 });
 
+$(".rightMenu a").click(function () {
+  setSelectedPage($(this).attr("id"));
+});
 
 $("#shoppingCart").click(function () {
   setSelectedPage("cartlogo");
-  
 });
 
 var userEmail = cookie.getCookie("useremail");
@@ -17,17 +19,16 @@ var wishItems = findItem(
 );
 
 $("#signInbtn").click(function () {
-  if(userEmail){
+  if (userEmail) {
     cookie.deleteCookie("useremail");
   }
   setSelectedPage("signInbtn");
 });
 
-function changeSignInOut(){
-  if(userEmail != "Not Found")
-  {
-    console.log(userEmail)
-    $("#signInbtn").html('Sign out')
+function changeSignInOut() {
+  if (userEmail != "Not Found") {
+    console.log(userEmail);
+    $("#signInbtn").html("Sign out");
   }
 }
 function changeSeletedItemStyle() {
@@ -80,4 +81,3 @@ updateUsercartItemsNumber();
 changeSignInOut();
 
 updateUserwishListNumber();
-
