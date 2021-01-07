@@ -1,35 +1,35 @@
-.body-div {
-  margin: 0px;
-  padding: 0px;
-}
-
-#preLoader {
-  position: absolute;
-  top: 35%;
-  left: 43%;
+#searchResultBody{
+  padding: 0;
+  margin: 0;
 }
 
 .books-display {
   margin-top: 22px;
   width: 100%;
-  position: absolute;
-  top: 14%;
-  display: none;
+  /*position: absolute;*/
+  display: grid;
   grid-template-columns: auto auto auto;
   row-gap: 24px;
   align-items: center;
   justify-items: center;
 }
+#searchContainer{
+  top:20% ;
+  position: absolute;
+  width: 100%;
+  display: none;
+}
+
 .cell {
   width: 300px;
 }
 
 #preLoader {
   position: absolute;
-  top: 35%;
+  top: 45%;
   left: 43%;
 }
 
-#header {
+#SearchResultNavBar{
   display: none;
 }

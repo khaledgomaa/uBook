@@ -1,9 +1,10 @@
 onload = function () {
-  $("#header").load("./navbar.html");
+  $("#SearchResultNavBar").load("./navbar.html");
   $("#searchFooter").load("footer.html");
+
   setTimeout(function () {
-    $("#header").show();
-    $(".books-display").css("display", "grid");
+    $("#SearchResultNavBar").show();
+    $("#searchContainer").show();
     $("#preLoader").hide();
   }, 300);
 
@@ -71,6 +72,7 @@ onload = function () {
       });
   }
 };
+
 /*
  
                 categorizedBooks = [].concat.apply([], categorizedBooks);

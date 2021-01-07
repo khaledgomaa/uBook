@@ -263,3 +263,6 @@ div.categories {
   top: 35%;
   left: 43%;
 }
+.checked{
+  color: orange;
+}
