@@ -37,7 +37,7 @@ xhr.onreadystatechange = function () {
         bookinfo.author;
       document.getElementsByClassName("bookPrice")[0].innerHTML =
         bookinfo.price;
-      document.getElementsByClassName("bookRate")[0].innerHTML = bookinfo.rate;
+      setBookRate(bookinfo.rate);
       $(".bookImage").attr("src", "../images/" + bookinfo.image);
 
       if (currentUser == "" || currentUser == null || currentUser == undefined)
@@ -264,4 +264,11 @@ function addItemsToCart() {
   $(".addWishBtn").hide();
   $(".secondTime").show();
   return;
+}
+function setBookRate(num) {
+  var bookRateStars = document.getElementsByClassName("bookRate")[0].children;
+  console.log(bookRateStars);
+  for (var x = 0; x < num; x++){
+    bookRateStars[x].classList.add("checked");
+  }
 }
