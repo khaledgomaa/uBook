@@ -1,4 +1,6 @@
 onload = function () {
+  cookie.setCookie("selected", "home");
+
   $("#header").load("./navbar.html");
   $("#searchbar").load("./search.html");
   $("#footer").load("./footer.html");
