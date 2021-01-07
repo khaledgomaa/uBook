@@ -110,3 +110,9 @@
   background-color: coral;
   color: white;
 }
+#profile{
+  display: none;
+}
+#profile img{
+  border-radius: 50%;
+}

@@ -18,8 +18,20 @@ var wishItems = findItem(
   userEmail
 );
 
+
+if (userEmail !== "Not Found") {
+  let users = JSON.parse(localStorage.getItem("userData"));
+  let img;
+  for(var i=0; i<users.length; i++){
+    if(userEmail === users[i].email)
+      img = users[i].image;
+  }
+  $("#profile").css("display","unset")
+  $("#profile img").attr("src",img)
+}
+
 $("#signInbtn").click(function () {
-  if (userEmail) {
+  if (userEmail !== "Not Found") {
     cookie.deleteCookie("useremail");
   }
   setSelectedPage("signInbtn");
