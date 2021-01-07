@@ -37,6 +37,8 @@ xhr.onreadystatechange = function () {
         bookinfo.author;
       document.getElementsByClassName("bookPrice")[0].innerHTML =
         bookinfo.price;
+      document.getElementsByClassName("bookStock")[0].innerHTML =
+        bookinfo.stock;
       setBookRate(bookinfo.rate);
       $(".bookImage").attr("src", "../images/" + bookinfo.image);
 
@@ -104,14 +106,18 @@ document.getElementsByClassName("minus")[0].onclick = function () {
 };
 function updateCurrentQuantity(num) {
   // update the cart according to the current user and his/her cart
-
+  //debugger;
   if (currentUser == "" || currentUser == null || currentUser == undefined)
     document.getElementsByClassName("numberlogo")[0].innerHTML = 0;
   else {
     for (idx in storedItems) {
       if (storedItems[idx].useremail == currentUser) {
         for (x in storedItems[idx].items) {
-          if (storedItems[idx].items[x].id == bookinfo.id) {
+          if (
+            storedItems[idx].items[x].id == bookinfo.id &&
+            +storedItems[idx].items[x].qty + num <=
+              +storedItems[idx].items[x].stock
+          ) {
             var itemQuan = storedItems[idx].items[x].qty;
             itemQuan += num;
             if (itemQuan == 0) {
@@ -190,6 +196,7 @@ function addToWishList() {
         price: bookinfo.price,
         qty: 1,
         image: bookinfo.image,
+        stock: bookinfo.stock,
       });
       localStorage.setItem("wishListCart", JSON.stringify(wishListitems));
       $(".numberwish").text(+$(".numberwish").text() + 1);
@@ -209,6 +216,7 @@ function addToWishList() {
         price: bookinfo.price,
         qty: 1,
         image: bookinfo.image,
+        stock: bookinfo.stock,
       },
     ],
   });
@@ -219,6 +227,7 @@ function addToWishList() {
 }
 
 function addItemsToCart() {
+  debugger;
   for (idx in storedItems) {
     if (storedItems[idx].useremail == currentUser) {
       // if user wants to add new items to cart
@@ -232,6 +241,7 @@ function addItemsToCart() {
         price: bookinfo.price,
         qty: 1,
         image: bookinfo.image,
+        stock: bookinfo.stock,
       });
       totalNumberOfItems += 1; // display number of items
       document.getElementsByClassName(
@@ -253,6 +263,7 @@ function addItemsToCart() {
         price: bookinfo.price,
         qty: 1,
         image: bookinfo.image,
+        stock: bookinfo.stock,
       },
     ],
   });
@@ -267,8 +278,7 @@ function addItemsToCart() {
 }
 function setBookRate(num) {
   var bookRateStars = document.getElementsByClassName("bookRate")[0].children;
-  console.log(bookRateStars);
-  for (var x = 0; x < num; x++){
+  for (var x = 0; x < num; x++) {
     bookRateStars[x].classList.add("checked");
   }
 }

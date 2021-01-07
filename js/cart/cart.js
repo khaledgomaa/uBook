@@ -83,7 +83,7 @@ function createItem(item, tableBody) {
   column = createColumn(row);
   column.style.maxWidth = "75px";
   column.style.minWidth = "75px";
-  createInputTag(column, item.qty, 1, item.id);
+  createInputTag(column, item.qty, 1, item.id, item.stock);
   //price attribute
   column = createColumn(row);
   column.innerHTML = item.price + "$";
@@ -120,12 +120,14 @@ function createImageTag(column, src) {
     " style= 'max-width: 200px; min-width: 200px;' />";
 }
 
-function createInputTag(column, value, min, id) {
+function createInputTag(column, value, min, id, stockAvailable) {
   column.innerHTML =
     "<input id=qty" +
     id +
     " type='number' min=" +
     min +
+    " max=" +
+    stockAvailable +
     " value=" +
     value +
     " style= 'max-width: 70px; min-width: 70px;' />";
@@ -135,6 +137,9 @@ function createInputTag(column, value, min, id) {
     updateTotalPriceForItem(id, inputFeild.value);
     updateCartItem(id, +inputFeild.value);
     updateTotal(computeTotalItems(), computeTotalPrice());
+  });
+  inputFeild.addEventListener("keypress", function (e) {
+    e.preventDefault();
   });
 }
 

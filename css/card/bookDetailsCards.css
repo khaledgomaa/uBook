@@ -246,6 +246,7 @@ div.categories {
 .bookAuthor,
 .bookTitle,
 .bookPrice,
+.bookStock,
 .bookRate {
   font-size: 14pt;
   font-family: cursive;
@@ -263,6 +264,6 @@ div.categories {
   top: 35%;
   left: 43%;
 }
-.checked{
+.checked {
   color: orange;
 }
