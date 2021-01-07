@@ -163,6 +163,7 @@ function addItemTocartItems(index) {
           price: newItem.price,
           qty: 1,
           image: newItem.image,
+          stock: newItem.stock,
         },
       ],
     });

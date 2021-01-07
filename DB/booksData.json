@@ -9,7 +9,8 @@
       "image": "ElementsofReusable.jpg",
       "description": "Capturing a wealth of experience about the design of object-oriented software, four top-notch designers present a catalog of simple and succinct solutions to commonly occurring design problems. Previously undocumented, these 23 patterns allow designers to create more flexible, elegant, and ultimately reusable designs without having to rediscover the design solutions themselves.",
       "rate": "4.5",
-      "used": 0
+      "used": 0,
+      "stock": 4
     },
     {
       "id": 2,
@@ -20,7 +21,8 @@
       "image": "headFirst.jpg",
       "description": "You know you don't want to reinvent the wheel, so you look to Design Patterns: the lessons learned by those who've faced the same software design problems. With Design Patterns, you get to take advantage of the best practices and experience of others so you can spend your time on something more challenging.",
       "rate": "4",
-      "used": 0
+      "used": 0,
+      "stock": 3
     },
     {
       "id": 3,
@@ -31,7 +33,8 @@
       "image": "machineLearning.jpg",
       "description": "In this book, you will find detailed explanations of 30 patterns for data and problem representation, operationalization, repeatability, reproducibility, flexibility, explainability, and fairness. Each pattern includes a description of the problem, a variety of potential solutions, and recommendations for choosing the best technique for your situation.",
       "rate": "4.5",
-      "used": 0
+      "used": 0,
+      "stock": 5
     },
     {
       "id": 4,
@@ -42,7 +45,8 @@
       "image": "node.jpg",
       "description": "In this book, we will show you how to implement a series of best practices and design patterns to help you create efficient and robust Node.js applications with ease",
       "rate": "3.5",
-      "used": 0
+      "used": 0,
+      "stock": 6
     },
     {
       "id": 5,
@@ -53,7 +57,8 @@
       "image": "Cplusplus.jpg",
       "description": "Gain comprehensive insights into concepts such as object-oriented programming (OOP), functional programming, generic programming, and the Standard Template Library (STL), along with exploring the latest features of C++",
       "rate": "4",
-      "used": 0
+      "used": 0,
+      "stock": 7
     }
   ],
   "Java": [
@@ -66,18 +71,20 @@
       "image": "headfirstJava.jpg",
       "description": "Learning a complex new language is no easy task especially when it s an object-oriented computer programming language like Java. You might think the problem is your brain. It seems to have a mind of its own, a mind that doesn't always want to take in the dry, technical stuff you're forced to study",
       "rate": "4.4",
-      "used": 0
+      "used": 0,
+      "stock": 3
     },
     {
       "id": 7,
-      "title":"Effective Java 3rd Edition",
+      "title": "Effective Java 3rd Edition",
       "categoryId": 2,
       "author": "Joshua Bloch",
       "price": 54.99,
       "image": "effectivejava.jpg",
       "description": "In this new edition of Effective Java, Bloch explores new design patterns and language idioms that have been introduced since the second edition was released in 2008 shortly after Java SE6, including Lambda, streams, generics and collections, as well as selected Java 9 features.",
       "rate": "4.8",
-      "used": 0
+      "used": 0,
+      "stock": 8
     },
     {
       "id": 8,
@@ -88,7 +95,8 @@
       "image": "javavolum.jpg",
       "description": "For serious programmers, Core Java, Volume I―Fundamentals, Eleventh Edition, is the definitive guide to writing robust, maintainable code. Whether you’re using Java SE 9, 10, or 11, it will help you achieve a deep and practical understanding of the language and API, and its hundreds of realistic examples reveal the most powerful and effective ways to get the job done.",
       "rate": "4.7",
-      "used": 0
+      "used": 0,
+      "stock": 2
     },
     {
       "id": 9,
@@ -99,7 +107,8 @@
       "image": "beginningwithjava.jpg",
       "description": "Learn to speak the Java language like the pros Are you new to programming and have decided that Java is your language of choice? Are you a wanna-be programmer looking to learn the hottest lingo around? Look no further! Beginning Programming with Java For Dummies, 5th Edition is the easy-to-follow guide you'll want to keep in your back pocket as you work your way toward Java mastery! In plain English, it quickly and easily shows you what goes into creating a program, how to put the pieces together, ways to deal with standard programming challenges, and so much more.",
       "rate": "4.5",
-      "used": 0
+      "used": 0,
+      "stock": 1
     },
     {
       "id": 10,
@@ -110,7 +119,8 @@
       "image": "introtoJava.jpg",
       "description": "Introduction to Java Programming and Data Structures seamlessly integrates programming, data structures, and algorithms into one text. With a fundamentals-first approach, the text builds a strong foundation of basic programming concepts and techniques before teaching students object-oriented programming and advanced Java programming. Liang explains programming in a problem-driven way that focuses on problem solving rather than syntax, illustrating basic concepts by example and providing a large number of exercises with various levels of difficulty for students to practice. The 12th Edition is completely revised in every detail to enhance clarity, presentation, content, examples, and exercises.",
       "rate": "4.7",
-      "used": 0
+      "used": 0,
+      "stock": 5
     },
     {
       "id": 11,
@@ -121,7 +131,8 @@
       "image": "completerefjava.jpg",
       "description": "Fully updated for Java SE 11, Java: The Complete Reference, Eleventh Edition explains how to develop, compile, debug, and run Java programs. Best-selling programming author Herb Schildt covers the entire Java language, including its syntax, keywords, and fundamental programming principles. You’ll also find information on key portions of the Java API library, such as I/O, the Collections Framework, the stream library, and the concurrency utilities. Swing, JavaBeans, and servlets are examined and numerous examples demonstrate Java in action. Of course, the very important module system is discussed in detail. This Oracle Press resource also offers an introduction to JShell, Java’s interactive programming tool. Best of all, the book is written in the clear, crisp, uncompromising style that has made Schildt the choice of millions worldwid",
       "rate": "4.6",
-      "used": 0
+      "used": 0,
+      "stock": 4
     }
   ],
   "Javascript": [
@@ -134,7 +145,8 @@
       "description": "Eloquent JavaScript dives deep into the JavaScript language to show you how to write beautiful, effective code",
       "rate": "4.5",
       "used": 0,
-      "image": "EloquentJavaScript.jpg"
+      "image": "EloquentJavaScript.jpg",
+      "stock": 3
     },
     {
       "id": 13,
@@ -145,7 +157,8 @@
       "description": "This authoritative book scrapes away these bad features to reveal a subset of JavaScript that's more reliable, readable, and maintainable than the language as a whole",
       "rate": "4.2",
       "used": 0,
-      "image": "JavaScriptTheGoodParts.jpg"
+      "image": "JavaScriptTheGoodParts.jpg",
+      "stock": 2
     },
 
     {
@@ -157,7 +170,8 @@
       "description": "The book requires no prior knowledge of JavaScript and works from the ground up to give you a thorough grounding in this powerful language",
       "rate": "4.2",
       "used": 0,
-      "image": "ObjectOrientedJavaScript.jpg"
+      "image": "ObjectOrientedJavaScript.jpg",
+      "stock": 8
     },
     {
       "id": 15,
@@ -168,7 +182,8 @@
       "description": "Crockford shows how to repair those problems. He then moves on to data structures and functions, exploring the underlying mechanisms and then uses higher order functions to achieve class-free object oriented programming",
       "rate": "3.8",
       "used": 0,
-      "image": "HowJavaScriptWorks.jpg"
+      "image": "HowJavaScriptWorks.jpg",
+      "stock": 6
     },
     {
       "id": 16,
@@ -179,7 +194,8 @@
       "description": "illustrate each core concept and technique. This completely revised edition shows you how to master key JavaScript concepts such as functions, closures, objects, prototypes, and promises. It covers APIs such as the DOM.",
       "rate": "5",
       "used": 0,
-      "image": "SecretsOfTheJavaScriptNinja.jpg"
+      "image": "SecretsOfTheJavaScriptNinja.jpg",
+      "stock": 5
     },
 
     {
@@ -191,7 +207,8 @@
       "description": "JavaScript: The Definitive Guide is ideal for experienced programmers who want to learn the programming language of the web, and for current JavaScript programmers who want to master it.",
       "rate": "4.8",
       "used": 0,
-      "image": "JavaScriptTheDefinitiveGuide.jpg"
+      "image": "JavaScriptTheDefinitiveGuide.jpg",
+      "stock": 7
     },
     {
       "id": 18,
@@ -202,7 +219,8 @@
       "description": "This is not a book for those looking for shortcuts; rather it is hard-won experience distilled into a guided tour. It's one of the few books on JS that I'll recommend without hesitation",
       "rate": "4.3",
       "used": 0,
-      "image": "EffectiveJavascript.jpg"
+      "image": "EffectiveJavascript.jpg",
+      "stock": 2
     }
   ],
   "Python": [
@@ -215,7 +233,8 @@
       "image": "python.jpg",
       "description": "Python for Everybody is designed to introduce students to programming and software development through the lens of exploring data. You can think of the Python programming language as your tool to solve data problems that are beyond the capability of a spreadsheet.",
       "rate": "4.5",
-      "used": 0
+      "used": 0,
+      "stock": 3
     },
     {
       "id": 20,
@@ -226,7 +245,8 @@
       "image": "pythonProgramming.jpg",
       "description": "You will explore the foundations of Python programming and learn how Python can be manipulated to achieve results. Explore different programming paradigms and find the best approach to a situation; understand how to carry out performance optimization and effective debugging; control the flow of a program; and utilize an interchange format to exchange data.",
       "rate": "4.3",
-      "used": 0
+      "used": 0,
+      "stock": 5
     },
     {
       "id": 21,
@@ -237,7 +257,8 @@
       "image": "pythonforfinance.jpg",
       "description": "The second edition of Mastering Python for Finance will guide you through carrying out complex financial calculations practiced in the industry of finance by using next-generation methodologies. You will master the Python ecosystem by leveraging publicly available tools to successfully perform research studies and modeling, and learn to manage risks with the help of advanced examples.",
       "rate": "4.3",
-      "used": 0
+      "used": 0,
+      "stock": 4
     },
     {
       "id": 22,
@@ -248,7 +269,8 @@
       "image": "PythonMachineLearning.jpg",
       "description": "A comprehensive guide to get you up to speed with the latest developments of practical machine learning with Python and upgrade your understanding of machine learning (ML) algorithms and techniquesKey FeaturesDive into machine learning algorithms to solve the complex challenges faced by data scientists todayExplore cutting edge content reflecting deep learning and reinforcement learning developmentsUse updated Python libraries such as TensorFlow, PyTorch, and scikit-learn to track machine learning projects end-to-endBook DescriptionPython Machine Learning By Example serves as a comprehensive gateway into the world of machine learning (ML).",
       "rate": "4.18",
-      "used": 0
+      "used": 0,
+      "stock": 2
     },
     {
       "id": 23,
@@ -259,7 +281,8 @@
       "image": "pythonAutomation.jpg",
       "description": "In Automate the Boring Stuff with Python, you’ll learn how to use Python to write programs that do in minutes what would take you hours to do by hand—no prior programming experience required. Once you’ve mastered the basics of programming, you’ll create Python programs that effortlessly perform useful and impressive feats of automation to search for text in a file or across multiple files and Create, update, move, and rename files and folders.",
       "rate": "4.5",
-      "used": 0
+      "used": 0,
+      "stock": 7
     },
     {
       "id": 24,
@@ -270,7 +293,8 @@
       "image": "LearnPython.jpg",
       "description": "In Learn Python 3 the Hard Way, you’ll learn Python by working through 52 brilliantly crafted exercises. Read them. Type their code precisely. (No copying and pasting!) Fix your mistakes. Watch the programs run. As you do, you’ll learn how a computer works; what good programs look like; and how to read, write, and think about code.It’ll be hard at first. But soon, you’ll just get it—and that will feel great! This course will reward you for every minute you put into it. Soon, you’ll know one of the world’s most powerful, popular programming languages. You’ll be a Python programmer.",
       "rate": "4.5",
-      "used": 0
+      "used": 0,
+      "stock": 6
     },
     {
       "id": 25,
@@ -281,7 +305,8 @@
       "image": "PythonTricks.jpg",
       "description": "With Python Tricks: The Book you’ll discover Python’s best practices and the power of beautiful & Pythonic code with simple examples and a step-by-step narrative. You'll get one step closer to mastering Python, so you can write beautiful and idiomatic code that comes to you naturally. Learning the ins and outs of Python is difficult—and with this book you'll be able to focus on the practical skills that really matter. Discover the “hidden gold” in Python’s standard library and start writing clean and Pythonic code today.",
       "rate": "4.5",
-      "used": 0
+      "used": 0,
+      "stock": 4
     }
   ]
 }
