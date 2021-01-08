@@ -2,7 +2,7 @@ $("#bookDetailsHeader").load("./navbar.html"); // include navbar on loading
 $("#bookDetailsFooter").load("./footer.html"); //include footer onloading
 
 (bookinfo = {}), (totalNumberOfItems = 0), (totalNumberOfWishList = 0);
-//localStorage.removeItem("cartItems");
+
 setTimeout(function () {
   $("#bodyDivId").show();
   $("#bookDetailsHeader").show();
