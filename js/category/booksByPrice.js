@@ -1,9 +1,6 @@
-
 $("#header").load("./navbar.html");
 $("#searchbar").load("./search.html");
 $("#footer").load("./footer.html");
-$("#sideBar").load("./sideBar.html");
-
 
 setTimeout(function () {
   $("#bodyDivId").show();
@@ -12,8 +9,11 @@ setTimeout(function () {
   $("#preLoader").hide();
 }, 300);
 
-
+var minPrice=cookie.getCookie("minPrice");
+var maxPrice=cookie.getCookie("maxPrice");
 var booksJsObj;
+
+var flag;
 
 $("document").ready(function () {
   var xhr = new XMLHttpRequest();
@@ -26,14 +26,20 @@ $("document").ready(function () {
         var booksObjKeys =  Object.keys(booksJsObj);
           
         for (var i = 0; i < Object.keys(booksJsObj).length; i++) {
+            flag=false;
             
-          var checkFirstCreation=true;
-          var CategDivData = createCategDiv(i, booksJsObj, checkFirstCreation);
-          var catBooksdivID=CategDivData[0]
-          
-          for (var j = 0; j < 4; j++) {
+          for (var j = 0; j < booksJsObj[Object.keys(booksJsObj)[i]].length && !flag ; j++){
               
-            createBooksDiv(i, j, booksJsObj, CategDivData);
+              if(booksJsObj[Object.keys(booksJsObj)[i]][j]["price"]>=minPrice
+                    && booksJsObj[Object.keys(booksJsObj)[i]][j]["price"] <=maxPrice){
+                  flag= true;
+                  var checkFirstCreation=true;
+                  var CategDivData = createCategDiv(i, Object.keys(booksJsObj), checkFirstCreation);
+                  var catBooksdivID=CategDivData[0];
+                  
+                  
+              }
+              
           }
         }
       }

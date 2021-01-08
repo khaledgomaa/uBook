@@ -79,7 +79,7 @@ function createBooksDiv(i, j, objectKeys, categData) {
 
   var bkimg = document.createElement("img");
   bkimg.setAttribute("class", "bookimg");
-  var imgId = "book" + (j + 1) + "img";
+  var imgId = "book" +i+j+ "img";
   bkimg.setAttribute("id", imgId);
   bkimg.src =
     "../../images/" + booksJsObj[Object.keys(booksJsObj)[i]][j]["image"];
@@ -97,6 +97,8 @@ function createBooksDiv(i, j, objectKeys, categData) {
   $("#" + imDivId).append("<a href=bookDetails.html id='" + anchId + "'></a>");
   document.getElementById(anchId).append(bkimg);
 
+  applyImgHover(imgId);
+    
   var authLabel = document.createElement("label");
   authLabel.setAttribute("class", "AuthLab");
   authLabel.innerHTML = booksJsObj[Object.keys(booksJsObj)[i]][j]["author"];
@@ -107,4 +109,12 @@ function createBooksDiv(i, j, objectKeys, categData) {
   priceLabel.innerHTML =
     "$" + booksJsObj[Object.keys(booksJsObj)[i]][j]["price"];
   document.getElementById(imDivId).append(priceLabel);
+    
+    
+}
+
+function applyImgHover(imgId){
+    $("#"+imgId).hover(function () {
+      $(this).toggleClass("classWithShadow");
+    }); 
 }

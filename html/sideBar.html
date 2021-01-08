@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+    <head>
+        <title>sideBar</title>
+        <link rel="stylesheet" href="../css/sideBar/sideBar.css" type="text/css" />
+        <script src="../js/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </head>
+    <body class="sideBarBody">
+        <div>
+            
+            <div id="sideCategDiv"> 
+                <div class="sectionLab"> <label> <b>Categories</b> </label> </div>
+            </div>
+            
+            <div id="priceDiv">
+                <div class="sectionLab"> <label > <b>Price</b> </label> </div>
+                <div id="fromDiv">
+                    <label>From</label>
+                    <br/>
+                    <input type="text" id="fromtxt"value="" >
+                </div>
+                
+                <div id="toDiv">
+                    <label>To</label>
+                    <br/>
+                    <input type="text" id="totxt" value="" >
+                </div>
+                
+                <div id="slider-range">
+                </div>
+                
+            </div>
+            
+            
+        </div>
+        
+         <!-- <script>
+  $( function() {
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [ 75, 300 ],
+      slide: function( event, ui ) {
+        $( "#fromtxt" ).val(ui.values[ 0 ]);
+         $( "#totxt" ).val(ui.values[ 1 ]); 
+      }
+    });
+    $( "#fromtxt" ).val($( "#slider-range" ).slider( "values", 0 ));
+    $( "#totxt" ).val($( "#slider-range" ).slider( "values", 1 ));
+    
+  } );
+  </script>  -->
+        
+        <script src="../js/sideBar/sideBar.js"></script>
+        <script src="../js/shared/cookieFunction.js"></script>
+        
+    </body>
+</html>

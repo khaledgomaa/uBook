@@ -2,8 +2,6 @@
 $("#header").load("./navbar.html");
 $("#searchbar").load("./search.html");
 $("#footer").load("./footer.html");
-$("#sideBar").load("./sideBar.html");
-
 
 setTimeout(function () {
   $("#bodyDivId").show();
@@ -14,6 +12,8 @@ setTimeout(function () {
 
 
 var booksJsObj;
+var selectCateg=cookie.getCookie("selectedCategory");
+
 
 $("document").ready(function () {
   var xhr = new XMLHttpRequest();
@@ -27,17 +27,20 @@ $("document").ready(function () {
           
         for (var i = 0; i < Object.keys(booksJsObj).length; i++) {
             
-          var checkFirstCreation=true;
-          var CategDivData = createCategDiv(i, booksJsObj, checkFirstCreation);
-          var catBooksdivID=CategDivData[0]
-          
-          for (var j = 0; j < 4; j++) {
-              
-            createBooksDiv(i, j, booksJsObj, CategDivData);
+          if(Object.keys(booksJsObj)[i]==selectCateg)
+          {   
+            
+              var checkFirstCreation=true;
+              var CategDivData = createCategDiv(i, Object.keys(booksJsObj), checkFirstCreation);
+              var catBooksdivID=CategDivData[0]
+
+              for (var j = 0; j < 4; j++) {
+
+                createBooksDiv(i, j, Object.keys(booksJsObj), CategDivData);
+              }
           }
         }
       }
     };
   xhr.send("");
 });
-

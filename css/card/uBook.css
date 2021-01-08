@@ -21,10 +21,20 @@
   top: 35%;
   left: 43%;
 }
+/*#containerDiv{
+    display: flex;
+}*/
 
 #footer {
   display: none;
 }
+#sideBar{
+    margin-left: 1%;
+    /*display: table-cell;*/
+    position: fixed;
+    margin-right: 50%;
+}
+
 
 #bookDetailsFooter {
   display: none;
@@ -60,8 +70,11 @@ a:visited {
 
 div.categories {
   margin-top: 60px;
-  text-align: center;
-  margin-left: 80px;
+  text-align: right;
+  margin-left: 28%;
+    /*float: right;*/
+    /*display: table-cell;*/
+    
 }
 .bkdiv {
   display: table;
