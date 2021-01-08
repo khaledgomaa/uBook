@@ -1,0 +1,43 @@
+.sideBarBody {
+  font-family: monospace;
+  font-size: 15pt;
+  margin-left: 1%;
+}
+
+.sectionLab {
+  margin-bottom: 1%;
+  margin-top: 2%;
+}
+
+#priceDiv {
+  margin-top: 4%;
+}
+
+.categbtn {
+  margin-bottom: 1%;
+  width: 160px;
+  height: 40px;
+  background-color: #fb9a33;
+  font-size: 12pt;
+  border-radius: 12px;
+  color: dimgrey;
+  border: 3px solid darkorange;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+#fromtxt,
+#totxt {
+  height: 25px;
+  width: 50%;
+}
+
+#toDiv,
+#fromDiv {
+  display: table-cell;
+}
+
+.slider {
+  margin-bottom: 1%;
+  margin-top: 1%;
+}

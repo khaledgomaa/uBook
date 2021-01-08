@@ -2,7 +2,7 @@ $("#bookDetailsHeader").load("./navbar.html"); // include navbar on loading
 $("#bookDetailsFooter").load("./footer.html"); //include footer onloading
 
 (bookinfo = {}), (totalNumberOfItems = 0), (totalNumberOfWishList = 0);
-//localStorage.removeItem("cartItems");
+
 setTimeout(function () {
   $("#bodyDivId").show();
   $("#bookDetailsHeader").show();
@@ -136,7 +136,11 @@ function updateCurrentQuantity(num) {
                 $(".addWishBtn").show();
               }
               $(".secondTime").hide();
-              storedItems[idx].items.splice(x, 1);
+              if (storedItems[idx].items.length > 1) {
+                storedItems[idx].items.splice(x);
+              } else {
+                storedItems.splice(index);
+              }
             } else {
               storedItems[idx].items[x].qty = itemQuan;
               storedItems[idx].items[x].stock = Math.abs(
