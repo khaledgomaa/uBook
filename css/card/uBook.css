@@ -61,7 +61,7 @@ a:visited {
 div.categories {
   margin-top: 60px;
   text-align: center;
-  margin-left: 80px;
+  margin-left: 260px;
 }
 .bkdiv {
   display: table;
@@ -271,4 +271,11 @@ div.categories {
 .rightArrow {
   float: left;
   min-height: 190px;
+  max-height: 190px;
+  width: 200px;
+}
+
+#sideBar {
+  position: fixed;
+  display: none;
 }

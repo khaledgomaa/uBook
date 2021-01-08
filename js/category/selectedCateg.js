@@ -1,17 +1,19 @@
+
 $("#header").load("./navbar.html");
 $("#searchbar").load("./search.html");
 $("#footer").load("./footer.html");
-$("#sideBar").load("./sideBar.html");
 
 setTimeout(function () {
   $("#bodyDivId").show();
   $("#header").show();
   $("#footer").show();
-  $("#sideBar").show();
   $("#preLoader").hide();
 }, 300);
 
+
 var booksJsObj;
+var selectCateg=cookie.getCookie("selectedCategory");
+
 
 $("document").ready(function () {
   var xhr = new XMLHttpRequest();
@@ -21,18 +23,24 @@ $("document").ready(function () {
       if (xhr.status >= 200 && xhr.status <= 300) {
         booksJsObj = JSON.parse(xhr.responseText);
 
-        var booksObjKeys = Object.keys(booksJsObj);
-
+        var booksObjKeys =  Object.keys(booksJsObj);
+          
         for (var i = 0; i < Object.keys(booksJsObj).length; i++) {
-          var checkFirstCreation = true;
-          var CategDivData = createCategDiv(i, booksJsObj, checkFirstCreation);
-          var catBooksdivID = CategDivData[0];
+            
+          if(Object.keys(booksJsObj)[i]==selectCateg)
+          {   
+            
+              var checkFirstCreation=true;
+              var CategDivData = createCategDiv(i, Object.keys(booksJsObj), checkFirstCreation);
+              var catBooksdivID=CategDivData[0]
 
-          for (var j = 0; j < 3; j++) {
-            createBooksDiv(i, j, booksJsObj, CategDivData);
+              for (var j = 0; j < 4; j++) {
+
+                createBooksDiv(i, j, Object.keys(booksJsObj), CategDivData);
+              }
           }
         }
       }
-  };
+    };
   xhr.send("");
 });
