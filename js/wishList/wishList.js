@@ -4,6 +4,7 @@ $("#cartfooter").load("./footer.html");
 //Getting user data
 var userEmail = cookie.getCookie("useremail");
 var allCartItems = JSON.parse(localStorage.getItem("cartItems"));
+
 var allWishList = JSON.parse(localStorage.getItem("wishListCart"));
 var wishitems = findItem(allWishList, userEmail);
 
@@ -101,21 +102,27 @@ function createImageTag(column, src, width, height) {
 }
 
 function createAddToCartButton(column, id) {
+  debugger;
   column.innerHTML =
     "<div class='addTomyCart' id =add" +
     id +
     ">" +
     "<i class='fa fa-cart-plus'></i></div>";
-  document.getElementById("add" + id).addEventListener("click", function () {
-    var addedItemIndex = findItemIndex(wishitems.items, id);
-    var userIndex = findItemIndex(allWishList, userEmail);
-    addItemTocartItems(addedItemIndex, userIndex);
-    removeItemFromWishList(id, addedItemIndex);
-    $(".numberlogo").text(+$(".numberlogo").text() + 1);
-    checkCart();
-    console.log(JSON.parse(localStorage.getItem("wishListCart")));
-    console.log(JSON.parse(localStorage.getItem("cartItems")));
-  });
+  if (checkStockForItem(id) == 0) {
+    $("#add" + id).css("color", "gray");
+  } else {
+    $("#add" + id).prop("disabled", false);
+    document.getElementById("add" + id).addEventListener("click", function () {
+      var addedItemIndex = findItemIndex(wishitems.items, id);
+      var userIndex = findItemIndex(allWishList, userEmail);
+      addItemTocartItems(addedItemIndex, userIndex);
+      removeItemFromWishList(id, addedItemIndex);
+      $(".numberlogo").text(+$(".numberlogo").text() + 1);
+      checkCart();
+      console.log(JSON.parse(localStorage.getItem("wishListCart")));
+      console.log(JSON.parse(localStorage.getItem("cartItems")));
+    });
+  }
 }
 
 function createRemoveItemFromWishList(column, id) {
@@ -124,9 +131,11 @@ function createRemoveItemFromWishList(column, id) {
     id +
     ">" +
     "<i class='fa fa-trash'></i></div>";
+
   document.getElementById("del" + id).addEventListener("click", function () {
     removeItemFromWishList(id, findItemIndex(wishitems.items, id));
     checkCart();
+
     console.log(JSON.parse(localStorage.getItem("wishListCart")));
     console.log(JSON.parse(localStorage.getItem("cartItems")));
   });
@@ -136,10 +145,15 @@ function removeItemFromWishList(id, addedItemIndex) {
   var userIndex = findItemIndex(allWishList, userEmail);
   wishitems.items.splice(addedItemIndex, 1);
   allWishList = JSON.parse(localStorage.getItem("wishListCart"));
-  allWishList[userIndex].items.splice(
-    findItemIndex(allWishList[userIndex].items, id),
-    1
-  );
+  if (allWishList[userIndex].items.length > 1) {
+    allWishList[userIndex].items.splice(
+      findItemIndex(allWishList[userIndex].items, id),
+      1
+    );
+  } else {
+    allWishList.splice(userIndex);
+  }
+
   document.getElementById("tr" + id).remove();
   localStorage.setItem("wishListCart", JSON.stringify(allWishList));
   $(".numberwish").text(+$(".numberwish").text() - 1);
@@ -148,12 +162,19 @@ function removeItemFromWishList(id, addedItemIndex) {
 function addItemTocartItems(index) {
   var userIndex = findItemIndex(allCartItems, userEmail);
   var newItem = wishitems.items[index];
-  var addFirstCart = [];
-  if (userIndex !== undefined) {
+  var curStock = +checkStockForItem(newItem.id);
+  if (curStock > -1) {
+    newItem.stock = +checkStockForItem(newItem.id) - 1;
+  } else {
+    newItem.stock--;
+  }
+
+  if (userIndex !== -1) {
     allCartItems[findItemIndex(allCartItems, userEmail)].items.push(newItem);
     localStorage.setItem("cartItems", JSON.stringify(allCartItems));
   } else {
-    addFirstCart.push({
+    if (allCartItems == null) allCartItems = [];
+    allCartItems.push({
       // add new object to storage
       useremail: userEmail,
       items: [
@@ -167,8 +188,9 @@ function addItemTocartItems(index) {
         },
       ],
     });
+    updateStockForItemInCartItems(allCartItems, newItem.id, newItem.stock);
 
-    localStorage.setItem("cartItems", JSON.stringify(addFirstCart));
+    localStorage.setItem("cartItems", JSON.stringify(allCartItems));
   }
 }
 
@@ -179,4 +201,14 @@ function computeTotalItems() {
   }
 
   return total;
+}
+
+function checkStockForItem(id) {
+  for (var i in allCartItems) {
+    var index = findItemIndex(allCartItems[i].items, id);
+    if (index > -1) {
+      return allCartItems[i].items[index].stock;
+    }
+  }
+  return -1;
 }

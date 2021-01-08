@@ -83,7 +83,7 @@ function createItem(item, tableBody) {
   column = createColumn(row);
   column.style.maxWidth = "75px";
   column.style.minWidth = "75px";
-  createInputTag(column, item.qty, 1, item.id, item.stock);
+  createInputTag(column, item.qty, 1, item.id, item.stock + item.qty);
   //price attribute
   column = createColumn(row);
   column.innerHTML = item.price + "$";
@@ -137,6 +137,12 @@ function createInputTag(column, value, min, id, stockAvailable) {
     updateTotalPriceForItem(id, inputFeild.value);
     updateCartItem(id, +inputFeild.value);
     updateTotal(computeTotalItems(), computeTotalPrice());
+    console.log(+$("#qty" + id).attr("max"));
+    updateStockForItemInCartItems(
+      allCartItems,
+      id,
+      +$("#qty" + id).attr("max") - inputFeild.value
+    );
   });
   inputFeild.addEventListener("keypress", function (e) {
     e.preventDefault();
@@ -164,15 +170,22 @@ function createDeleteButton(column, id) {
     cartitem.items.splice(findItemIndex(cartitem.items, id), 1);
     var userIndex = findItemIndex(allCartItems, userEmail);
     allCartItems = JSON.parse(localStorage.getItem("cartItems"));
-    allCartItems[userIndex].items.splice(
-      findItemIndex(allCartItems[userIndex].items, id),
-      1
-    );
+    var itemIndex = findItemIndex(allCartItems[userIndex].items, id);
+    var newStock =
+      allCartItems[userIndex].items[itemIndex].stock +
+      allCartItems[userIndex].items[itemIndex].qty;
+    if (allCartItems[userIndex].items.length > 1) {
+      allCartItems[userIndex].items.splice(itemIndex, id);
+    } else {
+      allCartItems.splice(userIndex);
+    }
+
     localStorage.setItem("cartItems", JSON.stringify(allCartItems));
+    console.log(allCartItems);
     document.getElementById("tr" + id).remove();
     updateTotal(computeTotalItems(), computeTotalPrice());
+    updateStockForItemInCartItems(allCartItems, id, newStock);
     checkCart();
-    console.log(JSON.parse(localStorage.getItem("cartItems")));
   });
 }
 

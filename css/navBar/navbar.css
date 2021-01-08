@@ -84,16 +84,16 @@
   margin-top: 22%;
 }
 .numberlogo {
-  position: absolute;
-  top: 20%;
-  left: 95.8%;
+  position: relative;
+  top: -41%;
+  left: -61.2%;
   z-index: 2;
 }
 
 .numberwish {
-  position: absolute;
-  top: 40%;
-  left: 90.3%;
+  position: relative;
+  top: -20%;
+  left: -39.7%;
   z-index: 2;
 }
 
@@ -110,9 +110,9 @@
   background-color: coral;
   color: white;
 }
-#profile{
+#profile {
   display: none;
 }
-#profile img{
+#profile img {
   border-radius: 50%;
 }

@@ -24,4 +24,16 @@ function findItemIndex(cartList, value) {
       }
     }
   }
+  return -1;
+}
+
+function updateStockForItemInCartItems(allCartItems, id, numInStock) {
+  for (var i in allCartItems) {
+    var index = findItemIndex(allCartItems[i].items, id);
+    if (index > -1) {
+      allCartItems[i].items[index].stock = numInStock;
+    }
+  }
+  localStorage.setItem("cartItems", JSON.stringify(allCartItems));
+  console.log(allCartItems);
 }
