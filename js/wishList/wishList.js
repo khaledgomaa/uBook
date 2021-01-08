@@ -102,21 +102,27 @@ function createImageTag(column, src, width, height) {
 }
 
 function createAddToCartButton(column, id) {
+  debugger;
   column.innerHTML =
     "<div class='addTomyCart' id =add" +
     id +
     ">" +
     "<i class='fa fa-cart-plus'></i></div>";
-  document.getElementById("add" + id).addEventListener("click", function () {
-    var addedItemIndex = findItemIndex(wishitems.items, id);
-    var userIndex = findItemIndex(allWishList, userEmail);
-    addItemTocartItems(addedItemIndex, userIndex);
-    removeItemFromWishList(id, addedItemIndex);
-    $(".numberlogo").text(+$(".numberlogo").text() + 1);
-    checkCart();
-    console.log(JSON.parse(localStorage.getItem("wishListCart")));
-    console.log(JSON.parse(localStorage.getItem("cartItems")));
-  });
+  if (checkStockForItem(id) == 0) {
+    $("#add" + id).css("color", "gray");
+  } else {
+    $("#add" + id).prop("disabled", false);
+    document.getElementById("add" + id).addEventListener("click", function () {
+      var addedItemIndex = findItemIndex(wishitems.items, id);
+      var userIndex = findItemIndex(allWishList, userEmail);
+      addItemTocartItems(addedItemIndex, userIndex);
+      removeItemFromWishList(id, addedItemIndex);
+      $(".numberlogo").text(+$(".numberlogo").text() + 1);
+      checkCart();
+      console.log(JSON.parse(localStorage.getItem("wishListCart")));
+      console.log(JSON.parse(localStorage.getItem("cartItems")));
+    });
+  }
 }
 
 function createRemoveItemFromWishList(column, id) {
@@ -125,11 +131,7 @@ function createRemoveItemFromWishList(column, id) {
     id +
     ">" +
     "<i class='fa fa-trash'></i></div>";
-  if (checkStockForItem(id)) {
-    $("#del" + id).prop("disabled", false);
-  } else {
-    $("#del" + id).prop("disabled", true);
-  }
+
   document.getElementById("del" + id).addEventListener("click", function () {
     removeItemFromWishList(id, findItemIndex(wishitems.items, id));
     checkCart();

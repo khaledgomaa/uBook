@@ -47,7 +47,7 @@ xhr.onreadystatechange = function () {
         stockNum > -1 ? stockNum : bookinfo.stock;
 
       if (getCurrentStock() == 0) {
-        $(".addCartButton").hide();
+        $(".addCartBtn").hide();
       }
 
       setBookRate(bookinfo.rate);
@@ -227,6 +227,9 @@ function addToWishList() {
   ///if the current user doesn't have wishes before
 
   $(".addWishBtn").hide();
+  if (wishListitems == null) {
+    wishListitems = [];
+  }
   wishListitems.push({
     // add new object to storage
     useremail: currentUser,
@@ -276,6 +279,9 @@ function addItemsToCart() {
     }
   }
   removeFromWishList();
+  if (storedItems == null) {
+    storedItems = [];
+  }
   storedItems.push({
     // add new object to storage
     useremail: currentUser,
