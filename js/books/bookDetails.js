@@ -2,7 +2,7 @@ $("#bookDetailsHeader").load("./navbar.html"); // include navbar on loading
 $("#bookDetailsFooter").load("./footer.html"); //include footer onloading
 
 (bookinfo = {}), (totalNumberOfItems = 0), (totalNumberOfWishList = 0);
-
+//localStorage.removeItem("cartItems");
 setTimeout(function () {
   $("#bodyDivId").show();
   $("#bookDetailsHeader").show();
@@ -10,10 +10,15 @@ setTimeout(function () {
   $("#preLoader").hide();
 }, 300);
 var bookId = cookie.getCookie("selectedBook");
-
 var currentUser = cookie.getCookie("useremail");
 var storedItems = JSON.parse(localStorage.getItem("cartItems"));
+if (storedItems == null) {
+  storedItems = [];
+}
 var wishListitems = JSON.parse(localStorage.getItem("wishListCart"));
+if (wishListitems == null) {
+  wishListitems = [];
+}
 /* Start XML HTTP REQUEST to get the data file*/
 
 var xhr = new XMLHttpRequest(); // create request
@@ -37,8 +42,14 @@ xhr.onreadystatechange = function () {
         bookinfo.author;
       document.getElementsByClassName("bookPrice")[0].innerHTML =
         bookinfo.price;
+      var stockNum = getAvailableInStock(bookinfo.id);
       document.getElementsByClassName("bookStock")[0].innerHTML =
-        bookinfo.stock;
+        stockNum > -1 ? stockNum : bookinfo.stock;
+
+      if (getCurrentStock() == 0) {
+        $(".addCartButton").hide();
+      }
+
       setBookRate(bookinfo.rate);
       $(".bookImage").attr("src", "../images/" + bookinfo.image);
 
@@ -107,7 +118,7 @@ document.getElementsByClassName("minus")[0].onclick = function () {
 function updateCurrentQuantity(num) {
   // update the cart according to the current user and his/her cart
   //debugger;
-  if (currentUser == "" || currentUser == null || currentUser == undefined)
+  if (currentUser == "Not Found")
     document.getElementsByClassName("numberlogo")[0].innerHTML = 0;
   else {
     for (idx in storedItems) {
@@ -115,7 +126,7 @@ function updateCurrentQuantity(num) {
         for (x in storedItems[idx].items) {
           if (
             storedItems[idx].items[x].id == bookinfo.id &&
-            +storedItems[idx].items[x].stock != 0
+            +storedItems[idx].items[x].stock >= 0
           ) {
             var itemQuan = storedItems[idx].items[x].qty;
             itemQuan += num;
@@ -136,6 +147,14 @@ function updateCurrentQuantity(num) {
               );
             }
             totalNumberOfItems += num;
+            var newStock = getCurrentStock() - num;
+            updateCurrentStock(newStock);
+            updateStockForItemInCartItems(storedItems, bookinfo.id, newStock);
+            if (newStock === 0) {
+              $(".plus").prop("disabled", true);
+            } else {
+              $(".plus").prop("disabled", false);
+            }
             document.getElementsByClassName(
               "numberlogo"
             )[0].innerHTML = totalNumberOfItems;
@@ -206,9 +225,9 @@ function addToWishList() {
     }
   }
   ///if the current user doesn't have wishes before
-  var addNewWishList = [];
+
   $(".addWishBtn").hide();
-  addNewWishList.push({
+  wishListitems.push({
     // add new object to storage
     useremail: currentUser,
     items: [
@@ -224,12 +243,11 @@ function addToWishList() {
   });
   //document.getElementsByClassName("numberlogo")[0].innerHTML = 1;
   $(".numberwish").text(+$(".numberwish").text() + 1);
-  localStorage.setItem("wishListCart", JSON.stringify(addNewWishList));
+  localStorage.setItem("wishListCart", JSON.stringify(wishListitems));
   return;
 }
 
 function addItemsToCart() {
-  debugger;
   for (idx in storedItems) {
     if (storedItems[idx].useremail == currentUser) {
       // if user wants to add new items to cart
@@ -246,6 +264,9 @@ function addItemsToCart() {
         stock: bookinfo.stock,
       });
       totalNumberOfItems += 1; // display number of items
+      var newStockNum = getCurrentStock() - 1;
+      updateCurrentStock(newStockNum);
+      updateStockForItemInCartItems(storedItems, bookinfo.id, newStockNum);
       document.getElementsByClassName(
         "numberlogo"
       )[0].innerHTML = totalNumberOfItems;
@@ -269,10 +290,14 @@ function addItemsToCart() {
       },
     ],
   });
+
   totalNumberOfItems += 1;
+  var newStockNum = getCurrentStock() - 1;
+  updateCurrentStock(newStockNum);
+  updateStockForItemInCartItems(storedItems, bookinfo.id, newStockNum);
   document.getElementsByClassName("numberlogo")[0].innerHTML = 1;
   $(".selectedItems").text("(1) in cart");
-  localStorage.setItem("userCart", JSON.stringify(storedItems));
+  localStorage.setItem("cartItems", JSON.stringify(storedItems));
   $(".addCartBtn").hide(); // if it's the first time for user to add elements
   $(".addWishBtn").hide();
   $(".secondTime").show();
@@ -283,4 +308,22 @@ function setBookRate(num) {
   for (var x = 0; x < num; x++) {
     bookRateStars[x].classList.add("checked");
   }
+}
+
+function getAvailableInStock(id) {
+  for (var i in storedItems) {
+    var index = findItemIndex(storedItems[i].items, id);
+    if (index > -1) {
+      return storedItems[i].items[index].stock;
+    }
+  }
+  return -1;
+}
+
+function getCurrentStock() {
+  return +$(".bookStock").text();
+}
+
+function updateCurrentStock(num) {
+  $(".bookStock").text(num);
 }
