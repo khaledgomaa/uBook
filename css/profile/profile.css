@@ -3,7 +3,7 @@
   margin: 0px;
 }
 .profile-container {
-  display: flex;
+  display: none;
   justify-content: center;
 }
 .profile-container-info {
@@ -45,7 +45,7 @@
   outline: none;
   color: black;
 
-  width: 900px;
+  width: 370px;
 }
 .edit-button {
   width: 150px;
@@ -84,4 +84,14 @@
 
 .change-Width {
   min-width: max-content;
+}
+
+#preLoader {
+  position: absolute;
+  top: 35%;
+  left: 43%;
+}
+.profile-footer,
+.profile-header {
+  display: none;
 }

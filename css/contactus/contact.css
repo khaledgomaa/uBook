@@ -100,7 +100,8 @@
 }
 
 .Islam {
-  margin-right: -6.8%;
+  position: relative;
+  margin-right: -7.8%;
   color: red;
   display: none;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -114,4 +115,8 @@
   position: absolute;
   top: 35%;
   left: 43%;
+}
+
+.disinline {
+  display: inline;
 }
