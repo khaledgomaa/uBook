@@ -255,7 +255,6 @@ function addToWishList() {
 }
 
 function addItemsToCart() {
-  debugger;
   for (idx in storedItems) {
     if (storedItems[idx].useremail == currentUser) {
       // if user wants to add new items to cart
