@@ -136,7 +136,11 @@ function updateCurrentQuantity(num) {
                 $(".addWishBtn").show();
               }
               $(".secondTime").hide();
-              storedItems[idx].items.splice(x, 1);
+              if (storedItems[idx].items.length > 1) {
+                storedItems[idx].items.splice(x);
+              } else {
+                storedItems.splice(index);
+              }
             } else {
               storedItems[idx].items[x].qty = itemQuan;
               storedItems[idx].items[x].stock = Math.abs(
@@ -251,6 +255,7 @@ function addToWishList() {
 }
 
 function addItemsToCart() {
+  debugger;
   for (idx in storedItems) {
     if (storedItems[idx].useremail == currentUser) {
       // if user wants to add new items to cart
