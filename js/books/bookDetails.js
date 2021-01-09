@@ -68,6 +68,11 @@ xhr.onreadystatechange = function () {
           $(".addCartBtn").hide();
           $(".addWishBtn").hide();
           $(".secondTime").show();
+          if (bookItem.stock == 0) {
+            $(".plus").prop("disabled", true);
+          } else {
+            $(".plus").prop("disabled", false);
+          }
         } else {
           bookItem = checkBookInList(wishListitems, bookinfo.id);
           if (bookItem !== undefined) {
