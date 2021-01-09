@@ -10,7 +10,10 @@ $(".submitForm").click(function () {
   checkoutCartItems();
   displayOrderFinished();
   checkCart();
-  console.log(JSON.parse(localStorage.getItem("cartItems")));
+});
+
+$(".currency").on("change", function () {
+  changeCurrency(this.value);
 });
 
 onload = function () {
@@ -21,6 +24,7 @@ onload = function () {
   setTimeout(function () {
     $("#header").show();
     $("#cartContainer").show();
+    $(".currency").show();
     $("#preLoader").hide();
   }, 300);
 };
@@ -62,7 +66,7 @@ function displayCartItems() {
 
     row = createRow(tableBody);
     row.setAttribute("id", "totalPrice");
-    addTotalElement("Total Price", computeTotalPrice() + "$", row);
+    addTotalElement("Total Price", computeTotalPrice(), row);
   }
 }
 
@@ -86,12 +90,12 @@ function createItem(item, tableBody) {
   createInputTag(column, item.qty, 1, item.id, item.stock + item.qty);
   //price attribute
   column = createColumn(row);
-  column.innerHTML = item.price + "$";
+  column.innerHTML = item.price;
   column.style.maxWidth = "70px";
   column.style.minWidth = "70px";
   //total Price attribute
   column = createColumn(row);
-  column.innerHTML = item.qty * +item.price.toFixed(2) + "$";
+  column.innerHTML = (item.qty * +item.price).toFixed(2);
   column.style.maxWidth = "100px";
   column.style.minWidth = "100px";
 
@@ -137,7 +141,6 @@ function createInputTag(column, value, min, id, stockAvailable) {
     updateTotalPriceForItem(id, inputFeild.value);
     updateCartItem(id, +inputFeild.value);
     updateTotal(computeTotalItems(), computeTotalPrice());
-    console.log(+$("#qty" + id).attr("max"));
     updateStockForItemInCartItems(
       allCartItems,
       id,
@@ -181,7 +184,6 @@ function createDeleteButton(column, id) {
     }
 
     localStorage.setItem("cartItems", JSON.stringify(allCartItems));
-    console.log(allCartItems);
     document.getElementById("tr" + id).remove();
     updateTotal(computeTotalItems(), computeTotalPrice());
     updateStockForItemInCartItems(allCartItems, id, newStock);
@@ -191,9 +193,10 @@ function createDeleteButton(column, id) {
 
 function updateTotalPriceForItem(rowNum, newValue) {
   var row = document.getElementById("tr" + rowNum);
-  var curPrice = row.getElementsByTagName("td")[3].innerHTML.replace("$", "");
-  row.getElementsByTagName("td")[4].innerHTML =
-    +(+newValue * +curPrice).toFixed(2) + "$";
+  var curPrice = row.getElementsByTagName("td")[3].innerHTML;
+  row.getElementsByTagName("td")[4].innerHTML = +(
+    +newValue * +curPrice
+  ).toFixed(2);
 }
 
 function computeTotalItems() {
@@ -207,8 +210,9 @@ function computeTotalItems() {
 
 function computeTotalPrice() {
   var total = 0;
-  for (var i = 0; i < cartitem.items.length; i++) {
-    total += cartitem.items[i].qty * cartitem.items[i].price;
+  var allRows = document.getElementById("items").getElementsByTagName("tr");
+  for (var i = 0; i < allRows.length - 2; i++) {
+    total += +allRows[i].getElementsByTagName("td")[4].innerHTML;
   }
 
   return +total.toFixed(2);
@@ -220,7 +224,7 @@ function updateTotal(totalItems, totalPrice) {
     .getElementsByTagName("td")[1].innerHTML = totalItems;
   document
     .getElementById("totalPrice")
-    .getElementsByTagName("td")[1].innerHTML = totalPrice.toFixed(2) + "$";
+    .getElementsByTagName("td")[1].innerHTML = totalPrice.toFixed(2);
   $(".numberlogo").text(totalItems);
 }
 
@@ -228,7 +232,6 @@ function updateCartItem(id, value) {
   cartitem.items[findItemIndex(cartitem.items, id)].qty = value;
   allCartItems[findItemIndex(allCartItems, userEmail)].items = cartitem.items;
   localStorage.setItem("cartItems", JSON.stringify(allCartItems));
-  console.log(JSON.parse(localStorage.getItem("cartItems")));
 }
 
 function checkoutCartItems() {
@@ -242,4 +245,58 @@ function displayOrderFinished() {
   $("#cartImage").attr("src", "../images/checkout.png");
   document.getElementById("message").innerHTML =
     "Thank you , You have successfully purchased the items";
+}
+
+function changeCurrency(currency) {
+  var allRows = document.getElementById("items").getElementsByTagName("tr");
+  if (currency == "EGP") {
+    convertCurrencyRequest("USD", "EGP", allRows);
+  } else {
+    convertCurrencyRequest("EGP", "USD", allRows);
+  }
+  changePriceHeader(currency);
+}
+
+function convertPricesToAnotherCurrency(value, allRows) {
+  var total = 0;
+  for (var i = 0; i < allRows.length - 2; i++) {
+    var oldValue = allRows[i].getElementsByTagName("td")[3].innerHTML;
+    var newPrice = (+oldValue * +value).toFixed(2);
+    allRows[i].getElementsByTagName("td")[3].innerHTML = newPrice;
+    var currentQuantity = allRows[i]
+      .getElementsByTagName("td")[2]
+      .getElementsByTagName("input")[0].value;
+    total += +currentQuantity * newPrice;
+    allRows[i].getElementsByTagName("td")[4].innerHTML = (
+      +currentQuantity * newPrice
+    ).toFixed(2);
+  }
+  allRows[allRows.length - 1].getElementsByTagName(
+    "td"
+  )[1].innerHTML = total.toFixed(2);
+}
+
+function convertCurrencyRequest(from, to, allRows) {
+  $.ajax({
+    type: "GET",
+    url:
+      "https://free.currconv.com/api/v7/convert?q=" +
+      from +
+      "_" +
+      to +
+      "&compact=ultra&apiKey=614ed387ee809f1a9ff1",
+    dataType: "json",
+    jsonp: false,
+    cache: true,
+    success: function (resp) {
+      convertPricesToAnotherCurrency(resp[from + "_" + to], allRows, to);
+    },
+  });
+}
+
+function changePriceHeader(currency) {
+  document
+    .getElementById("theadItems")
+    .getElementsByTagName("tr")[0]
+    .getElementsByTagName("th")[3].innerHTML = "price / " + currency;
 }

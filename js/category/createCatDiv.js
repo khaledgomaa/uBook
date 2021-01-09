@@ -116,6 +116,7 @@ function createBooksDiv(i, j, objectKeys, categData) {
 }
 
 function applyImgHover(imgId) {
+  
   $("#" + imgId).hover(function () {
     $(this).toggleClass("classWithShadow");
   });

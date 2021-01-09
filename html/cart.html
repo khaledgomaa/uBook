@@ -29,12 +29,12 @@
 
       <div id="tableCart">
         <table id="cart" class="cart">
-          <thead>
+          <thead id="theadItems">
             <tr>
               <th>Product Image</th>
               <th>Title</th>
               <th>Quantity</th>
-              <th>Price</th>
+              <th>Price / $</th>
               <th>Total</th>
               <th></th>
             </tr>
@@ -42,6 +42,10 @@
           <tbody id="items"></tbody>
         </table>
         <button type="submit" class="submitForm">Checkout</button>
+        <select class="currency">
+          <option>USD</option>
+          <option>EGP</option>
+        </select>
       </div>
       <div id="cartfooter"></div>
     </div>

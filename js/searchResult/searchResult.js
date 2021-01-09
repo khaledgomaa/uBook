@@ -1,4 +1,5 @@
 onload = function () {
+  cookie.setCookie("selected", "searchResult");
   $("#SearchResultNavBar").load("./navbar.html");
   $("#searchFooter").load("footer.html");
 
@@ -41,13 +42,11 @@ onload = function () {
       if (title.includes(keyWord)) searchResult.push(books[b]);
     }
     display();
-    console.log(searchResult);
   };
 
   let display = () => {
     for (var i = 0; i < searchResult.length; i++) {
       let book = searchResult[i];
-      console.log("___", searchResult[i]);
       $(".books-display").append(
         "<div class=cell id=" +
           book.id +
@@ -68,7 +67,6 @@ onload = function () {
       .getElementById(bookId.toString())
       .addEventListener("click", function () {
         cookie.setCookie("selectedBook", bookId);
-        console.log(bookId);
       });
   }
 };
