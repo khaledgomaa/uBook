@@ -11,6 +11,18 @@ setTimeout(function () {
   $("#preLoader").hide();
 }, 300);
 
+$(window).scroll(function (event) {
+  if (
+    $(window).scrollTop() + $(window).height() >=
+    $(document).height() - 300
+  ) {
+    $("#sideBar").css("visibility", "hidden");
+  } else {
+    $("#sideBar").css("visibility", "visible");
+  }
+  // Do something
+});
+
 var booksJsObj;
 
 $("document").ready(function () {
