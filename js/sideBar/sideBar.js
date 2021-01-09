@@ -15,7 +15,16 @@ $("document").ready(function () {
         createSlider();
       }
   };
-  
+
+  // scrolling back to top
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > 300) $("#up").css("display", "block");
+    else $("#up").css("display", "none");
+  });
+  $("#up").click(function () {
+    $("html, body").animate({ scrollTop: 0 });
+  });
+
 });
 
 function createCategoriesContainer() {
@@ -145,7 +154,7 @@ function displayAllResultSearch() {
       imageCreation.setAttribute("src", "../images/" + book.image);
       imageCreation.setAttribute("width", "300");
       imageCreation.setAttribute("height", "350");
-  
+      imageCreation.setAttribute("class","searchBookImage")
       anchorCreation.append(imageCreation);
       bookDiv.append(anchorCreation);
   
