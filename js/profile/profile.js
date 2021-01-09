@@ -1,4 +1,5 @@
 onload = function () {
+  cookie.setCookie("selected", "profile");
   $(".profile-header").load("./navbar.html");
   $(".profile-footer").load("./footer.html");
 
@@ -52,7 +53,6 @@ onload = function () {
 
       $("input[type=file]").change(() => {
         var file = $("input[type=file]").get(0).files[0];
-        console.log(file);
         if (file) {
           reader = new FileReader();
           reader.onload = function () {

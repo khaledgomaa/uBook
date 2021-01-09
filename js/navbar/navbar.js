@@ -18,16 +18,14 @@ var wishItems = findItem(
   userEmail
 );
 
-
 if (userEmail !== "Not Found") {
   let users = JSON.parse(localStorage.getItem("userData"));
   let img;
-  for(var i=0; i<users.length; i++){
-    if(userEmail === users[i].email)
-      img = users[i].image;
+  for (var i = 0; i < users.length; i++) {
+    if (userEmail === users[i].email) img = users[i].image;
   }
-  $("#profile").css("display","unset")
-  $("#profile img").attr("src",img)
+  $("#profile").css("display", "unset");
+  $("#profile img").attr("src", img);
 }
 
 $("#signInbtn").click(function () {
@@ -39,7 +37,6 @@ $("#signInbtn").click(function () {
 
 function changeSignInOut() {
   if (userEmail != "Not Found") {
-    console.log(userEmail);
     $("#signInbtn").html("Sign out");
   }
 }

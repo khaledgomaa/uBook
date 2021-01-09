@@ -1,3 +1,4 @@
+cookie.setCookie("selected", "bookDetails");
 $("#bookDetailsHeader").load("./navbar.html"); // include navbar on loading
 $("#bookDetailsFooter").load("./footer.html"); //include footer onloading
 
@@ -139,7 +140,7 @@ function updateCurrentQuantity(num) {
               if (storedItems[idx].items.length > 1) {
                 storedItems[idx].items.splice(x);
               } else {
-                storedItems.splice(index);
+                storedItems.splice(idx);
               }
             } else {
               storedItems[idx].items[x].qty = itemQuan;
@@ -274,6 +275,11 @@ function addItemsToCart() {
       var newStockNum = getCurrentStock() - 1;
       updateCurrentStock(newStockNum);
       updateStockForItemInCartItems(storedItems, bookinfo.id, newStockNum);
+      if (newStockNum == 0) {
+        $(".plus").prop("disabled", true);
+      } else {
+        $(".plus").prop("disabled", false);
+      }
       document.getElementsByClassName(
         "numberlogo"
       )[0].innerHTML = totalNumberOfItems;
@@ -305,6 +311,11 @@ function addItemsToCart() {
   var newStockNum = getCurrentStock() - 1;
   updateCurrentStock(newStockNum);
   updateStockForItemInCartItems(storedItems, bookinfo.id, newStockNum);
+  if (newStockNum == 0) {
+    $(".plus").prop("disabled", true);
+  } else {
+    $(".plus").prop("disabled", false);
+  }
   document.getElementsByClassName("numberlogo")[0].innerHTML = 1;
   $(".selectedItems").text("(1) in cart");
   localStorage.setItem("cartItems", JSON.stringify(storedItems));
