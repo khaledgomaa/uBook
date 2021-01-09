@@ -1,3 +1,4 @@
+cookie.setCookie("selected", "about");
 $("#aboutUsNavBar").load("../html/navbar.html");
 $("#aboutUsFooter").load("../html/footer.html");
 

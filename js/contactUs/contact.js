@@ -1,4 +1,5 @@
 onload = function () {
+  cookie.setCookie("selected", "contactus");
   $("#header").load("./navbar.html");
   $("#contactfooter").load("./footer.html");
 };
