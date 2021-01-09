@@ -1,3 +1,4 @@
+cookie.setCookie("selected", "event");
 $("#eventsNavBar").load("../html/navbar.html");
 $("#eventsFooter").load("../html/footer.html");
 
