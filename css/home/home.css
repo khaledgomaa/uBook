@@ -47,6 +47,7 @@
 
 #prev {
   position: absolute;
+  outline: none;
   top: 16%;
   border-radius: 50%;
   width: 30px;
@@ -55,6 +56,7 @@
 }
 #next {
   position: absolute;
+  outline: none;
   top: 16%;
   left: 96%;
   border-radius: 50%;
